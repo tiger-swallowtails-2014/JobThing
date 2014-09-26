@@ -7,6 +7,10 @@ FactoryGirl.define do
     username {Faker::Internet.user_name}
     password_hash {"Some crazy password hash that will be changed later when bcrypt works"}
   end
-
+  factory :jobthing do 
+    job_link {Faker::Internet.url}
+    company {Faker::Company.name}
+    position {Faker::Lorem.word}
+  end
 
 end
