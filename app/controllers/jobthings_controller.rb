@@ -1,5 +1,5 @@
 class JobthingsController < ApplicationController
-  before_filter :load_jobthing, :except => [:index, :create]
+  before_filter :load_jobthing, :except => [:index, :new, :create]
   before_filter :load_user
 
   def index
@@ -15,11 +15,12 @@ class JobthingsController < ApplicationController
     @user.jobthings << @jobthing
   end
 
-  def edit
+  def update
+    @jobthing.update_attributes(job_link: params[:job_link], company: params[:company], position: params[:position])
   end
 
   def destroy
-    @jobthing.delete
+    @jobthing.destroy
   end
 
   private
