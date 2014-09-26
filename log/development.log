@@ -831,3 +831,10 @@ Migrating to CreateApplieds (20140926181454)
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (1.6ms)[0m  INSERT INTO "jobthings" ("company", "created_at", "job_link", "position", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["company", "13"], ["created_at", "2014-09-26 19:26:45.020594"], ["job_link", "123"], ["position", "123"], ["updated_at", "2014-09-26 19:26:45.020594"]]
   [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-09-26 12:51:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/myeung58/.rvm/gems/ruby-2.0.0-p481/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 38ms (Views: 26.6ms | ActiveRecord: 0.0ms)
