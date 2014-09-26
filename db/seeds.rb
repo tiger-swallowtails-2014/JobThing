@@ -14,7 +14,7 @@ contact = Contact.create(
 )
 
 note = Note.create(
-  note: "I fucked up",
+  note: "I messed up",
   phase_column: "interview",
 )
 
