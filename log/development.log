@@ -695,3 +695,28 @@ Migrating to CreateApplieds (20140926181454)
   [1m[35mMiscjobthing Load (0.6ms)[0m  SELECT "miscjobthings".* FROM "miscjobthings"
   [1m[36m (0.2ms)[0m  [1mBEGIN[0m
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (120.1ms)[0m  [1mDROP DATABASE IF EXISTS "JobThing_development"[0m
+  [1m[35m (117.2ms)[0m  DROP DATABASE IF EXISTS "JobThing_test"
+  [1m[36m (549.2ms)[0m  [1mCREATE DATABASE "JobThing_development" ENCODING = 'unicode'[0m
+  [1m[35m (536.1ms)[0m  CREATE DATABASE "JobThing_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.8ms)[0m  CREATE TABLE "applieds" ("id" serial primary key, "jobthing_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "contacts" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "phone_number" character varying(255), "email" character varying(255), "jobthing_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "interviews" ("id" serial primary key, "interviewed_with" character varying(255), "interview_date" timestamp, "interview_time" timestamp, "jobthing_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "jobthings" ("id" serial primary key, "job_link" character varying(255), "company" character varying(255), "position" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (2.6ms)[0m  CREATE TABLE "miscjobthings" ("id" serial primary key, "type" character varying(255), "jobthing_id" integer, "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.8ms)[0m  [1mCREATE TABLE "notes" ("id" serial primary key, "note" text, "phase_column" character varying(255), "user_id" integer, "jobthing_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (3.9ms)[0m  CREATE TABLE "outcomes" ("id" serial primary key, "jobthing_id" integer, "success" boolean DEFAULT 'f', "created_at" timestamp, "updated_at" timestamp) 
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "username" character varying(255), "password_hash" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926181454')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140926172014')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926173127')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140926173817')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926173901')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140926174002')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926174044')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140926180833')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
