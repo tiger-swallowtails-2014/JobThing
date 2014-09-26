@@ -1,4 +1,4 @@
 class Miscjobthing < ActiveRecord::Base
-  validates_presence_of :type
+  validates_presence_of :name
 	belongs_to :jobthing
 end
