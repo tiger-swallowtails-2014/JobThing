@@ -26,4 +26,5 @@ var Authentication = {
 
 $(document).ready(function () {
   Authentication.bindEvents();
+  jobThingController.bindButton();
 })
