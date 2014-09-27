@@ -8,6 +8,7 @@ class JobthingsController < ApplicationController
 
   def new
     @jobthing = Jobthing.new
+    render partial: 'form'
   end
 
   def create
@@ -20,12 +21,21 @@ class JobthingsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+    render partial: 'form'
+  end
+
   def update
     @jobthing.update_attributes(jobthing_params)
+    redirect_to user_path(@user)
   end
 
   def destroy
     @jobthing.destroy
+    redirect_to user_path(@user)
   end
 
   private
