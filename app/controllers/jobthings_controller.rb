@@ -20,12 +20,16 @@ class JobthingsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def update
     @jobthing.update_attributes(jobthing_params)
   end
 
   def destroy
     @jobthing.destroy
+    redirect_to user_path(@user)
   end
 
   private
