@@ -3,7 +3,7 @@ user = User.create(
   last_name: "lname",
   email: "test@test.com",
   username: "test",
-  password_hash: "test"
+  password: "test"
 )
 
 contact = Contact.create(
