@@ -8,6 +8,7 @@ class JobthingsController < ApplicationController
 
   def new
     @jobthing = Jobthing.new
+    render partial: 'form'
   end
 
   def create
