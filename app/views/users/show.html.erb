@@ -1,20 +1,17 @@
 <div class="main-container">
   <h1 class="title"><%= @user.username %>'s JobThing </h1>
+  <!-- add user authentication logics here -->
   <%= button_to "Sign Out", logout_path, :method => :delete %>
 
   <div class="table-responsive col-md-2 ">
     <h2>Job Bucket</h2>
 
     <table class="table">
-      <tr>
-        <td>Job 1</td>
-      </tr>
-      <tr>
-        <td>Job 2</td>
-      </tr>
-      <tr>
-        <td>Job 3</td>
-      </tr>
+      <% @jobthings.each do |jobthing| %>
+        <tr>
+          <td><%= render partial: 'jobthing', collection: @jobthings, locals: {jobthing: jobthing} %></td>
+        </tr>
+      <% end %>
     </table>
 
     <button type="button" class="btn btn-primary">Add New</button>

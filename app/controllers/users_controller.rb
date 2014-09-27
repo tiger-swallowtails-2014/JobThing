@@ -16,7 +16,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    # replace params with session
     @user = User.find(params[:id])
+    @jobthings = Jobthing.where(user_id: @user.id)
   end
 
   private
