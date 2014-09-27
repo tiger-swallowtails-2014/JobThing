@@ -15,7 +15,7 @@
       <% end %>
     </table>
 
-    <button type="button" class="btn btn-primary" id="show_new_jobthing_form">Add New</button>
+    <button type="button" class="btn btn-primary" id="show_new_jobthing_form" action="/users/<%=@user.id%>/jobthings/new">Add New</button>
   </div>
 
   <div class="table-responsive col-md-2 ">
@@ -63,4 +63,8 @@
   </div>
 
   <i class="fa fa-trash"></i>
+</div>
+
+<div class="jobthing_form_container">
+
 </div>
