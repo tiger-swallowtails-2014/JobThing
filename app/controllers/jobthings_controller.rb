@@ -13,8 +13,8 @@ class JobthingsController < ApplicationController
 
   def create
     @jobthing = Jobthing.create(jobthing_params)
-    @user.jobthings << @jobthing
-    if @user.save
+    if @jobthing.save
+      @user.jobthings << @jobthing
       redirect_to user_path(@user)
     else
       redirect_to root_path
