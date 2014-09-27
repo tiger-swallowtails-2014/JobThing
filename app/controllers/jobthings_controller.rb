@@ -24,8 +24,13 @@ class JobthingsController < ApplicationController
   def show
   end
 
+  def edit
+    render partial: 'form'
+  end
+
   def update
     @jobthing.update_attributes(jobthing_params)
+    redirect_to user_path(@user)
   end
 
   def destroy
