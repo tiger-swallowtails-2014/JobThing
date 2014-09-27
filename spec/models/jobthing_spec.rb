@@ -22,7 +22,7 @@ describe Jobthing do
     end
   end
   context "associations" do
-    it { should have_one :interview }
+    it { should have_many :interviews }
     it { should have_one :applied }
     it { should have_one :outcome }
     it { should have_one :miscjobthing }

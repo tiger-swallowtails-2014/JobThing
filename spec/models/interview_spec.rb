@@ -10,7 +10,7 @@ describe Interview do
     it "should belong to its respective job thing" do 
     job = FactoryGirl.build(:jobthing)
     interview = FactoryGirl.build(:interview)
-    job.interview = interview
+    job.interviews << interview
     expect(interview.jobthing).to be job 
     end
   end 
