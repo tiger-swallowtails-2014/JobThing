@@ -11,12 +11,17 @@ class JobthingsController < ApplicationController
   end
 
   def create
-    @jobthing = Jobthing.create(job_link: params[:job_link], company: params[:company], position: params[:position])
+    @jobthing = Jobthing.create(jobthing_params)
     @user.jobthings << @jobthing
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      redirect_to root_path
+    end
   end
 
   def update
-    @jobthing.update_attributes(job_link: params[:job_link], company: params[:company], position: params[:position])
+    @jobthing.update_attributes(jobthing_params)
   end
 
   def destroy
@@ -32,6 +37,10 @@ class JobthingsController < ApplicationController
   def load_user
     # substitute params[:user_id] with session[:user_id] once session model is ready
     @user = User.find(params[:user_id])
+  end
+
+  def jobthing_params
+    params.require(:jobthing).permit(:job_link, :company, :position)
   end
 
 end
