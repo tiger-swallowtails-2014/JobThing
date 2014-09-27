@@ -22,4 +22,7 @@ FactoryGirl.define do
     interview_date {DateTime.now}
     interview_time {DateTime.now}
   end
+  factory :note do 
+    note {Faker::Lorem.paragraph}
+  end
 end
