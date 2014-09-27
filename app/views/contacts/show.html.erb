@@ -1,0 +1,6 @@
+<p><%= @contact.first_name %></p>
+<p><%= @contact.last_name %></p>
+<p><%= @contact.phone_number %></p>
+<p><%= @contact.email %></p>
+<%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, @contact), method: :delete %>
+<%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, @contact) %>
