@@ -1,5 +1,7 @@
 <h1>WELCOME</h1>
 
+<%= link_to "Sign In", login_path %>
+
 <%= form_for @user do |f| %>
   First Name: <%= f.text_field :first_name, placeholder: "First Name" %>
   Last Name: <%= f.text_field :last_name, placeholder: "Last Name" %>
