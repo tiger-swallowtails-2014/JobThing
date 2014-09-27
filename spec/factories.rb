@@ -17,5 +17,9 @@ FactoryGirl.define do
     last_name {Faker::Name.last_name}
     phone_number {"123 456 2342"}
   end
-
+  factory :interview do 
+    interview_with {Faker::Name.name}
+    interview_date {DateTime.now}
+    interview_time {DateTime.now}
+  end
 end
