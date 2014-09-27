@@ -9,7 +9,8 @@
     <table class="table">
       <% @jobs_w_interest.each do |job_w_interest| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobs_w_interest, locals: {jobthing: job_w_interest} %></td>
+          <% p job_w_interest %>
+          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></td>
         </tr>
       <% end %>
     </table>
@@ -22,7 +23,7 @@
     <table class="table">
      <% @jobs_w_applied.each do |job_w_applied| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobs_w_applied, locals: {jobthing: job_w_applied} %></td>
+          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></td>
         </tr>
       <% end %>
     </table>
@@ -33,7 +34,7 @@
     <table class="table">
       <% @jobs_w_interview.each do |job_w_interview| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobs_w_interview, locals: {jobthing: job_w_interview} %></td>
+          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></td>
         </tr>
       <% end %>
     </table>
@@ -44,7 +45,7 @@
     <table class="table">
       <% @jobs_w_misc.each do |job_w_misc| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobs_w_misc, locals: {jobthing: job_w_misc} %></td>
+          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></td>
         </tr>
       <% end %>
     </table>
@@ -55,7 +56,7 @@
     <table class="table">
       <% @jobs_w_outcome.each do |job_w_outcome| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobs_w_outcome, locals: {jobthing: job_w_outcome} %></td>
+          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></td>
         </tr>
       <% end %>
     </table>
