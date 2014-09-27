@@ -12,5 +12,10 @@ FactoryGirl.define do
     company {Faker::Company.name}
     position {Faker::Lorem.word}
   end
+  factory :contact do 
+    first_name {Faker::Name.first_name}
+    last_name {Faker::Name.last_name}
+    phone_number {"123 456 2342"}
+  end
 
 end
