@@ -8,18 +8,19 @@ class NotesController < ApplicationController
 
   def new
     @note = Note.new
-    render partial: 'note'
+    render partial: 'form'
   end
 
   def create
     @note = Note.create(note_params)
+    if @note.save
   end
 
   def show
   end
 
   def edit
-    render partial: 'note'
+    render partial: 'form'
   end
 
   def update
