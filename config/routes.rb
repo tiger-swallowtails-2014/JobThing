@@ -12,7 +12,12 @@ Rails.application.routes.draw do
   #   end
 
   root 'users#index'
-  resources :sessions, only: [:new, :destroy, :create]
+
+  get '/login' => 'sessions#new'
+  post "/login" => 'sessions#create'
+  get "/logout" => 'sessions#destroy'
+
+
   resources :users do
     resources :jobthings do
       resources :notes
