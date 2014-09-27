@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     # replace params with session
     @user = User.find(params[:id])
     @jobthings = Jobthing.where(user_id: @user.id)
-    @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview; @jobs_w_misc = []; @jobs_w_outcome = [];
+    @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = []; @jobs_w_outcome = [];
 
     @jobthings.each do |jobthing|
       if jobthing.has_outcome

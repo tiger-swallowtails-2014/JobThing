@@ -18,7 +18,7 @@ class Jobthing < ActiveRecord::Base
   end
 
   def has_misc
-    Miscjobthing.where(jobthig_id: self.id).count != 0
+    Miscjobthing.where(jobthing_id: self.id).count != 0
   end
 
   # check this first
