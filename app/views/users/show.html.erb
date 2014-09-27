@@ -1,5 +1,6 @@
 <div class="main-container">
   <h1 class="title"><%= @user.username %>'s JobThing </h1>
+  <%= link_to "Sign Out", logout_path, :method => :delete %>
 
   <div class="table-responsive col-md-2 ">
     <h2>Job Bucket</h2>
