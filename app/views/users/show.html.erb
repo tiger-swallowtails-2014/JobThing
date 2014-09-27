@@ -7,9 +7,9 @@
     <h2>Job Bucket</h2>
 
     <table class="table">
-      <% @jobthings.each do |jobthing| %>
+      <% @jobs_w_interest.each do |job_w_interest| %>
         <tr>
-          <td><%= render partial: 'jobthing', collection: @jobthings, locals: {jobthing: jobthing} %></td>
+          <td><%= render partial: 'jobthing', collection: @jobs_w_interest, locals: {job_w_interest: job_w_interest} %></td>
         </tr>
       <% end %>
     </table>
