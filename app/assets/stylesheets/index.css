@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.sign-in {
+  /*border: 2px solid black;*/
+  margin: auto;
+  width: 20%;
+  padding: 2%;
+  text-align: center;
+}
+
+.sign-up {
+  /*border: 2px solid black;*/
+  margin: auto;
+  width: 20%;
+  padding: 2%;
+  text-align: center;
+}
+
+
+.registration_form {
+  display: none;
+}
