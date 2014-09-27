@@ -12,10 +12,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    p "Contact Params"
-    p contact_params
     @contact = Contact.new(contact_params)
-    p @contact
     if @contact.save
       p "contact created!"
       @jobthing.contacts << @contact
