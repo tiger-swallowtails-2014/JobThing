@@ -12,7 +12,7 @@ end
 
 10.times do
   jobthing = Jobthing.create(
-    job_link: "http://www.google.com",
+    job_link: Faker::Internet.url,
     company: Faker::Company.name,
     position: Faker::Name.title
   )
@@ -39,32 +39,26 @@ end
   Jobthing.first.notes << note
 end
 
-
-
-# user.jobthings << jobthing
-# user.notes << note
-# jobthing.contacts << contact
-# jobthing.notes << note
-
 Jobthing.first.outcome = Outcome.create()
 
-3.times do
-  i = 1
-  Jobthing.find(i).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
-  i += 1
-end
+Jobthing.find(1).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
+Jobthing.find(2).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
+Jobthing.find(3).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
 
-5.times do
-  i = 1
-  Jobthing.find(i).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
-  i += 1
-end
+Jobthing.find(1).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(2).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(3).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(4).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(5).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
 
-7.times do
-  i = 1
-  Jobthing.find(i).applied = Applied.create()
-  i += 1
-end
+Jobthing.find(1).applied = Applied.create()
+Jobthing.find(2).applied = Applied.create()
+Jobthing.find(3).applied = Applied.create()
+Jobthing.find(4).applied = Applied.create()
+Jobthing.find(5).applied = Applied.create()
+Jobthing.find(6).applied = Applied.create()
+Jobthing.find(7).applied = Applied.create()
+
 
 
 
