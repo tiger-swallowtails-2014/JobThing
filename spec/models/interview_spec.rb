@@ -7,13 +7,13 @@ describe Interview do
   end
 
   context "associations" do
-    it "should belong to its respective job thing" do 
+    it "should belong to its respective job thing" do
     job = FactoryGirl.build(:jobthing)
     interview = FactoryGirl.build(:interview)
-    job.interview = interview
-    expect(interview.jobthing).to be job 
+    job.interviews << interview
+    expect(interview.jobthing).to be job
     end
-  end 
+  end
 
 
 end
