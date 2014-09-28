@@ -1,0 +1,5 @@
+<% @interviews.each_with_index do |interview, index| %>
+<p><%= index + 1 %>. <%= interview.interview_date %>
+  <%= link_to "Details", user_jobthing_interview_path(@user, @jobthing, interview) %>
+  <p>Format me into something that makes sense for an interview index</p>
+<% end %>

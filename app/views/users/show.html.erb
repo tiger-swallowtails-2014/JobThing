@@ -1,66 +1,80 @@
-<div class="main-container">
-  <h1 class="title"><%= @user.username %>'s JobThing </h1>
-  <!-- add user authentication logics here -->
-  <%= button_to "Sign Out", logout_path, :method => :delete %>
+<div class="main-page">
+  <div class="main-container">
+    <h1 class="title"><%= @user.username %>'s JobThing </h1>
+    <!-- add user authentication logics here -->
+    <%= button_to "Sign Out", logout_path, :method => :delete %>
 
-  <div class="table-responsive col-md-2 ">
-    <h2>Job Bucket</h2>
+    <div class="table-responsive col-md-2 ">
+      <h2>Job Bucket</h2>
 
-    <table class="table">
-      <% @jobs_w_interest.each do |job_w_interest| %>
-        <tr>
-          <% p job_w_interest %>
-          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></td>
-        </tr>
-      <% end %>
-    </table>
+      <table class="table">
+        <% @jobs_w_interest.each do |job_w_interest| %>
+          <tr>
+            <% p job_w_interest %>
+            <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></td>
+          </tr>
+        <% end %>
+      </table>
 
-    <button type="button" class="btn btn-primary">Add New</button>
+      <button type="button" class="btn btn-primary new-job" id="show_new_jobthing_form" action="/users/<%=@user.id%>/jobthings/new">Add New</button>
+      <button class="test">test</button>
+    </div>
+
+    <div class="table-responsive col-md-2 ">
+      <h2>Applied To</h2>
+      <table class="table">
+       <% @jobs_w_applied.each do |job_w_applied| %>
+          <tr>
+            <td><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="table-responsive col-md-2 ">
+      <h2>Interview</h2>
+      <table class="table">
+        <% @jobs_w_interview.each do |job_w_interview| %>
+          <tr>
+            <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="table-responsive col-md-2 ">
+      <h2>Misc</h2>
+      <table class="table">
+        <% @jobs_w_misc.each do |job_w_misc| %>
+          <tr>
+            <td><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="table-responsive col-md-2 ">
+      <h2>Outcome</h2>
+      <table class="table">
+        <% @jobs_w_outcome.each do |job_w_outcome| %>
+          <tr>
+            <td><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <i class="fa fa-trash"></i>
+
   </div>
 
-  <div class="table-responsive col-md-2 ">
-    <h2>Applied To</h2>
-    <table class="table">
-     <% @jobs_w_applied.each do |job_w_applied| %>
-        <tr>
-          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></td>
-        </tr>
-      <% end %>
-    </table>
+  <div class="form_container">
+    <p class="close-form">Close</p>
   </div>
-
-  <div class="table-responsive col-md-2 ">
-    <h2>Interview</h2>
-    <table class="table">
-      <% @jobs_w_interview.each do |job_w_interview| %>
-        <tr>
-          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-
-  <div class="table-responsive col-md-2 ">
-    <h2>Misc</h2>
-    <table class="table">
-      <% @jobs_w_misc.each do |job_w_misc| %>
-        <tr>
-          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-
-  <div class="table-responsive col-md-2 ">
-    <h2>Outcome</h2>
-    <table class="table">
-      <% @jobs_w_outcome.each do |job_w_outcome| %>
-        <tr>
-          <td><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
-
-  <i class="fa fa-trash"></i>
 </div>
+
+<!-- <div class="jobthing_form_container">
+
+</div> -->
+
+

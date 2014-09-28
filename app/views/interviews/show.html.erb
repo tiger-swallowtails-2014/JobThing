@@ -1,0 +1,13 @@
+<h3> You have an interview with: </h3>
+<%= @interview.interview_with %>
+<h3> From </h3>
+<%= @jobthing.company %>
+<h3> On </h3>
+<%= @interview.interview_date %>
+<h3> At </h3>
+<%= @interview.interview_time %>
+<h5> Render some inspirational "you are great!" quote here </h5>
+
+
+<%= link_to "Delete this interview", user_jobthing_interview_path(@user, @jobthing, @interview), method: :delete %>
+<%= link_to "Edit the details", edit_user_jobthing_interview_path(@user, @jobthing, @interview) %>
