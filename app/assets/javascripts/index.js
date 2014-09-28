@@ -33,6 +33,7 @@ var Utility = (function() {
     },
     removeAllForms: function() {
       Jobthing.removeForm();
+      Interview.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;

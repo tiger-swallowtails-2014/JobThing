@@ -1,8 +1,9 @@
 var Interview = (function() {
   return {
     bindNewInterviewButton: function() {
+      var element = Utility.elementCloner.getClone()
       var request = $.ajax({
-        url: $("#new-interview-link").attr('action'),
+        url: element.find("#new-interview-link").attr('action'),
         type: "GET"
       });
       request.done(function(data) {
@@ -30,7 +31,10 @@ var Interview = (function() {
           // updateInterviewView();
         }
       })
-    }
+    },
+    removeForm: function() {
+      $('.new_interview').remove();
+    },
   }
 })();
 

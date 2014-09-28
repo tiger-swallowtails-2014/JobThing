@@ -6,25 +6,28 @@ class InterviewsController < ApplicationController
     @interviews = @jobthing.interviews
   end
 
-  def new 
+  def new
     @interview = Interview.new
     render partial: 'form'
   end
 
-  def create 
-    @interview = Interview.new(interview_params)
-    if @interview.save 
+  def create
+    p "reached create route"
+    p params
+    @interview = Interview.create(interview_params)
+    if @interview.save
+      p "saved"
       @jobthing.interviews << @interview
-      redirect_to user_jobthing_interviews_path
-    else 
-      redirect_to user_jobthing_interviews_path
+      redirect_to user_path(@user)
+    else
+      redirect_to user_path(@user)
     end
   end
 
   def show
   end
 
-  def edit 
+  def edit
     render partial: 'form'
   end
 
@@ -33,22 +36,22 @@ class InterviewsController < ApplicationController
     redirect_to user_jobthing_interviews_path
   end
 
-  def destroy 
+  def destroy
     @interview.destroy
   end
 
 
   private
 
-  def load_jobthing 
+  def load_jobthing
     @jobthing = Jobthing.find(params[:jobthing_id])
   end
 
-  def load_user 
+  def load_user
     @user = User.find(params[:user_id])
   end
 
-  def load_interview 
+  def load_interview
     @interview = Interview.find(params[:id])
   end
 
