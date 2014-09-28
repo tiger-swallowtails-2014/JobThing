@@ -13,10 +13,10 @@
     margin: 15px 0px 0px;
     outline: rgb(44, 54, 56) none 0px;
     float: left;
-    margin-right: 2%;
-    margin-top: -2%;
-    /*border: 2px solid black;*/
-}/*#SPAN_1*/
+    clear: both;
+    margin-right: 4%;
+    margin-bottom: 1%;
+}
 
 .month {
     color: rgb(255, 168, 0);
