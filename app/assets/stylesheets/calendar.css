@@ -1,0 +1,68 @@
+.calendar {
+    color: rgb(44, 54, 56);
+    cursor: default;
+    display: block;
+    float: left;
+    height: 125px;
+    width: 88px;
+    perspective-origin: 44px 62.5px;
+    transform-origin: 44px 62.5px;
+    background: rgba(0, 0, 0, 0) url(http://javascriptissexy.com/wp-content/themes/launch/images/publishedDate_bg.png) no-repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(44, 54, 56);
+    font: normal normal 300 16px/24px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 15px 0px 0px;
+    outline: rgb(44, 54, 56) none 0px;
+    float: left;
+    margin-right: 2%;
+    margin-top: -2%;
+    /*border: 2px solid black;*/
+}/*#SPAN_1*/
+
+.month {
+    color: rgb(255, 168, 0);
+    cursor: default;
+    display: block;
+    float: left;
+    height: 24px;
+    text-align: center;
+    width: 88px;
+    perspective-origin: 44px 12px;
+    transform-origin: 44px 12px;
+    border: 0px none rgb(255, 168, 0);
+    font: normal normal 600 14px/24px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    outline: rgb(255, 168, 0) none 0px;
+}/*#SPAN_2*/
+
+.date {
+    color: rgb(36, 189, 221);
+    cursor: default;
+    display: block;
+    float: left;
+    height: 24px;
+    text-align: center;
+    text-shadow: rgb(0, 0, 0) 0px 2px 0px;
+    width: 88px;
+    perspective-origin: 44px 12px;
+    transform-origin: 44px 12px;
+    border: 0px none rgb(36, 189, 221);
+    font: normal normal normal 48px/24px Bebas, 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+    margin: 20px 0px 0px;
+    outline: rgb(36, 189, 221) none 0px;
+}/*#SPAN_3*/
+
+.year {
+    color: rgb(255, 168, 0);
+    cursor: default;
+    display: block;
+    float: left;
+    height: 24px;
+    text-align: center;
+    width: 88px;
+    perspective-origin: 44px 12px;
+    transform-origin: 44px 12px;
+    border: 0px none rgb(255, 168, 0);
+    font: normal normal 600 14px/24px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 28px 0px 0px;
+    outline: rgb(255, 168, 0) none 0px;
+}
+

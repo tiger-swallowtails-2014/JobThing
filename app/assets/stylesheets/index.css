@@ -42,6 +42,7 @@ body {
 
 .main-container {
   position: relative;
+  /*display: none;*/
   /*border: 2px solid blue ;*/
   /*height: 60%;*/
   /*opacity: 0.025;*/
@@ -51,4 +52,6 @@ body {
   cursor: pointer;
 }
 
-
+.title {
+  text-align: center;
+}
