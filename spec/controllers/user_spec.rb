@@ -3,7 +3,7 @@ require 'rails_helper'
 describe UsersController do
   let!(:user) {FactoryGirl.create :user}
 
-  describe "Post create" do
+  describe "#create" do
     it "should create a new user with successfull response" do
       post :create, :user => FactoryGirl.attributes_for(:user)
       expect(response).to have_http_status(302)
@@ -37,8 +37,8 @@ describe UsersController do
 
   end
 
-  describe "Get show" do
-    it "should finds the correct users with successfull response" do
+  describe "#show" do
+    it "should find the correct users with successfull response" do
       get :show, id: user.id
       expect(response).to have_http_status(200)
     end
