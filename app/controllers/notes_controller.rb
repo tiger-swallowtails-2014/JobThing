@@ -17,7 +17,7 @@ class NotesController < ApplicationController
       # integrate note phase-column feature
       @user.notes << @note
       @jobthing.notes << @note
-      redirect_to user_jobthing_path(@user, @jobthing)
+      redirect_to user_path(@user)
     else
       redirect_to user_path(@user)
     end
@@ -32,12 +32,12 @@ class NotesController < ApplicationController
 
   def update
     @note.update_attributes(note_params)
-    redirect_to user_jobthing_path(@user, @jobthing)
+    redirect_to user_path(@user)
   end
 
   def destroy
     @note.destroy
-    redirect_to user_jobthing_path(@user, @jobthing)
+    redirect_to user_path(@user)
   end
 
   private

@@ -24,6 +24,21 @@ var Authentication = {
   }
 }
 
+var Utility = (function() {
+  return {
+    hideAllForms: function() {
+      JobThingController.hideForm();
+    },
+    removeAllForms: function() {
+      JobThingController.removeForm();
+    }
+  }
+})();
+
 $(document).ready(function () {
   Authentication.bindEvents();
+  JobThingController.bindButton();
+  Utility.hideAllForms();
+  LightBox.bindEvents();
+  // $('.form-container').hide()
 })

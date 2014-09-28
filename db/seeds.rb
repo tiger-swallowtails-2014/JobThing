@@ -45,11 +45,12 @@ Jobthing.find(1).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"
 Jobthing.find(2).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
 Jobthing.find(3).miscjobthing = Miscjobthing.create(name: ["coffee", "follow up"].sample)
 
-Jobthing.find(1).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
-Jobthing.find(2).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
-Jobthing.find(3).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
-Jobthing.find(4).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
-Jobthing.find(5).interview = Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(2).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(3).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(4).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
+Jobthing.find(5).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
 
 Jobthing.find(1).applied = Applied.create()
 Jobthing.find(2).applied = Applied.create()
