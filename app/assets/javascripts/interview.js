@@ -28,7 +28,7 @@ var Interview = (function() {
           // render form
           Interview.bindNewInterviewButton();
           // Lightbox.renderForm();
-          // updateInterviewView();
+
         }
       })
     },

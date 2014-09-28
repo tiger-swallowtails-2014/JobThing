@@ -14,7 +14,8 @@ var Applied = (function() {
           var element = Utility.elementCloner.getClone();
           $('.applied-table tbody').append(element);
           createApplied(element);
-          view_removeInterest();
+          view_removeFromOrigin();
+          db_removeAllInterviews(element);
           // re-bind drag events to items
           Interaction.bindDragEvent();
           // look into sorting items
@@ -31,7 +32,18 @@ function createApplied(element) {
   });
 }
 
-function view_removeInterest() {
+function view_removeFromOrigin() {
   Utility.elementCloner.getOriginal().remove();
 };
 
+// remove all interviews
+function db_removeAllInterviews(element) {
+  // console.log(element.find("#delete-interview-link"))
+  element.find("#delete-interviews-link").each(function() {
+    var request = $.ajax({
+      url: $(this).attr('action'),
+      type: "get"
+    })
+
+  })
+}

@@ -40,7 +40,6 @@ class InterviewsController < ApplicationController
     @interview.destroy
   end
 
-
   private
 
   def load_jobthing

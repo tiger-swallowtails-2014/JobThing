@@ -9,6 +9,6 @@
     <button id="delete-applied-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds/<%=jobthing.applied.id%>"></button>
   <% end %>
   <% if jobthing.interviews %>
-    <button id="delete-interview-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/interviews/"></button><!-- concatenate interview id -->
+    <button id="delete-interviews-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/destroy_interviews"></button>
   <% end %>
 </div>
