@@ -4,6 +4,7 @@ var InteractionController = (function() {
       var items = $('.item')
       console.log(items);
       items.draggable({
+        helper: 'clone',
         start: function() {
           console.log('dragging');
         }
