@@ -34,12 +34,17 @@ var Utility = (function() {
     },
     elementCloner: (function() {
       var clonedItem;
+      var original;
       return {
         setClone: function(element) {
+          original = element;
           clonedItem = element.clone();
         },
         getClone: function() {
           return clonedItem;
+        },
+        getOriginal: function() {
+          return original;
         }
       }
     })()

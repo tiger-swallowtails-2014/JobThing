@@ -15,6 +15,7 @@ var AppliedController = (function() {
           $('.applied-table tbody').append(e);
           // ajax?
           createApplied(e);
+          removeInterest();
         }
       })
     }
@@ -29,4 +30,8 @@ function createApplied(element) {
   request.done(function() {
     console.log("success")
   })
+}
+
+function removeInterest() {
+  Utility.elementCloner.getOriginal().remove();
 }

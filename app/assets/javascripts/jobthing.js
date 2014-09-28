@@ -8,7 +8,6 @@ var JobthingController = (function() {
         var request = $.ajax({url: $(this).attr("action"), type: "GET"});
         request.done(function(data) {
           console.log("success");
-          console.log(data);
           Utility.removeAllForms();
           $('.form_container').append(data);
           LightBox.renderForm();
