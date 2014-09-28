@@ -51,6 +51,20 @@ var Utility = (function() {
   }
 })();
 
+var JobPage = {
+
+  bindEvents: function () {
+    $('.item').on("click", this.renderJobPage);
+  },
+
+  renderJobPage: function() {
+    var $template = $('.job-page');
+    var jobPage = $template.clone().html().trim();
+    $('.main-container').hide(1000);
+    $('.main-page').append(jobPage);
+  },
+}
+
 $(document).ready(function () {
   Authentication.bindEvents();
   JobthingController.bindButton();
@@ -58,5 +72,6 @@ $(document).ready(function () {
   LightBox.bindEvents();
   InteractionController.bindDragEvent();
   InteractionController.bindDropEvent();
+  JobPage.bindEvents();
   // $('.form-container').hide()
 })
