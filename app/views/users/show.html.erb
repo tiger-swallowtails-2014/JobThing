@@ -21,7 +21,7 @@
 
     <div class="table-responsive col-md-2 ">
       <h2>Applied To</h2>
-      <table class="table">
+      <table class="table applied-table">
        <% @jobs_w_applied.each do |job_w_applied| %>
           <tr class="item">
             <td><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></td>
@@ -32,7 +32,7 @@
 
     <div class="table-responsive col-md-2 ">
       <h2>Interview</h2>
-      <table class="table">
+      <table class="table interview-table">
         <% @jobs_w_interview.each do |job_w_interview| %>
           <tr class="item">
             <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></td>
@@ -43,7 +43,7 @@
 
     <div class="table-responsive col-md-2 ">
       <h2>Misc</h2>
-      <table class="table">
+      <table class="table misc-table">
         <% @jobs_w_misc.each do |job_w_misc| %>
           <tr class="item">
             <td><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></td>
@@ -54,7 +54,7 @@
 
     <div class="table-responsive col-md-2 ">
       <h2>Outcome</h2>
-      <table class="table">
+      <table class="table outcome-table">
         <% @jobs_w_outcome.each do |job_w_outcome| %>
           <tr class="item">
             <td><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></td>

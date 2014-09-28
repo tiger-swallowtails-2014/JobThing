@@ -1,8 +1,7 @@
 var InteractionController = (function() {
   return {
     bindDragEvent: function() {
-      var items = $('.item')
-      console.log(items);
+      var items = $('.item');
       items.draggable({
         helper: 'clone',
         start: function() {
