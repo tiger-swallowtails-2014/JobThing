@@ -78,6 +78,10 @@ body {
   font-size: 18px;
 }
 
+.contact-name {
+  font-size: 18px;
+}
+
 .notes {
   border: 1px solid black;
   text-align: center;
@@ -87,11 +91,16 @@ body {
   padding-top: 2%;
 }
 
-.btn-sm {
+.note-button {
   margin-top: 2%;
   margin-left: 43.5%;
 }
 
-.note-box {
+.contact-button {
+  margin-top: 2%;
+  margin-left: 42%;
+}
+
+.box {
   padding-bottom: 2%;
 }
