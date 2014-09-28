@@ -1,0 +1,5 @@
+<%= form_for [@user, @jobthing, @outcome] do |f| %>
+  Accepted: <%= f.radio_button :success , true%></div>
+  Rejected: <%= f.radio_button :success , false%></div>
+  <%= f.submit "Submit"%>
+<% end %>
