@@ -24,8 +24,6 @@ var Authentication = {
   }
 }
 
-
-
 var Utility = (function() {
   return {
     hideAllForms: function() {
@@ -41,6 +39,6 @@ $(document).ready(function () {
   Authentication.bindEvents();
   JobThingController.bindButton();
   Utility.hideAllForms();
-  // LightBox.bindEvents();
+  LightBox.bindEvents();
   // $('.form-container').hide()
 })

@@ -12,8 +12,6 @@ var JobThingController = (function() {
           Utility.removeAllForms();
           $('.form_container').append(data);
           LightBox.renderForm();
-          // $('.job-form').append(data);
-          // $('.form_container').toggle();
         })
       });
     },
@@ -29,16 +27,4 @@ var JobThingController = (function() {
   }
 })();
 
-var LightBox = {
-  bindEvents: function () {
-    $('.test').on("click", this.renderForm);
-  },
-  renderForm: function () {
-    // debugger
-    console.log("rendering form")
-    // var $template = $('.lightbox')
-    // var form = $template.clone().html().trim()
-    $('.main-container').css('opacity', '0.1');
-    $('.form_container').toggle();
-  }
-}
+

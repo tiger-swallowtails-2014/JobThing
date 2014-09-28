@@ -44,3 +44,9 @@
   /*height: 60%;*/
   /*opacity: 0.025;*/
 }
+
+.close-form {
+  cursor: pointer;
+}
+
+
