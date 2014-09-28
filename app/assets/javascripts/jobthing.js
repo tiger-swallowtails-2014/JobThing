@@ -1,6 +1,6 @@
-var JobthingController = (function() {
+var Jobthing = (function() {
   return {
-    bindButton: function() {
+    bindNewJobthingButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
         console.log("clicked");
         // e.preventDefault();
@@ -11,6 +11,7 @@ var JobthingController = (function() {
           Utility.removeAllForms();
           $('.form_container').append(data);
           LightBox.renderForm();
+          // Interaction.bindDragEvent();
         })
       });
     },

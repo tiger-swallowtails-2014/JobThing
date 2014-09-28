@@ -1,4 +1,4 @@
-var InterestController = (function() {
+var Interest = (function() {
   return {
     bindDropEvent: function() {
       $('.interest-table').droppable({
@@ -10,12 +10,15 @@ var InterestController = (function() {
           // toggle highlight
         },
         drop: function() {
+          // confirm with user
+
           console.log("dropped");
           var element = Utility.elementCloner.getClone();
           $('.interest-table tbody').append(element);
           db_removeApplied(element);
+          db_removeAllInterviews(element);
           view_removeApplied(element);
-          InteractionController.bindDragEvent();
+          Interaction.bindDragEvent();
         }
       })
     }
@@ -32,3 +35,5 @@ function db_removeApplied(element) {
     type: "DELETE"
   });
 }
+
+

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :interviews
       resources :miscjobthings
       resources :outcomes
+      get '/destroy_interviews' => 'jobthings#destroy_interviews'
     end
 
   end
