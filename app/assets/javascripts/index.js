@@ -31,7 +31,18 @@ var Utility = (function() {
     },
     removeAllForms: function() {
       JobthingController.removeForm();
-    }
+    },
+    elementCloner: (function() {
+      var clonedItem;
+      return {
+        setClone: function(element) {
+          clonedItem = element.clone();
+        },
+        getClone: function() {
+          return clonedItem;
+        }
+      }
+    })()
   }
 })();
 
@@ -41,5 +52,6 @@ $(document).ready(function () {
   Utility.hideAllForms();
   LightBox.bindEvents();
   InteractionController.bindDragEvent();
+  AppliedController.bindDropEvent();
   // $('.form-container').hide()
 })

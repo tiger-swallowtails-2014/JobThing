@@ -6,6 +6,8 @@ var InteractionController = (function() {
         helper: 'clone',
         start: function() {
           console.log('dragging');
+          console.log($(this));
+          Utility.elementCloner.setClone($(this));
         }
       })
     },
