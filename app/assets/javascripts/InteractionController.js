@@ -8,6 +8,9 @@ var InteractionController = (function() {
           console.log('dragging');
         }
       })
+    },
+    bindDropEvent: function() {
+      AppliedController.bindDropEvent();
     }
   }
 })();

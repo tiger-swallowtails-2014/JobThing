@@ -27,17 +27,17 @@ var Authentication = {
 var Utility = (function() {
   return {
     hideAllForms: function() {
-      JobThingController.hideForm();
+      JobthingController.hideForm();
     },
     removeAllForms: function() {
-      JobThingController.removeForm();
+      JobthingController.removeForm();
     }
   }
 })();
 
 $(document).ready(function () {
   Authentication.bindEvents();
-  JobThingController.bindButton();
+  JobthingController.bindButton();
   Utility.hideAllForms();
   LightBox.bindEvents();
   InteractionController.bindDragEvent();

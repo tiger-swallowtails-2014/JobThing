@@ -1,4 +1,4 @@
-var JobThingController = (function() {
+var JobthingController = (function() {
   return {
     bindButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
