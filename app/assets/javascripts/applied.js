@@ -1,4 +1,4 @@
-var AppliedController = (function() {
+var Applied = (function() {
   return {
     bindDropEvent: function() {
       $('.applied-table').droppable({
@@ -16,7 +16,7 @@ var AppliedController = (function() {
           createApplied(element);
           view_removeInterest();
           // re-bind drag events to items
-          InteractionController.bindDragEvent();
+          Interaction.bindDragEvent();
           // look into sorting items
         }
       })
@@ -34,3 +34,4 @@ function createApplied(element) {
 function view_removeInterest() {
   Utility.elementCloner.getOriginal().remove();
 };
+

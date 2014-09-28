@@ -1,4 +1,4 @@
-var InterestController = (function() {
+var Interest = (function() {
   return {
     bindDropEvent: function() {
       $('.interest-table').droppable({
@@ -15,7 +15,7 @@ var InterestController = (function() {
           $('.interest-table tbody').append(element);
           db_removeApplied(element);
           view_removeApplied(element);
-          InteractionController.bindDragEvent();
+          Interaction.bindDragEvent();
         }
       })
     }

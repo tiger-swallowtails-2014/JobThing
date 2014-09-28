@@ -27,10 +27,12 @@ var Authentication = {
 var Utility = (function() {
   return {
     hideAllForms: function() {
-      JobthingController.hideForm();
+      // Jobthing.hideForm();
+      // Interview.hideForm();
+      $('.form_container').hide();
     },
     removeAllForms: function() {
-      JobthingController.removeForm();
+      Jobthing.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;
@@ -67,11 +69,14 @@ var JobPage = {
 
 $(document).ready(function () {
   Authentication.bindEvents();
-  JobthingController.bindButton();
   Utility.hideAllForms();
   LightBox.bindEvents();
-  InteractionController.bindDragEvent();
-  InteractionController.bindDropEvent();
+
   JobPage.bindEvents();
+  Interaction.bindFormButton();
+  Interaction.bindDragEvent();
+  Interaction.bindDropEvent();
   // $('.form-container').hide()
 })
+
+

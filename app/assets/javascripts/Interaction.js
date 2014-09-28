@@ -1,5 +1,11 @@
-var InteractionController = (function() {
+var Interaction = (function() {
   return {
+    bindFormButton: function() {
+      Jobthing.bindNewJobthingButton();
+      // Interview.bindNewInterviewButton();
+      // misc
+      // outcome
+    },
     bindDragEvent: function() {
       var items = $('.item');
       items.draggable({
@@ -12,8 +18,11 @@ var InteractionController = (function() {
       })
     },
     bindDropEvent: function() {
-      AppliedController.bindDropEvent();
-      InterestController.bindDropEvent();
+      Applied.bindDropEvent();
+      Interest.bindDropEvent();
+      Interview.bindDropEvent();
+      // misc
+      // outcome
     }
   }
 })();
