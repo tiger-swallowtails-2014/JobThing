@@ -57,6 +57,6 @@ $(document).ready(function () {
   Utility.hideAllForms();
   LightBox.bindEvents();
   InteractionController.bindDragEvent();
-  AppliedController.bindDropEvent();
+  InteractionController.bindDropEvent();
   // $('.form-container').hide()
 })

@@ -1,4 +1,8 @@
 <div>
   <%= jobthing.job_link %>
-  <button id="store-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds"></button>
+
+  <button id="create-applied-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds"></button>
+  <% if jobthing.applied %>
+    <button id="delete-applied-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds/<%=jobthing.applied.id%>"></button>
+  <% end %>
 </div>

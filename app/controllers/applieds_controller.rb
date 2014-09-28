@@ -1,14 +1,13 @@
 class AppliedsController < ApplicationController
 
   def create
-    p params
     @user = User.find(params[:user_id])
     @jobthing = Jobthing.find(params[:jobthing_id])
-    @applied = Applied.create()
-    if @applied.save
-      @jobthing.applied = @applied
+    if @jobthing.applied
       redirect_to user_path(@user)
     else
+      @applied = Applied.create()
+      @jobthing.applied = @applied
       redirect_to user_path(@user)
     end
 
