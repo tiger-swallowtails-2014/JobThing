@@ -27,19 +27,36 @@ var Authentication = {
 var Utility = (function() {
   return {
     hideAllForms: function() {
-      JobThingController.hideForm();
+      JobthingController.hideForm();
     },
     removeAllForms: function() {
-      JobThingController.removeForm();
-    }
+      JobthingController.removeForm();
+    },
+    elementCloner: (function() {
+      var clonedItem;
+      var original;
+      return {
+        setClone: function(element) {
+          original = element;
+          clonedItem = element.clone();
+        },
+        getClone: function() {
+          return clonedItem;
+        },
+        getOriginal: function() {
+          return original;
+        }
+      }
+    })()
   }
 })();
 
 $(document).ready(function () {
   Authentication.bindEvents();
-  JobThingController.bindButton();
+  JobthingController.bindButton();
   Utility.hideAllForms();
   LightBox.bindEvents();
   InteractionController.bindDragEvent();
+  AppliedController.bindDropEvent();
   // $('.form-container').hide()
 })

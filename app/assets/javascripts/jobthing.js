@@ -1,4 +1,4 @@
-var JobThingController = (function() {
+var JobthingController = (function() {
   return {
     bindButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
@@ -8,7 +8,6 @@ var JobThingController = (function() {
         var request = $.ajax({url: $(this).attr("action"), type: "GET"});
         request.done(function(data) {
           console.log("success");
-          console.log(data);
           Utility.removeAllForms();
           $('.form_container').append(data);
           LightBox.renderForm();

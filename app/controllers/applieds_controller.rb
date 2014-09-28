@@ -1,6 +1,7 @@
 class AppliedsController < ApplicationController
 
   def create
+    p params
     @user = User.find(params[:user_id])
     @jobthing = Jobthing.find(params[:jobthing_id])
     @applied = Applied.create()
