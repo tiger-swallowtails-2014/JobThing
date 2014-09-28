@@ -59,3 +59,4 @@ class NotesController < ApplicationController
     params.require(:note).permit(:note, :phase_column)
   end
 end
+
