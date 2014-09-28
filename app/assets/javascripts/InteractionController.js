@@ -13,6 +13,7 @@ var InteractionController = (function() {
     },
     bindDropEvent: function() {
       AppliedController.bindDropEvent();
+      InterestController.bindDropEvent();
     }
   }
 })();

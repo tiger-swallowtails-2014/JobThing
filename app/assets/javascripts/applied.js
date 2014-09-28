@@ -4,18 +4,20 @@ var AppliedController = (function() {
       $('.applied-table').droppable({
         activate: function() {
           // hightlight
-          console.log("active")
+          console.log("active");
         },
-        listView: function() {
+        deactivate: function() {
           // toggle highlight
         },
         drop: function() {
-          console.log("dropped")
-          var e = Utility.elementCloner.getClone()
-          $('.applied-table tbody').append(e);
-          // ajax?
-          createApplied(e);
-          removeInterest();
+          console.log("dropped");
+          var element = Utility.elementCloner.getClone();
+          $('.applied-table tbody').append(element);
+          createApplied(element);
+          view_removeInterest();
+          // re-bind drag events to items
+          InteractionController.bindDragEvent();
+          // look into sorting items
         }
       })
     }
@@ -24,14 +26,11 @@ var AppliedController = (function() {
 
 function createApplied(element) {
   var request = $.ajax({
-    url: element.find('#store-link').attr('action'),
+    url: element.find('#create-applied-link').attr('action'),
     type: "POST"
-  })
-  request.done(function() {
-    console.log("success")
-  })
+  });
 }
 
-function removeInterest() {
+function view_removeInterest() {
   Utility.elementCloner.getOriginal().remove();
-}
+};
