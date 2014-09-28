@@ -1,6 +1,6 @@
 <div class="main-page">
   <div class="main-container">
-    <h1 class="title"><%= @user.username %>'s JobThing </h1>
+    <h1 class="name-title center"><%= @user.username %>'s JobThing </h1>
     <!-- add user authentication logics here -->
     <%= button_to "Sign Out", logout_path, :method => :delete %>
 
@@ -74,11 +74,11 @@
 
 <script type="temp" class="job-page">
   <div class="jobpage container-fluid">
-    <h1 class="title">Uber</h1>
-    <h2 class="title">Software Developer</h2>
+    <h1 class="job-title center">Uber</h1>
+    <h2 class="position-title center">Software Developer</h2>
 
     <div class="job-page-box">
-      <h1 class="title box-title">Progress</h1>
+      <h1 class="box-title center">Progress</h1>
 
       <div class="info container-fluid">
         <div class="calendar">
@@ -109,7 +109,7 @@
     </div>
 
     <div class="job-page-box box">
-      <h1 class="title box-title">Notes</h1>
+      <h1 class="box-title center">Notes</h1>
       <div class="notes container-fluid">
         <p class="note-title">Note 1</p>
         <p class="note-content">
@@ -121,7 +121,7 @@
     </div>
 
     <div class="job-page-box box">
-      <h1 class="title box-title">Contacts</h1>
+      <h1 class="box-title center">Contacts</h1>
       <div class="notes container-fluid">
         <p class="contact-name">John McCain</p>
         <p class="contact-info">Email : </p>
