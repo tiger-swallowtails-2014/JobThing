@@ -5,8 +5,6 @@ Note = (function() {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "GET"});
         request.done(function(data) {
-          console.log("success");
-          console.log(data);
           Utility.removeAllForms();
           $('.form_container').append(data);
           Note.bindSubmitButton();
@@ -20,7 +18,6 @@ Note = (function() {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
-          console.log("success");
           $('.note-box').append(data);
         })
 
