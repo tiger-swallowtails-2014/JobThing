@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20140926181454) do
   end
 
   create_table "notes", force: true do |t|
-    t.text     "note"
-    t.string   "phase_column"
+    t.text     "content"
+    t.string   "title"
     t.integer  "user_id"
     t.integer  "jobthing_id"
     t.datetime "created_at"

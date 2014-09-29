@@ -32,8 +32,8 @@ end
 
 3.times do
   note = Note.create(
-    note: Faker::Lorem.sentence,
-    phase_column: ["interest", "applied", "interview", "misc", "outcome"].sample
+    content: Faker::Lorem.sentence,
+    title: ["interest", "applied", "interview", "misc", "outcome"].sample
   )
   User.first.notes << note
   Jobthing.first.notes << note

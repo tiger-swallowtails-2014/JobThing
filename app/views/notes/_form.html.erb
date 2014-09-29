@@ -1,4 +1,5 @@
 <%= form_for [@user, @jobthing, @note] do |f| %>
-  <%= f.text_field :note, placeholder: "note content here" %>
+  <%= f.text_field :title, placeholder: "title" %>
+  <%= f.text_field :content, placeholder: "note content here" %>
   <%= f.submit "Add Note" %>
 <% end %>

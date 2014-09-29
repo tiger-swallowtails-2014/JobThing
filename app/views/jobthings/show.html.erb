@@ -68,9 +68,9 @@
         <% @jobthing.notes.each do |note| %>
           <div class="notes container-fluid">
             <!-- change them to title and content -->
-            <p class="note-title"><%= note.phase_column %></p>
+            <p class="note-title"><%= note.title %></p>
             <p class="note-content">
-              <%= note.note %>
+              <%= note.content %>
             </p>
           </div>
         <% end %>
