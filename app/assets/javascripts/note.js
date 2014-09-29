@@ -19,8 +19,9 @@ Note = (function() {
       $('.new_note').on("submit", function(e) {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
-        request.done(function() {
+        request.done(function(data) {
           console.log("success");
+          $('.note-box').append(data);
         })
 
       })
