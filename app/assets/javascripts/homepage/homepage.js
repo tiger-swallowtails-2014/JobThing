@@ -1,25 +1,35 @@
 var navBar = {
 
   bindEvents: function(){
-    $('.job-thing-example').on("click", this.renderExample)
     $('.sign-in-btn').on("click", this.signIn)
     $('.sign-up-btn').on("click", this.signUp)
+    $('.example-btn').on("click", this.renderExample)
+    $('.home').on("click", this.renderHome)
   },
   renderExample: function(){
     console.log("Rendering an example!")
     $('.titlebar').hide()
-    $('.example-div').hide()
+    $('.loginform').hide()
+    $('.signupform').hide()
+    $('.example').show()
   },
   signIn: function(){
     $('.titlebar').hide()
-    $('.loginform').show()
     $('.signupform').hide()
+    $('.example').hide()
+    $('.loginform').show()
   },
   signUp: function(){
     $('.titlebar').hide()
     $('.loginform').hide()
+    $('.example').hide()
     $('.signupform').show()
-
+  },
+  renderHome: function(){
+    $('.titlebar').show()
+    $('.loginform').hide()
+    $('.example').hide()
+    $('.signupform').hide()
   }
 
 }

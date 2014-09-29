@@ -1,10 +1,13 @@
 <body class="index">
 <container>
   <section class="color-1">
-    <nav class="cl-effect-1">
-      <a class="job-thing-example"><span data-hover="What Is It?">What Is It?</span></a>
+    <nav>
+      <a><i class="fa fa-home home"></i></a>
+      <div class="navlinkswrapper cl-effect-1">
+      <a class="example-btn"><span data-hover="What Is It?">What Is It?</span></a>
       <a class="sign-in-btn"><span data-hover="Sign In">Sign In</span></a>
       <a class='sign-up-btn'><span data-hover="Sign Up">Register</span></a>
+      </div>
     </nav>
   </section>
 </container>
@@ -16,5 +19,6 @@
 
 <%= render partial: 'login' %>
 <%= render partial: 'signup' %>
+<%= render partial: 'whatisit' %>
 
 </body>
