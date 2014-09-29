@@ -114,21 +114,27 @@ nav {
     width: 50%;
   }
 }
-
+.loginpadding {
+  height: 9em;
+}
 .login {
-  padding-top: 5em;
+  padding-top: 7em;
   padding-left: 5em;
   height: 500px;
 }
 
 .loginform {
+  h2 {
+    padding-bottom: 1em;
+  }
+  font-family: 'Lato',sans-serif;
+  padding-top: 1em;
   width: 100%;
   float: left;
   background-color: white;
-  text-align: center;
   display: none;
   height: 300px;
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 
