@@ -22,7 +22,6 @@ class JobthingsController < ApplicationController
   end
 
   def show
-
     render 'show', layout: false
   end
 
