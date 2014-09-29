@@ -32,8 +32,8 @@ end
 
 3.times do
   note = Note.create(
-    note: Faker::Lorem.sentence,
-    phase_column: ["interest", "applied", "interview", "misc", "outcome"].sample
+    content: Faker::Lorem.sentence,
+    title: ["interest", "applied", "interview", "misc", "outcome"].sample
   )
   User.first.notes << note
   Jobthing.first.notes << note
@@ -41,9 +41,9 @@ end
 
 Jobthing.first.outcome = Outcome.create()
 
-Jobthing.find(1).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
-Jobthing.find(2).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
-Jobthing.find(3).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
+Jobthing.find(1).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
+Jobthing.find(2).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
+Jobthing.find(3).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
 
 Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
 Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")

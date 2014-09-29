@@ -56,7 +56,7 @@ class NotesController < ApplicationController
   end
 
   def note_params
-    params.require(:note).permit(:note, :phase_column)
+    params.require(:note).permit(:content, :title)
   end
 end
 

@@ -7,22 +7,22 @@ FactoryGirl.define do
     username {Faker::Internet.user_name}
     password {"Dis Is A Password"}
   end
-  factory :jobthing do 
+  factory :jobthing do
     job_link {Faker::Internet.url}
     company {Faker::Company.name}
     position {Faker::Lorem.word}
   end
-  factory :contact do 
+  factory :contact do
     first_name {Faker::Name.first_name}
     last_name {Faker::Name.last_name}
     phone_number {"123 456 2342"}
   end
-  factory :interview do 
+  factory :interview do
     interview_with {Faker::Name.name}
     interview_date {DateTime.now}
     interview_time {DateTime.now}
   end
-  factory :note do 
-    note {Faker::Lorem.paragraph}
+  factory :note do
+    content {Faker::Lorem.paragraph}
   end
 end
