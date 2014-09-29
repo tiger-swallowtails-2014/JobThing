@@ -1,4 +1,4 @@
-var LightBox = (function() {
+LightBox = (function() {
   return {
     bindEvents: function () {
       $('.close-form').on('click', this.closeForm);

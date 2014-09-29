@@ -1,10 +1,9 @@
-var Interaction = (function() {
+Interaction = (function() {
   return {
     bindFormButton: function() {
       Jobthing.bindNewJobthingButton();
-      // Interview.bindNewInterviewButton();
-      // misc
-      // outcome
+      Note.bindNewNoteButton();
+      // Contact.bindNewContactButton();
     },
     bindDragEvent: function() {
       var items = $('.item');

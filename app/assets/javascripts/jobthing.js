@@ -1,4 +1,4 @@
-var Jobthing = (function() {
+Jobthing = (function() {
   return {
     bindNewJobthingButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {

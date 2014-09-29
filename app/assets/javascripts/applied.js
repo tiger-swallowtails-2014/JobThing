@@ -1,4 +1,4 @@
-var Applied = (function() {
+Applied = (function() {
   return {
     bindDropEvent: function() {
       $('.applied-table').droppable({

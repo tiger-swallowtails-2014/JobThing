@@ -1,4 +1,4 @@
-var Authentication = {
+Authentication = {
 
   bindEvents: function () {
     $('.login-btn').on("click", this.renderSignIn);
@@ -24,7 +24,7 @@ var Authentication = {
   }
 }
 
-var Utility = (function() {
+Utility = (function() {
   return {
     hideAllForms: function() {
       // Jobthing.hideForm();
@@ -56,7 +56,7 @@ var Utility = (function() {
   }
 })();
 
-var JobPage = {
+JobPage = {
   bindEvents: function () {
     $('.job-page-link').on("click", this.renderJobPage);
   },

@@ -1,4 +1,4 @@
-var Trashcan = (function() {
+Trashcan = (function() {
   return {
     bindTrashcanButton: function() {
       // var request = $.ajax({url: })

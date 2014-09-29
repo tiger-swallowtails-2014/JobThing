@@ -1,4 +1,4 @@
-var Outcome = (function() {
+Outcome = (function() {
   return {
     bindNewOutcomeButton: function() {
       var element = Utility.elementCloner.getClone()
