@@ -11,8 +11,6 @@ var Interaction = (function() {
       items.draggable({
         helper: 'clone',
         start: function() {
-          console.log('dragging');
-          console.log($(this));
           Utility.elementCloner.setClone($(this));
         }
       })
@@ -23,6 +21,7 @@ var Interaction = (function() {
       Interview.bindDropEvent();
       Misc.bindDropEvent();
       Outcome.bindDropEvent();
+      Trashcan.bindDropEvent();
     }
   }
 })();
