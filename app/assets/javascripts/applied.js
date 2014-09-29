@@ -18,6 +18,7 @@ var Applied = (function() {
           db_removeAllInterviews(element);
           // re-bind drag events to items
           Interaction.bindDragEvent();
+          JobPage.bindEvents();
           // look into sorting items
         }
       })

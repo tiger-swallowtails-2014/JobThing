@@ -59,22 +59,25 @@ var Utility = (function() {
 var JobPage = {
 
   bindEvents: function () {
-    $('.item').on("click", this.renderJobPage);
+    $('.job-page-link').on("click", this.renderJobPage);
   },
 
   renderJobPage: function(event) {
     event.preventDefault();
-    var $url = $(this)
+    // console.log($(this))
+    // debugger
+    // var $url = $(this)
     $.ajax({
-      url: $url.find('a').attr('href'),
+      url: $(this).attr('href'),
       type: "Get"
     })
     .done(function(data){
-      $('.main-container').hide(1400);
+      $('.main-container').hide(200);
+      // remove existing jobpage
       $('.jobpage').remove();
       $('.main-page').append(data);
-
-      // back button to go to the home page
+      console.log(data)
+      // bind back button to go to the home page
       $('.back').on("click", function(){
         $('.jobpage').remove();
         $('.main-container').show(300);
