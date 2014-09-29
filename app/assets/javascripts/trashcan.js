@@ -7,6 +7,7 @@ var Trashcan = (function() {
       db_removeAllInterviews(element);
       db_removeMisc(element);
       db_removeOutcome(element);
+      db_removeJobthing(element);
       view_removeFromOrigin();
     },
     bindDropEvent: function() {
