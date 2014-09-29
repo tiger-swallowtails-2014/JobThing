@@ -1,7 +1,8 @@
 var Misc = (function() {
   return {
     bindNewMiscButton: function() {
-      var element = Utility.elementCloner.getClone()
+      var element = Utility.elementCloner.getClone();
+      console.log(element.find("#new-misc-link").attr('action'))
       var request = $.ajax({
         url: element.find("#new-misc-link").attr('action'),
         type: "GET"
@@ -26,7 +27,7 @@ var Misc = (function() {
         drop: function() {
           console.log("dropped");
           // render form
-          Misc.bindNewInterviewButton();
+          Misc.bindNewMiscButton();
           // Lightbox.renderForm();
 
         }
