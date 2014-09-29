@@ -63,11 +63,8 @@ JobPage = {
   },
   renderJobPage: function(event) {
     event.preventDefault();
-    // console.log($(this))
-    // debugger
-    // var $url = $(this)
     $.ajax({
-      url: $(this).attr('href'),
+      url: $(this).attr('action'),
       type: "Get"
     })
     .done(function(data){
@@ -89,11 +86,27 @@ JobPage = {
   },
 }
 
+var JobBox = {
+  bindEvents: function() {
+    $('tr').on("mouseenter", this.showIcons)
+    $('tr').on("mouseleave", this.hideIcons)
+  },
+
+  showIcons: function() {
+    $(this).find('.job-page-link').show()
+  },
+
+  hideIcons: function() {
+    $(this).find('.job-page-link').hide()
+  }
+}
+
 $(document).ready(function () {
   Authentication.bindEvents();
   Utility.hideAllForms();
   LightBox.bindEvents();
   JobPage.bindEvents();
+  JobBox.bindEvents();
   Interaction.bindFormButton();
   Interaction.bindDragEvent();
   Interaction.bindDropEvent();
