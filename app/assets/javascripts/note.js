@@ -19,6 +19,7 @@ Note = (function() {
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
           $('.note-box').append(data);
+          LightBox.closeForm();
         })
 
       })
