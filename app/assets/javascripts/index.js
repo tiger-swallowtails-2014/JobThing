@@ -59,6 +59,7 @@ var JobPage = {
 
   bindEvents: function () {
     $('.item').on("click", this.renderJobPage);
+    $('.fa-reply').on("click", this.closeJobPage)
   },
 
   renderJobPage: function() {
@@ -67,6 +68,11 @@ var JobPage = {
     $('.main-container').hide(1000);
     $('.main-page').append(jobPage);
   },
+
+  closeJobPage: function() {
+    $('.jobpage').hide(1000);
+    $('.main-page').append('.main-container');
+  }
 }
 
 $(document).ready(function () {
