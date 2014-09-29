@@ -34,6 +34,7 @@ var Utility = (function() {
     removeAllForms: function() {
       Jobthing.removeForm();
       Interview.removeForm();
+      Misc.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;

@@ -5,7 +5,7 @@ class Jobthing < ActiveRecord::Base
 	has_many :interviews
 	has_one :applied
 	has_one :outcome
-	has_one :miscjobthing
+	has_many :miscjobthings
 	has_many :contacts
 	has_many :notes
 

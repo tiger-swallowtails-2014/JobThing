@@ -25,7 +25,7 @@ describe Jobthing do
     it { should have_many :interviews }
     it { should have_one :applied }
     it { should have_one :outcome }
-    it { should have_one :miscjobthing }
+    it { should have_many :miscjobthings }
     it { should have_many :contacts }
     it { should have_many :notes }
   end

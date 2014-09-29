@@ -21,7 +21,7 @@ var Interaction = (function() {
       Applied.bindDropEvent();
       Interest.bindDropEvent();
       Interview.bindDropEvent();
-      // misc
+      Misc.bindDropEvent();
       // outcome
     }
   }

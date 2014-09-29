@@ -14,7 +14,7 @@ class MiscjobthingsController < ApplicationController
   def create
     @miscjobthing = Miscjobthing.create(miscjobthing_params)
     if @miscjobthing.save
-      @jobthing.miscjobthing = @miscjobthing
+      @jobthing.miscjobthings << @miscjobthing
       redirect_to user_path(@user)
     else
       redirect_to user_path(@user)
