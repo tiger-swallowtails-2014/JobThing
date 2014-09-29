@@ -10,7 +10,7 @@ var navBar = {
     $('.example-div').hide()
   },
   signIn: function(){
-    $('.titlebar').toggle()
+    $('.titlebar').hide()
     $('.loginform').show()
   }
 

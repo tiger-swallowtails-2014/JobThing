@@ -16,8 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = User.find(session[:id])
+      @user = User.find(params[:id])
       @jobthings = Jobthing.where(user_id: @user.id)
       @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = []; @jobs_w_outcome = [];
       @jobthings.each do |jobthing|
@@ -33,8 +32,6 @@ class UsersController < ApplicationController
           @jobs_w_interest << jobthing
         end
       end
-    end
-    else redirect_to root_path 
   end
 
   private

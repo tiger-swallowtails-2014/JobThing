@@ -27,13 +27,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    angularjs-rails (1.2.22)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (3.1.0.20140911)
       execjs
     bcrypt (3.1.7)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootstrap_form (2.2.0)
     builder (3.2.2)
     capybara (2.4.3)
       mime-types (>= 1.16)
@@ -171,10 +171,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  angularjs-rails
   autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0)
+  bootstrap_form
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
