@@ -1,5 +1,29 @@
 module JobpageHelper
 
+  def applied?
+    @jobthing.applied ? true : false
+  end
+
+  def interviews?
+    @jobthing.interviews ? true : false
+  end
+
+  def miscjobthings?
+    @jobthing.miscjobthings ? true : false
+  end
+
+  def outcome?
+    @jobthing.outcome ? true : false
+  end
+
+  def notes?
+    @jobthing.notes ? true : false
+  end
+
+  def contacts?
+    @jobthing.contacts ? true : false
+  end
+
   def day(date)
     Date.parse(date.to_date.to_s).strftime("%d")
   end
@@ -13,10 +37,14 @@ module JobpageHelper
   end
 
   def past?(date)
+    date < ::DateTime.current
   end
 
   def success?(bool)
     bool == true ? "Success" : "Rejected"
+  end
+
+  def past_interviews?
   end
 
 end

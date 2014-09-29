@@ -9,7 +9,7 @@
   <div class="job-page-box">
     <h1 class="box-title center">Progress</h1>
 
-    <% if @jobthing.applied %>
+    <% if applied? %>
         <div class="info container-fluid">
           <div class="calendar">
             <div class="month"><%= month(@jobthing.applied.created_at) %></div>
@@ -20,21 +20,25 @@
         </div>
     <% end %>
 
-    <% if @jobthing.interviews %>
+    <% if interviews? %>
       <% @jobthing.interviews.each do |interview| %>
         <!-- logic for whether the interview has been conducted -->
         <div class="info container-fluid">
           <div class="calendar">
-            <div class="month">January</div>
-            <div class="date">13</div>
-            <div class="year">2015</div>
+            <div class="month"><%= month(interview.interview_date) %></div>
+            <div class="date"><%= day(interview.interview_date) %></div>
+            <div class="year">20<%= year(interview.interview_date) %></div>
           </div>
-          <p class="date-info">You have interviewed with John at 8am</p>
+          <% if past?(interview.interview_date) %>
+            <p class="date-info">Interviewed with <%= interview.interview_with %></p>
+          <% else %>
+            <p class="date-info">Interview at <%= interview.interview_time %>!</p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
 
-    <% if @jobthing.miscjobthings %>
+    <% if miscjobthings? %>
       <% @jobthing.miscjobthings.each do |miscjobthing| %>
         <div class="info container-fluid">
           <div class="calendar">
@@ -47,8 +51,7 @@
       <% end %>
     <% end %>
 
-    <% if @jobthing.outcome %>
-
+    <% if outcome? %>
         <div class="info container-fluid">
           <div class="calendar">
             <div class="month"><%= month(@jobthing.outcome.created_at) %></div>
@@ -64,10 +67,9 @@
   <div class="job-page-box box">
     <h1 class="box-title center">Notes</h1>
 
-      <% if @jobthing.notes %>
+      <% if notes? %>
         <% @jobthing.notes.each do |note| %>
           <div class="notes container-fluid">
-            <!-- change them to title and content -->
             <p class="note-title"><%= note.title %></p>
             <p class="note-content">
               <%= note.content %>
@@ -83,7 +85,7 @@
   <div class="job-page-box box">
     <h1 class="box-title center">Contacts</h1>
 
-      <% if @jobthing.contacts %>
+      <% if contacts? %>
         <% @jobthing.contacts.each do |contact| %>
           <div class="notes container-fluid">
             <p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p>
@@ -92,7 +94,6 @@
           </div>
         <% end %>
       <% end %>
-
 
     <button type="button" class="contact-button btn btn-primary btn-sm">Add Contact</button>
   </div>

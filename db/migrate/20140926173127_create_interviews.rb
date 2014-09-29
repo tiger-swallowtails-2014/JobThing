@@ -3,7 +3,7 @@ class CreateInterviews < ActiveRecord::Migration
     create_table :interviews do |t|
     	t.string :interview_with
     	t.datetime :interview_date
-    	t.datetime :interview_time
+    	t.string :interview_time
     	t.belongs_to :jobthing
     	t.timestamps
     end

@@ -1,7 +1,6 @@
-<p>Good Luck!</p>
 <%= form_for [@user, @jobthing, @interview] do |f| %>
 Who are you interviewing with? <%= f.text_field :interview_with %><br>
-Interview Date: <%= f.text_field :interview_date %><br>
-Interview Time: <%= f.text_field :interview_time %><br>
+Interview Date: <%= f.datetime_field :interview_date, placeholder: "yyyy-mm-dd" %><br>
+Interview Time: <%= f.text_field :interview_time, placeholder: "hh:mm" %><br>
 <%= f.submit "Submit" %>
 <% end %>
