@@ -65,13 +65,13 @@ var JobPage = {
   renderJobPage: function() {
     var $template = $('.job-page');
     var jobPage = $template.clone().html().trim();
-    $('.main-container').hide(1000);
+    $('.main-container').hide(300);
     $('.main-page').append(jobPage);
 
     // back button to go to the home page
     $('.back').on("click", function(){
       $('.jobpage').remove();
-      $('.main-container').fadeIn(0.1);
+      $('.main-container').fadeIn(1000);
     });
   },
 }
