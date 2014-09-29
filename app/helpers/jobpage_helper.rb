@@ -37,10 +37,14 @@ module JobpageHelper
   end
 
   def past?(date)
+    date < ::DateTime.current
   end
 
   def success?(bool)
     bool == true ? "Success" : "Rejected"
+  end
+
+  def past_interviews?
   end
 
 end
