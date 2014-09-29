@@ -34,6 +34,8 @@ gem 'bootstrap_form'
 group :development do
   gem 'spring'
   gem 'rails_db_info'
+  gem 'jasmine'
+  gem 'jasmine-rails'
 end
 
 group :production do
@@ -42,7 +44,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'jasmine'
+  gem 'jasmine-rails'
 end
 
 group :test do
