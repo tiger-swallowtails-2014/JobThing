@@ -71,7 +71,7 @@ var JobPage = {
     // back button to go to the home page
     $('.back').on("click", function(){
       $('.jobpage').remove();
-      $('.main-container').fadeIn(1000);
+      $('.main-container').show(300);
     });
   },
 }
