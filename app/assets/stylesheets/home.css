@@ -35,3 +35,7 @@ tr {
   float: right;
   font-size: 60px;
 }
+
+.table {
+  min-height: 35px;
+}
