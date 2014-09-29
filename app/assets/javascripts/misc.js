@@ -9,7 +9,7 @@ var Misc = (function() {
       });
       request.done(function(data) {
         console.log("success");
-        // Utility.removeAllForms();
+        Utility.removeAllForms();
         $('.form_container').append(data);
         LightBox.renderForm();
         // Interaction.bindDragEvent;
@@ -34,7 +34,7 @@ var Misc = (function() {
       })
     },
     removeForm: function() {
-      $('.new_misc').remove();
+      $('.new_miscjobthing').remove();
     },
   }
 })();

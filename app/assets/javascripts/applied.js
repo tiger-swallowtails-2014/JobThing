@@ -42,7 +42,7 @@ function db_removeAllInterviews(element) {
   element.find("#delete-interviews-link").each(function() {
     var request = $.ajax({
       url: $(this).attr('action'),
-      type: "get"
+      type: "GET"
     })
 
   })

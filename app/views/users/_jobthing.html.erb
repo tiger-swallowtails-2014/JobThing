@@ -12,5 +12,8 @@
   <% if jobthing.interviews %>
     <button id="delete-interviews-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/destroy_interviews"></button>
   <% end %>
+  <% if jobthing.miscjobthings %>
+    <button id="delete-miscs-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/destroy_miscs"></button>
+  <% end %>
 
 </div>
