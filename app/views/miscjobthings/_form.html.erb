@@ -1,4 +1,5 @@
 <%= form_for [@user, @jobthing, @miscjobthing] do |f| %>
   <%= f.text_area :name, placeholder: "Write miscellaneous things for your job here" %>
+  <%= f.datetime_field :misc_date, placeholder: "yyyy-mm-dd" %>
   <%= f.submit "Add" %>
 <% end %>

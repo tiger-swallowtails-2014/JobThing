@@ -1,4 +1,4 @@
-var Interview = (function() {
+Interview = (function() {
   return {
     bindNewInterviewButton: function() {
       var element = Utility.elementCloner.getClone()

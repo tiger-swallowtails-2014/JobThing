@@ -1,4 +1,4 @@
-var Misc = (function() {
+Misc = (function() {
   return {
     bindNewMiscButton: function() {
       var element = Utility.elementCloner.getClone();

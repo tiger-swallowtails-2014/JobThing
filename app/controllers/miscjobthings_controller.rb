@@ -53,7 +53,7 @@ class MiscjobthingsController < ApplicationController
   end
 
   def miscjobthing_params
-    params.require(:miscjobthing).permit(:name)
+    params.require(:miscjobthing).permit(:name, :misc_date)
   end
 
 

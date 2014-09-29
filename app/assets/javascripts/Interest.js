@@ -1,4 +1,4 @@
-var Interest = (function() {
+Interest = (function() {
   return {
     bindDropEvent: function() {
       $('.interest-table').droppable({

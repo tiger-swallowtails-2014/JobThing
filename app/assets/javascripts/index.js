@@ -1,4 +1,4 @@
-var Authentication = {
+Authentication = {
 
   bindEvents: function () {
     $('.login-btn').on("click", this.renderSignIn);
@@ -24,7 +24,7 @@ var Authentication = {
   }
 }
 
-var Utility = (function() {
+Utility = (function() {
   return {
     hideAllForms: function() {
       // Jobthing.hideForm();
@@ -36,6 +36,7 @@ var Utility = (function() {
       Interview.removeForm();
       Misc.removeForm();
       Outcome.removeForm();
+      Note.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;
@@ -56,7 +57,7 @@ var Utility = (function() {
   }
 })();
 
-var JobPage = {
+JobPage = {
   bindEvents: function () {
     $('.job-page-link').on("click", this.renderJobPage);
   },
@@ -74,7 +75,8 @@ var JobPage = {
       // remove existing jobpage
       $('.jobpage').remove();
       $('.main-page').append(data);
-      console.log(data)
+      console.log(data);
+      Interaction.bindFormButton();
       // bind back button to go to the home page
       $('.back').on("click", function(){
         $('.jobpage').remove();

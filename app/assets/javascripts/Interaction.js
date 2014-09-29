@@ -1,10 +1,10 @@
-var Interaction = (function() {
+Interaction = (function() {
   return {
     bindFormButton: function() {
       Jobthing.bindNewJobthingButton();
-      // Interview.bindNewInterviewButton();
-      // misc
-      // outcome
+      console.log($('.note-button'))
+      Note.bindNewNoteButton();
+      // Contact.bindNewContactButton();
     },
     bindDragEvent: function() {
       var items = $('.item');
@@ -25,3 +25,4 @@ var Interaction = (function() {
     }
   }
 })();
+
