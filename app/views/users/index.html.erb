@@ -4,7 +4,7 @@
     <nav class="cl-effect-1">
       <a class="job-thing-example"><span data-hover="What Is It?">What Is It?</span></a>
       <a class="sign-in-btn"><span data-hover="Sign In">Sign In</span></a>
-      <a href="#"><span data-hover="Sign Up">Register</span></a>
+      <a class='sign-up-btn'><span data-hover="Sign Up">Register</span></a>
     </nav>
   </section>
 </container>
@@ -15,61 +15,6 @@
 </div>
 
 <%= render partial: 'login' %>
+<%= render partial: 'signup' %>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="sign-in">
-  <h4>Welcome Back</h4>
-  <button type="button" class="login-btn btn btn-primary">Sign In</button>
-</div>
-
-<div class="sign-up">
-  <h4>New to JobThing? Register Here!</h4>
-  <button type="button" class="registration-btn btn btn-primary">Sign Up</button><br><br>
-</div> -->
-
-
-<!-- Form Template -->
-
-<script type="tmp" class="login_form">
-  <div>
-    <%= form_tag '/login', method: :post do |f| %><br>
-      <%= text_field_tag :email, nil, {placeholder: "Email"} %><br><br>
-      <%= password_field_tag :password, nil, placeholder:"Password" %><br><br>
-      <%= submit_tag "Sign In" %>
-    <% end %>
-  </div>
-</script>
-
-<script type="tmp" class="registration_form">
-  <div>
-    <%= form_for @user do |f| %>
-      <%= f.text_field :first_name, placeholder: "First Name" %><br><br>
-      <%= f.text_field :last_name, placeholder: "Last Name" %><br><br>
-      <%= f.text_field :username, placeholder: "Username" %><br><br>
-      <%= f.text_field :email, placeholder: "Email" %><br><br>
-      <%= f.password_field :password, placeholder: "Password" %><br><br>
-      <%= f.submit "Sign Up" %>
-    <% end %>
-  </div>
-</script>
 </body>

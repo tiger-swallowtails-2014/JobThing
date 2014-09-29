@@ -3,6 +3,7 @@ var navBar = {
   bindEvents: function(){
     $('.job-thing-example').on("click", this.renderExample)
     $('.sign-in-btn').on("click", this.signIn)
+    $('.sign-up-btn').on("click", this.signUp)
   },
   renderExample: function(){
     console.log("Rendering an example!")
@@ -12,6 +13,13 @@ var navBar = {
   signIn: function(){
     $('.titlebar').hide()
     $('.loginform').show()
+    $('.signupform').hide()
+  },
+  signUp: function(){
+    $('.titlebar').hide()
+    $('.loginform').hide()
+    $('.signupform').show()
+
   }
 
 }
