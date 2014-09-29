@@ -71,6 +71,7 @@ var JobPage = {
     })
     .done(function(data){
       $('.main-container').hide(1400);
+      $('.jobpage').remove();
       $('.main-page').append(data);
 
       // back button to go to the home page
