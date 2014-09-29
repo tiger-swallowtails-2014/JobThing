@@ -29,7 +29,7 @@ tr {
   margin: 0 auto;
 }
 
-.fa {
+.icon {
   margin-top: 3%;
   margin-right: 4%;
   float: right;
@@ -38,4 +38,8 @@ tr {
 
 .table {
   min-height: 35px;
+}
+
+.job-page-link {
+  float: right;
 }

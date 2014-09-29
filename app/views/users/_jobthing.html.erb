@@ -1,5 +1,5 @@
 <div>
-  <%= link_to jobthing.company, user_jobthing_path(@user, jobthing), class: "job-page-link" %>
+   <%= jobthing.company%>   <button type="button" class="btn btn-primary btn-xs job-page-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>">View</button>
   <!-- refactor this crap! -->
   <button id="jobthing-id" style="display: none"><%=jobthing.id%></button>
   <button id="create-applied-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds"></button>
