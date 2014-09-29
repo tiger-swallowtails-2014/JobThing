@@ -17,7 +17,9 @@ var Interest = (function() {
           $('.interest-table tbody').append(element);
           db_removeApplied(element);
           db_removeAllInterviews(element);
-          view_removeApplied(element);
+          db_removeMisc(element);
+          view_removeFromOrigin();
+          // view_removeApplied(element);
           Interaction.bindDragEvent();
         }
       })
@@ -25,9 +27,9 @@ var Interest = (function() {
   }
 })();
 
-function view_removeApplied() {
-  Utility.elementCloner.getOriginal().remove();
-};
+// function view_removeApplied() {
+//   Utility.elementCloner.getOriginal().remove();
+// };
 
 function db_removeApplied(element) {
   var request = $.ajax({
@@ -36,4 +38,9 @@ function db_removeApplied(element) {
   });
 }
 
-
+function db_removeMisc(element) {
+  var request = $.ajax({
+    url: element.find('#delete-miscs-link').attr('action'),
+    type: "GET"
+  });
+}
