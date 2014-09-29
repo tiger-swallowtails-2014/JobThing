@@ -41,9 +41,9 @@ end
 
 Jobthing.first.outcome = Outcome.create()
 
-Jobthing.find(1).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
-Jobthing.find(2).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
-Jobthing.find(3).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample)
+Jobthing.find(1).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
+Jobthing.find(2).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
+Jobthing.find(3).miscjobthings << Miscjobthing.create(name: ["coffee", "follow up"].sample, misc_date: Date.today)
 
 Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")
 Jobthing.find(1).interviews << Interview.create(interview_with: Faker::Name.name, interview_date: "October 1 2014", interview_time: "12 pm")

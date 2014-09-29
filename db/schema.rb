@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140926181454) do
 
   create_table "miscjobthings", force: true do |t|
     t.string   "name"
+    t.datetime "misc_date"
     t.integer  "jobthing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
