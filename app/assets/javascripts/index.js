@@ -62,17 +62,26 @@ var JobPage = {
     $('.item').on("click", this.renderJobPage);
   },
 
-  renderJobPage: function() {
-    var $template = $('.job-page');
-    var jobPage = $template.clone().html().trim();
-    $('.main-container').hide(300);
-    $('.main-page').append(jobPage);
+  renderJobPage: function(event) {
+    event.preventDefault();
+    var $url = $(this)
+    $.ajax({
+      url: $url.find('a').attr('href'),
+      type: "Get"
+    })
+    .done(function(data){
+      $('.main-container').hide(1400);
+      $('.main-page').append(data);
 
-    // back button to go to the home page
-    $('.back').on("click", function(){
-      $('.jobpage').remove();
-      $('.main-container').show(300);
-    });
+      // back button to go to the home page
+      $('.back').on("click", function(){
+        $('.jobpage').remove();
+        $('.main-container').show(300);
+      });
+    })
+    .fail(function(data){
+      console.log("You Failed")
+    })
   },
 }
 
