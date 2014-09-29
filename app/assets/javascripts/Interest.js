@@ -53,3 +53,9 @@ function db_removeOutcome(element) {
   });
 }
 
+function db_removeJobthing(element) {
+  var request = $.ajax({
+    url: element.find("#delete-jobthing-link").attr('action'),
+    type: "DELETE"
+  })
+}
