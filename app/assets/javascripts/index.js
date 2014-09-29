@@ -59,7 +59,6 @@ var JobPage = {
 
   bindEvents: function () {
     $('.item').on("click", this.renderJobPage);
-    $('.fa-reply').on("click", this.closeJobPage)
   },
 
   renderJobPage: function() {
@@ -67,19 +66,19 @@ var JobPage = {
     var jobPage = $template.clone().html().trim();
     $('.main-container').hide(1000);
     $('.main-page').append(jobPage);
-  },
 
-  closeJobPage: function() {
-    $('.jobpage').hide(1000);
-    $('.main-page').append('.main-container');
-  }
+    // back button to go to the home page
+    $('.back').on("click", function(){
+      $('.jobpage').remove();
+      $('.main-container').fadeIn(0.1);
+    });
+  },
 }
 
 $(document).ready(function () {
   Authentication.bindEvents();
   Utility.hideAllForms();
   LightBox.bindEvents();
-
   JobPage.bindEvents();
   Interaction.bindFormButton();
   Interaction.bindDragEvent();
