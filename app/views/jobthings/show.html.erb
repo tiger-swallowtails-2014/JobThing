@@ -1,42 +1,66 @@
 <div class="jobpage container-fluid">
-  <p><%= @jobthing.company %></p>
-  <p><%= @user %></p>
   <button class="back"><i class="fa fa-reply"></i></button>
   <div class="header">
-    <h1 class="job-title center">Uber</h1>
-    <h2 class="position-title center">Software Developer</h2>
+    <h1 class="job-title center"><%= @jobthing.company %></h1>
+    <h2 class="position-title center"><%= @jobthing.position %></h2>
   </div>
   <br><br>
 
   <div class="job-page-box">
     <h1 class="box-title center">Progress</h1>
 
-    <div class="info container-fluid">
-      <div class="calendar">
-        <div class="month">November</div>
-        <div class="date">29</div>
-        <div class="year">2014</div>
-      </div>
-      <p class="date-info">Date Applied </p>
-    </div>
+    <% if @jobthing.applied %>
+        <%= @jobthing.applied.created_at %>
+        <div class="info container-fluid">
+          <div class="calendar">
+            <div class="month">November</div>
+            <div class="date">29</div>
+            <div class="year">2014</div>
+          </div>
+          <p class="date-info">Date Applied</p>
+        </div>
+    <% end %>
 
-    <div class="info container-fluid">
-      <div class="calendar">
-        <div class="month">January</div>
-        <div class="date">13</div>
-        <div class="year">2015</div>
-      </div>
-      <p class="date-info">You have interviewed with John at 8am</p>
-    </div>
+    <% if @jobthing.interviews %>
+      <% @jobthing.interviews.each do |interview| %>
+        <%= interview.interview_with %>
+        <!-- logic for whether the interview has been conducted -->
+        <div class="info container-fluid">
+          <div class="calendar">
+            <div class="month">January</div>
+            <div class="date">13</div>
+            <div class="year">2015</div>
+          </div>
+          <p class="date-info">You have interviewed with John at 8am</p>
+        </div>
+      <% end %>
+    <% end %>
 
-    <div class="info container-fluid">
-      <div class="calendar">
-        <div class="month">February</div>
-        <div class="date">07</div>
-        <div class="year">2015</div>
-      </div>
-      <p class="date-info">You have a second interview with Mark at 7am </p>
-    </div>
+    <% if @jobthing.miscjobthings %>
+      <% @jobthing.miscjobthings.each do |miscjobthing| %>
+        <div class="info container-fluid">
+          <div class="calendar">
+            <div class="month">January</div>
+            <div class="date">13</div>
+            <div class="year">2015</div>
+          </div>
+          <p class="date-info">miscjobthing.name</p>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @jobthing.outcome %>
+
+        <div class="info container-fluid">
+          <div class="calendar">
+            <div class="month">November</div>
+            <div class="date">29</div>
+            <div class="year">2014</div>
+          </div>
+          <p class="date-info"><%= @jobthing.outcome.success %></p>
+        </div>
+    <% end %>
+
   </div>
 
   <div class="job-page-box box">
