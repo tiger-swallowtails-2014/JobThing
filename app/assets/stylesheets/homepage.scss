@@ -115,6 +115,20 @@ nav {
   }
 }
 
-.loginform {
-  background-color: white;
+.login {
+  padding-top: 5em;
+  padding-left: 5em;
+  height: 500px;
 }
+
+.loginform {
+  width: 100%;
+  float: left;
+  background-color: white;
+  text-align: center;
+  display: none;
+  height: 300px;
+    border-radius: 4px;
+}
+
+
