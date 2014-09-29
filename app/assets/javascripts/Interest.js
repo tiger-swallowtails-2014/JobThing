@@ -18,6 +18,7 @@ var Interest = (function() {
           db_removeApplied(element);
           db_removeAllInterviews(element);
           db_removeMisc(element);
+          db_removeOutcome(element);
           view_removeFromOrigin();
           // view_removeApplied(element);
           Interaction.bindDragEvent();
@@ -44,3 +45,11 @@ function db_removeMisc(element) {
     type: "GET"
   });
 }
+
+function db_removeOutcome(element) {
+  var request = $.ajax({
+    url: element.find('#delete-outcome-link').attr('action'),
+    type: "DELETE"
+  });
+}
+
