@@ -10,12 +10,11 @@
     <h1 class="box-title center">Progress</h1>
 
     <% if @jobthing.applied %>
-        <%= @jobthing.applied.created_at %>
         <div class="info container-fluid">
           <div class="calendar">
-            <div class="month">November</div>
-            <div class="date">29</div>
-            <div class="year">2014</div>
+            <div class="month"><%= month(@jobthing.applied.created_at) %></div>
+            <div class="date"><%= day(@jobthing.applied.created_at) %></div>
+            <div class="year">20<%= year(@jobthing.applied.created_at) %></div>
           </div>
           <p class="date-info">Date Applied</p>
         </div>
@@ -53,11 +52,11 @@
 
         <div class="info container-fluid">
           <div class="calendar">
-            <div class="month">November</div>
-            <div class="date">29</div>
-            <div class="year">2014</div>
+            <div class="month"><%= month(@jobthing.outcome.created_at) %></div>
+            <div class="date"><%= day(@jobthing.outcome.created_at) %></div>
+            <div class="year">20<%= year(@jobthing.outcome.created_at) %></div>
           </div>
-          <p class="date-info"><%= @jobthing.outcome.success %></p>
+          <p class="date-info"><%= success?(@jobthing.outcome.success) %></p>
         </div>
     <% end %>
 
