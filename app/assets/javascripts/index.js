@@ -36,6 +36,7 @@ Utility = (function() {
       Interview.removeForm();
       Misc.removeForm();
       Outcome.removeForm();
+      Note.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;
@@ -74,7 +75,8 @@ JobPage = {
       // remove existing jobpage
       $('.jobpage').remove();
       $('.main-page').append(data);
-      console.log(data)
+      console.log(data);
+      Interaction.bindFormButton();
       // bind back button to go to the home page
       $('.back').on("click", function(){
         $('.jobpage').remove();
