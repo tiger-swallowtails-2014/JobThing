@@ -5,10 +5,12 @@ LightBox = (function() {
     },
     renderForm: function () {
       $('.main-container').css('opacity', '0.1');
+      $('.jobpage').css('opacity', '0.1');
       $('.form_container').toggle();
     },
     closeForm: function() {
       $('.main-container').css('opacity', 1);
+      $('.jobpage').css('opacity', 1);
       $('.form_container').toggle();
     }
   }
