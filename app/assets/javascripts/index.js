@@ -66,6 +66,12 @@ var JobPage = {
     var jobPage = $template.clone().html().trim();
     $('.main-container').hide(1000);
     $('.main-page').append(jobPage);
+
+    // back button to go to the home page
+    $('.back').on("click", function(){
+      $('.jobpage').remove();
+      $('.main-container').fadeIn(0.1);
+    });
   },
 }
 
@@ -73,7 +79,6 @@ $(document).ready(function () {
   Authentication.bindEvents();
   Utility.hideAllForms();
   LightBox.bindEvents();
-
   JobPage.bindEvents();
   Interaction.bindFormButton();
   Interaction.bindDragEvent();

@@ -54,7 +54,13 @@
   padding-bottom: 5%;
   border-bottom: 2px solid #d8d8d8;
   margin-bottom: 0%;
+}
 
+.back {
+  margin-left: 2%;
+  float: left;
+  margin-right: -7%;
+  margin-top: 2%;
 }
 
 .job-page-box{
@@ -104,4 +110,9 @@
 
 .box {
   padding-bottom: 2%;
+}
+
+.back {
+  background-color: white;
+  border: none;
 }
