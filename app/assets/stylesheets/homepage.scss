@@ -97,15 +97,13 @@ h1.title{
   }
 }
 
-.word-animation {
-  line-height: 25em;
-  text-align: right;
-  font-family: 'Lato',sans-serif;
-  font-size: 1em;
+.navlinkswrapper {
+  float: right;
+  line-height: 4;
 }
 
-nav {
-  text-align: right;
+.home {
+  float: left;
 }
 
 .example-wrapper {
@@ -115,15 +113,12 @@ nav {
   }
 }
 .loginpadding {
-  height: 9em;
+  height: 4em;
 }
 .login {
   padding-top: 7em;
-  padding-left: 5em;
   height: 500px;
 }
-
-
 
 .loginform {
   h2 {
@@ -134,8 +129,8 @@ nav {
   float: left;
   background-color: white;
   display: none;
-  height: 300px;
   border-radius: 4px;
+  padding-bottom: 1em;
 }
 
 .signupform {
@@ -148,7 +143,19 @@ nav {
   display: none;
   background-color: white;
   display: none;
-  height: 500px;
   border-radius: 4px;
+  padding-bottom: 1em;
+}
+
+
+.example {
+  font-family: 'Lato',sans-serif;
+  border-radius: 4px;
+  display: none;
+  background-color: white;
+  padding-bottom: 1em;
+  .fa-thumbs-up {
+    float: left;
+  }
 }
 
