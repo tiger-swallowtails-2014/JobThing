@@ -56,31 +56,36 @@ var Utility = (function() {
   }
 })();
 
-var JobPage = {
+// var JobPage = {
 
-  bindEvents: function () {
-    $('.item').on("click", this.renderJobPage);
-  },
+//   // bindEvents: function () {
+//   //   $('.item').on("click", this.renderJobPage);
+//   // },
 
-  renderJobPage: function() {
-    var $template = $('.job-page');
-    var jobPage = $template.clone().html().trim();
-    $('.main-container').hide(300);
-    $('.main-page').append(jobPage);
+//   // renderJobPage: function(event) {
+//   //   event.preventDefault();
+//   //   $.ajax({
+//   //     url: "",
 
-    // back button to go to the home page
-    $('.back').on("click", function(){
-      $('.jobpage').remove();
-      $('.main-container').show(300);
-    });
-  },
-}
+//   //   })
+//   //   var $template = $('.job-page');
+//   //   var jobPage = $template.clone().html().trim();
+//   //   $('.main-container').hide(300);
+//   //   $('.main-page').append(jobPage);
+
+//     // back button to go to the home page
+//     $('.back').on("click", function(){
+//       $('.jobpage').remove();
+//       $('.main-container').show(300);
+//     });
+//   },
+// }
 
 $(document).ready(function () {
   Authentication.bindEvents();
   Utility.hideAllForms();
   LightBox.bindEvents();
-  JobPage.bindEvents();
+  // JobPage.bindEvents();
   Interaction.bindFormButton();
   Interaction.bindDragEvent();
   Interaction.bindDropEvent();
