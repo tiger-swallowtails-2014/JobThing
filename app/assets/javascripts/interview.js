@@ -27,6 +27,7 @@ var Interview = (function() {
           console.log("dropped");
           // render form
           Interview.bindNewInterviewButton();
+          JobPage.bindEvents();
           // Lightbox.renderForm();
 
         }

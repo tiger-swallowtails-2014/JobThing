@@ -11,7 +11,8 @@ var Outcome = (function() {
         Utility.removeAllForms();
         $('.form_container').append(data);
         LightBox.renderForm();
-        // Interaction.bindDragEvent;
+        Interaction.bindDragEvent;
+        JobPage.bindEvents();
       })
     },
     bindDropEvent: function() {

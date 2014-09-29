@@ -22,6 +22,7 @@ var Interest = (function() {
           view_removeFromOrigin();
           // view_removeApplied(element);
           Interaction.bindDragEvent();
+          JobPage.bindEvents();
         }
       })
     }
