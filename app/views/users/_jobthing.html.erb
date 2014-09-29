@@ -6,6 +6,7 @@
   <button id="new-interview-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/interviews/new"></button>
   <button id="create-interview-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/interviews"></button>
   <button id="new-misc-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/miscjobthings/new"></button>
+  <button id="new-outcome-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/outcomes/new"></button>
   <% if jobthing.has_applied %>
     <button id="delete-applied-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/applieds/<%=jobthing.applied.id%>"></button>
   <% end %>
@@ -14,6 +15,9 @@
   <% end %>
   <% if jobthing.miscjobthings %>
     <button id="delete-miscs-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/destroy_miscs"></button>
+  <% end %>
+  <% if jobthing.has_outcome %>
+    <button id="delete-outcome-link" style="display: none" action="/users/<%=@user.id%>/jobthings/<%=jobthing.id%>/outcomes/<%=jobthing.outcome.id%>"></button>
   <% end %>
 
 </div>

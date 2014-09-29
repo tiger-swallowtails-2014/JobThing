@@ -22,7 +22,7 @@ var Interaction = (function() {
       Interest.bindDropEvent();
       Interview.bindDropEvent();
       Misc.bindDropEvent();
-      // outcome
+      Outcome.bindDropEvent();
     }
   }
 })();
