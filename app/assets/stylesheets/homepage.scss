@@ -123,6 +123,8 @@ nav {
   height: 500px;
 }
 
+
+
 .loginform {
   h2 {
     padding-bottom: 1em;
@@ -136,4 +138,17 @@ nav {
   border-radius: 4px;
 }
 
+.signupform {
+  h2 {
+    padding-bottom: 1em;
+  }
+  font-family: 'Lato',sans-serif;
+  width: 100%;
+  float: left;
+  display: none;
+  background-color: white;
+  display: none;
+  height: 500px;
+  border-radius: 4px;
+}
 

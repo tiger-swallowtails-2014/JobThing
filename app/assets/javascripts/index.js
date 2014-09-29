@@ -57,11 +57,9 @@ var Utility = (function() {
 })();
 
 var JobPage = {
-
   bindEvents: function () {
     $('.job-page-link').on("click", this.renderJobPage);
   },
-
   renderJobPage: function(event) {
     event.preventDefault();
     // console.log($(this))
