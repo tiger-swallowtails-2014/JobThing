@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140926181454) do
   create_table "interviews", force: true do |t|
     t.string   "interview_with"
     t.datetime "interview_date"
-    t.datetime "interview_time"
+    t.string   "interview_time"
     t.integer  "jobthing_id"
     t.datetime "created_at"
     t.datetime "updated_at"

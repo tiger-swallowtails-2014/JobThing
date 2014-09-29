@@ -25,11 +25,15 @@
         <!-- logic for whether the interview has been conducted -->
         <div class="info container-fluid">
           <div class="calendar">
-            <div class="month">January</div>
-            <div class="date">13</div>
-            <div class="year">2015</div>
+            <div class="month"><%= month(interview.interview_date) %></div>
+            <div class="date"><%= day(interview.interview_date) %></div>
+            <div class="year">20<%= year(interview.interview_date) %></div>
           </div>
-          <p class="date-info">You have interviewed with John at 8am</p>
+          <% if past?(interview.interview_date) %>
+            <p class="date-info">Interviewed with <%= interview.interview_with %></p>
+          <% else %>
+            <p class="date-info">Interview at <%= interview.interview_time %>!</p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
