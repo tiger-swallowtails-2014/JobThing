@@ -42,11 +42,15 @@
       <% @jobthing.miscjobthings.each do |miscjobthing| %>
         <div class="info container-fluid">
           <div class="calendar">
-            <div class="month">January</div>
-            <div class="date">13</div>
-            <div class="year">2015</div>
+            <div class="month"><%= month(miscjobthing.misc_date) %></div>
+            <div class="date"><%= day(miscjobthing.misc_date) %></div>
+            <div class="year">20<%= year(miscjobthing.misc_date) %></div>
           </div>
-          <p class="date-info"><%= miscjobthing.name %></p>
+          <% if past?(miscjobthing.misc_date) %>
+            <p class="date-info">You did: <%= miscjobthing.name %></p>
+          <% else %>
+            <p class="date-info">Don't forget: <%= miscjobthing.name %></p>
+          <% end %>
         </div>
       <% end %>
     <% end %>
