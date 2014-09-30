@@ -110,12 +110,13 @@ var JobBox = {
 
 $(document).ready(function () {
   // Authentication.bindEvents();
+
   PageController.getJobthingsData();
   Utility.hideAllForms();
   LightBox.bindEvents();
   JobPage.bindEvents();
 
-  Interaction.bindFormButton();
+  // Interaction.bindFormButton();
   // Interaction.bindDragEvent();
   // Interaction.bindDropEvent();
   // Jobthing.bindNewJobthingButton();
