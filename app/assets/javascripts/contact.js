@@ -27,7 +27,7 @@ Contact = (function() {
       })
     },
     bindNewSubmitButton: function() {
-      $('.new_contact').on("submit", function(e) {
+      $('.contact-form').on("submit", function(e) {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {

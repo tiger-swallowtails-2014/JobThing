@@ -2,9 +2,9 @@ class InterviewsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_interview, except: [:index, :new, :create]
 
-  def index
-    @interviews = @jobthing.interviews
-  end
+  # def index
+  #   @interviews = @jobthing.interviews
+  # end
 
   def new
     @interview = Interview.new
@@ -12,11 +12,8 @@ class InterviewsController < ApplicationController
   end
 
   def create
-    p "reached create route"
-    p params
     @interview = Interview.create(interview_params)
     if @interview.save
-      p "saved"
       @jobthing.interviews << @interview
       redirect_to user_path(@user)
     else
@@ -24,8 +21,8 @@ class InterviewsController < ApplicationController
     end
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def edit
     render partial: 'form'

@@ -2,9 +2,9 @@ class ContactsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_contact, :except => [:index, :new, :create]
 
-  def index
-    @contacts = @jobthing.contacts
-  end
+  # def index
+  #   @contacts = @jobthing.contacts
+  # end
 
   def new
     @contact = Contact.new
@@ -30,21 +30,20 @@ class ContactsController < ApplicationController
     render 'contact', layout: false
   end
 
-  def show
-  end
+  # def show
+  # end
 
   def destroy
     @contact.destroy
     redirect_to user_jobthing_contacts_path
-
   end
 
   def edit
     render partial: 'form'
   end
 
-
   private
+
   def load_jobthing
     @jobthing = Jobthing.find(params[:jobthing_id])
   end
