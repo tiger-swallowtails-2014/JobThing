@@ -6,6 +6,7 @@ Interaction = (function() {
       Note.bindNewNoteButton();
       Note.bindEditNoteButton();
       Contact.bindNewContactButton();
+      Contact.bindEditContactButton();
     },
     bindDragEvent: function() {
       var items = $('.item');

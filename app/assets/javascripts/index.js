@@ -37,6 +37,7 @@ Utility = (function() {
       Misc.removeForm();
       Outcome.removeForm();
       Note.removeForm();
+      Contact.removeForm();
     },
     elementCloner: (function() {
       var clonedItem;

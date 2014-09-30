@@ -21,9 +21,13 @@ class ContactsController < ApplicationController
     end
   end
 
+  def edit
+    render partial: 'contact'
+  end
+
   def update
     @contact.update_attributes(contact_params)
-    redirect_to user_jobthing_contacts_path
+    render 'contact', layout: false
   end
 
   def show
