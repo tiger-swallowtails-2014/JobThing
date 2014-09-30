@@ -2,9 +2,7 @@ Jobthing = (function() {
   return {
     bindNewJobthingButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
-        console.log("clicked");
-        // e.preventDefault();
-        console.log($(this))
+        e.preventDefault();
         var request = $.ajax({url: $(this).attr("action"), type: "GET"});
         request.done(function(data) {
           console.log("success");
