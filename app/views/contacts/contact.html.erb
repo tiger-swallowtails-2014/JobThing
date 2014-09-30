@@ -3,4 +3,5 @@
   <p class="contact-info">Email : <%= @contact.email %></p>
   <p class="contact-info">Phone Number: <%= @contact.phone_number %></p>
   <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, @contact), class: "contact-edit" %>
+  <%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, @contact), remote: true, class: "contact-delete-button" %>
 </div>

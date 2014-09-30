@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_filter :load_note, :except => [:index, :new, :create]
+  before_filter :load_note, :except => [:index, :new, :create, :destroy]
   before_filter :load_jobthing, :load_user
 
   def index
@@ -14,7 +14,6 @@ class NotesController < ApplicationController
   def create
     @note = Note.create(note_params)
     if @note.save
-      # integrate note phase-column feature
       @user.notes << @note
       @jobthing.notes << @note
       render 'note', layout: false
@@ -36,8 +35,8 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note.destroy
-    redirect_to user_path(@user)
+    Note.find(params[:id]).destroy
+    render nothing: true
   end
 
   private

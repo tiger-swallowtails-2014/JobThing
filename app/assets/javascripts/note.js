@@ -26,6 +26,17 @@ Note = (function() {
         })
       })
     },
+    bindDeleteButton: function() {
+      $('.note-delete-button').on("click", function(e) {
+        Utility.elementCloner.setClone($(this).parent());
+        e.preventDefault();
+        var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
+        request.done(function() {
+          console.log("success");
+          Utility.elementCloner.getOriginal().remove();
+        })
+      })
+    },
     bindNewSubmitButton: function() {
       $('.note-form').on("submit", function(e) {
         e.preventDefault();
@@ -33,6 +44,7 @@ Note = (function() {
         request.done(function(data) {
           $('.note-box').append(data);
           Note.bindEditNoteButton();
+          Note.bindDeleteButton();
           LightBox.closeForm();
         })
       })
@@ -46,6 +58,7 @@ Note = (function() {
           Utility.elementCloner.getOriginal().remove();
           $('.note-box').append(data);
           Note.bindEditNoteButton();
+          Note.bindDeleteButton();
           LightBox.closeForm();
         })
 
