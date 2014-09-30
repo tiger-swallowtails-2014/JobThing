@@ -87,8 +87,8 @@ JobPage = {
 
 var JobBox = {
   bindEvents: function() {
-    $('tr').on("mouseenter", this.showIcons)
-    $('tr').on("mouseleave", this.hideIcons)
+    $('.item').on("mouseenter", this.showIcons)
+    $('.item').on("mouseleave", this.hideIcons)
   },
 
   showIcons: function() {
