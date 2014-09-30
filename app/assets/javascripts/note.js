@@ -30,20 +30,19 @@ Note = (function() {
     bindDeleteButton: function() {
       console.log("binding")
       $('.note-delete-button').on("click", function(e) {
-        e.preventDefault();
         console.log("binding")
         console.log($('.note-delete-button'))
-        debugger
-        Utility.elementCloner.setClone($(this).parent());
 
-        debugger
+        Utility.elementCloner.setClone($(this).parent());
+        e.preventDefault();
+
         var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
-        debugger
+
         request.done(function() {
           console.log("success");
-          debugger
+
           Utility.elementCloner.getOriginal().remove();
-          debugger
+
         })
       })
     },
