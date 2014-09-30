@@ -27,8 +27,6 @@ Authentication = {
 Utility = (function() {
   return {
     hideAllForms: function() {
-      // Jobthing.hideForm();
-      // Interview.hideForm();
       $('.form_container').hide();
     },
     removeAllForms: function() {
