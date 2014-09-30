@@ -69,5 +69,3 @@ Contact = (function() {
     }
   }
 })();
-
-

@@ -56,7 +56,6 @@ class JobthingsController < ApplicationController
 
   def load_jobthing
     @jobthing = Jobthing.find(params[:id])
-    p @jobthing
   end
 
   def load_user

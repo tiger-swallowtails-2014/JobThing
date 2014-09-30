@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   post "/login" => 'sessions#create'
   delete "/logout" => 'sessions#destroy'
 
-
   resources :users do
+
+  get '/get_jobthings' => 'users#get_jobthings'
+
     resources :jobthings do
       resources :notes
       resources :contacts

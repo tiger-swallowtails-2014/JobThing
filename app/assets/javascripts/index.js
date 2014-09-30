@@ -1,28 +1,28 @@
-Authentication = {
+// Authentication = {
 
-  bindEvents: function () {
-    $('.login-btn').on("click", this.renderSignIn);
-    $('.registration-btn').on("click", this.renderSignUp);
-  },
+  // bindEvents: function () {
+  //   $('.login-btn').on("click", this.renderSignIn);
+  //   $('.registration-btn').on("click", this.renderSignUp);
+  // },
 
-  renderSignIn: function() {
-    var $template = $('.login_form');
-    var loginForm = $template.clone().html().trim();
-    $('.sign-in').append(loginForm);
-    $('form').hide();
-    $('form').slideDown(1000);
-    $('.login-btn').hide();
-  },
+  // renderSignIn: function() {
+  //   var $template = $('.login_form');
+  //   var loginForm = $template.clone().html().trim();
+  //   $('.sign-in').append(loginForm);
+  //   $('form').hide();
+  //   $('form').slideDown(1000);
+  //   $('.login-btn').hide();
+  // },
 
-  renderSignUp: function() {
-    var $template = $('.registration_form');
-    var registrationForm = $template.clone().html().trim();
-    $('.sign-up').append(registrationForm);
-    $('form').hide();
-    $('form').slideDown(1000);
-    $('.registration-btn').hide();
-  }
-}
+  // renderSignUp: function() {
+  //   var $template = $('.registration_form');
+  //   var registrationForm = $template.clone().html().trim();
+  //   $('.sign-up').append(registrationForm);
+  //   $('form').hide();
+  //   $('form').slideDown(1000);
+  //   $('.registration-btn').hide();
+  // }
+// }
 
 Utility = (function() {
   return {
@@ -30,10 +30,10 @@ Utility = (function() {
       $('.form_container').hide();
     },
     removeAllForms: function() {
-      Jobthing.removeForm();
-      Interview.removeForm();
-      Misc.removeForm();
-      Outcome.removeForm();
+      // Jobthing.removeForm();
+      // Interview.removeForm();
+      // Misc.removeForm();
+      // Outcome.removeForm();
       Note.removeForm();
       Contact.removeForm();
     },
@@ -112,5 +112,3 @@ $(document).ready(function () {
   Jobthing.bindNewJobthingButton();
   // $('.form-container').hide()
 })
-
-

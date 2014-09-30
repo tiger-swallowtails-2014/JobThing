@@ -20,12 +20,12 @@ Interaction = (function() {
       })
     },
     bindDropEvent: function() {
-      Applied.bindDropEvent();
-      Interest.bindDropEvent();
-      Interview.bindDropEvent();
-      Misc.bindDropEvent();
-      Outcome.bindDropEvent();
-      Trashcan.bindDropEvent();
+      // Applied.bindDropEvent();
+      // Interest.bindDropEvent();
+      // Interview.bindDropEvent();
+      // Misc.bindDropEvent();
+      // Outcome.bindDropEvent();
+      // Trashcan.bindDropEvent();
     }
   }
 })();
