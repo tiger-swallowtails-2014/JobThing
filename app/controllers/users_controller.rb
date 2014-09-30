@@ -25,6 +25,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_jobthings
+    user = User.find(params[:user_id])
+    @jobthing = user.jobthings
+    @jobs = []
+    @jobthing.each  do |job|
+      @job = job
+      @applied = job.applied
+      @interviews = job.interviews
+      @miscjobthings = job.miscjobthings
+      @outcome = job.outcome
+
+      temp = {jobthing: @job , applied: [@applied], interviews: @interviews, miscjobthings: @miscjobthings, outcome: [@outcome]}
+      @jobs << temp
+    end
+
+    render json: @jobs
+  end
+
   private
   def person_params
     params.require(:user).permit(:first_name, :last_name, :username, :email, :password)
