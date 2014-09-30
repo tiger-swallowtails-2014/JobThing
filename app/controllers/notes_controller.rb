@@ -36,8 +36,6 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    p params
-    p params[:id]
     Note.find(params[:id]).destroy
     # @note.destroy
     # redirect_to user_path(@user)
