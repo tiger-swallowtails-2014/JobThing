@@ -16,11 +16,7 @@
 
 }
 
-td {
-  border: 2px solid black;
-}
-
-tr {
+.item {
   border: 2px solid black;
 }
 
@@ -36,18 +32,26 @@ tr {
   font-size: 65px;
 }
 
+.back-arrow {
+  font-size: 55px;
+}
+
 .table {
-  min-height: 35px;
+  min-height: 41px;
 }
 
 .table-container1 {
   overflow: auto;
   height: 321.5px;
+  border: 1px solid #F2F2F2;
+
 }
 
 .table-container {
   overflow: auto;
   height: 375px;
+  border: 1px solid #F2F2F2;
+
 }
 
 .job-page-link {
