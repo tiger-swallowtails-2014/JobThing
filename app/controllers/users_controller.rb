@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-      if current_user
+    if current_user && page_owner?
         @user = current_user
         @jobthings = Jobthing.where(user_id: @user.id)
         @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = [];@jobs_w_outcome = [];
@@ -33,7 +33,8 @@ class UsersController < ApplicationController
             @jobs_w_interest << jobthing
           end
         end
-      else
+    else
+      redirect_to root_path
     end
   end
 
