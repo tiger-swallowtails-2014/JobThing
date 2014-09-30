@@ -35,7 +35,6 @@ Note = (function() {
           Note.bindEditNoteButton();
           LightBox.closeForm();
         })
-
       })
     },
     bindEditSubmitButton: function() {
