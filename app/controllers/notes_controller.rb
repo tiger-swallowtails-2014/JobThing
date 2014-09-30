@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_filter :load_note, :except => [:index, :new, :create]
+  before_filter :load_note, :except => [:index, :new, :create, :destroy]
   before_filter :load_jobthing, :load_user
 
   def index
@@ -36,8 +36,12 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note.destroy
-    redirect_to user_path(@user)
+    p params
+    p params[:id]
+    Note.find(params[:id]).destroy
+    # @note.destroy
+    # redirect_to user_path(@user)
+    render nothing: true
   end
 
   private

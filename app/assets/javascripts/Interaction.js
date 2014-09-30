@@ -2,11 +2,12 @@ Interaction = (function() {
   return {
     bindFormButton: function() {
       Jobthing.bindNewJobthingButton();
-      console.log($('.note-button'))
       Note.bindNewNoteButton();
       Note.bindEditNoteButton();
+      Note.bindDeleteButton();
       Contact.bindNewContactButton();
       Contact.bindEditContactButton();
+      // Contact.bindDeleteButton();
     },
     bindDragEvent: function() {
       var items = $('.item');
