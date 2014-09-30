@@ -1,6 +1,6 @@
 <div class="main-page">
   <div class="main-container">
-    <h1 class="name-title center"><%= @user.username %>'s JobThing </h1>
+    <h1 class="name-title center" data-id="<%=@user.id%>"><%= @user.username %>'s JobThing </h1>
     <!-- add user authentication logics here -->
     <%= button_to "Sign Out", logout_path, :method => :delete %>
 

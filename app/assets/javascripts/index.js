@@ -52,7 +52,15 @@ Utility = (function() {
           return original;
         }
       }
-    })()
+    })(),
+    jsonParser: function(jobthings_data) {
+      var jobthings = [];
+      for (var i = 0; i < jobthings_data.length; i++) {
+        var jobthing = new Jobthing(jobthings_data[i]);
+        jobthings.push(jobthing);
+      };
+      return jobthings;
+    }
   }
 })();
 
@@ -101,14 +109,17 @@ var JobBox = {
 }
 
 $(document).ready(function () {
-  Authentication.bindEvents();
+  // Authentication.bindEvents();
+  PageController.getJobthingsData();
   Utility.hideAllForms();
   LightBox.bindEvents();
   JobPage.bindEvents();
-  JobBox.bindEvents();
+
   Interaction.bindFormButton();
-  Interaction.bindDragEvent();
-  Interaction.bindDropEvent();
-  Jobthing.bindNewJobthingButton();
+  // Interaction.bindDragEvent();
+  // Interaction.bindDropEvent();
+  // Jobthing.bindNewJobthingButton();
+  JobBox.bindEvents();
   // $('.form-container').hide()
+
 })

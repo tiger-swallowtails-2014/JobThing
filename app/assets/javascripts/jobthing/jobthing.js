@@ -4,7 +4,7 @@ Jobthing = function(job_object) {
     this.company = job_object.jobthing.company
     this.position = job_object.jobthing.position
 
-    this.jobthing_id = job_object.jobthing_id
+    this.jobthing_id = job_object.jobthing.id
 
     // array of objects
     this.applied = job_object.applied
@@ -17,23 +17,23 @@ Jobthing = function(job_object) {
     this.has_misc = function() {return job_object.misc.length != 0}
     this.has_outcome = function() {return job_object.outcome.length != 0}
 
-    var url_base = "/users/" + this.user_id + "/jobthings/" + this.jobthing_id
-    this.url_interview_form = function() {return url_base + "/interviews/new"};
-    this.url_misc_form = function() {return url_base + "/miscjobthings/new"};
-    this.url_outcome_form = function() {return url_base + "/outcomes/new"};
+    this.url_base = function() {return "/users/" + this.user_id + "/jobthings/" + this.jobthing_id};
+    this.url_interview_form = function() {return this.url_base() + "/interviews/new"};
+    this.url_misc_form = function() {return this.url_base() + "/miscjobthings/new"};
+    this.url_outcome_form = function() {return this.url_base() + "/outcomes/new"};
 
-    this.url_applied_create = function() {return url_base + "/applieds"}
+    this.url_applied_create = function() {return this.url_base() + "/applieds"}
 
     this.url_applied_delete = function() {
       if (this.has_applied) {
-        return url_base + "/applieds/" + this.applied_id
+        return this.url_base() + "/applieds/" + this.applied_id
       }
     };
     // delete all interviews
-    this.url_interview_delete = function() {return url_base + "/destroy_interviews"}
+    this.url_interview_delete = function() {return this.url_base() + "/destroy_interviews"}
     // delete all miscs
-    this.url_misc_delete = function() {return url_base + "/destroy_miscs"}
-    this.url_outcome_delete = function() {return url_base + "/outcomes/" + this.outcome_id}
+    this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
+    this.url_outcome_delete = function() {return this.url_base() + "/outcomes/" + this.outcome_id}
 };
 
 
