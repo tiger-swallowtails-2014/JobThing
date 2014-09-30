@@ -32,7 +32,7 @@ class NotesController < ApplicationController
 
   def update
     @note.update_attributes(note_params)
-    redirect_to user_path(@user)
+    render 'note', layout: false
   end
 
   def destroy

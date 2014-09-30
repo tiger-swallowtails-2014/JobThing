@@ -76,7 +76,9 @@
           <div class="notes container-fluid">
             <p class="note-title"><%= note.title %></p>
             <p class="note-content"><%= note.content %></p>
+            <%= link_to "Edit", edit_user_jobthing_note_path(@user, @jobthing, note), class: "note-edit" %>
           </div>
+
         <% end %>
 
       <% end %>
@@ -94,11 +96,12 @@
               <p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p>
               <p class="contact-info">Email : <%= contact.email %></p>
               <p class="contact-info">Phone Number: <%= contact.phone_number %></p>
+              <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, contact), class: "contact-edit" %>
             </div>
           <% end %>
         <% end %>
     </div>
 
-    <button type="button" class="contact-button btn btn-primary btn-sm">Add Contact</button>
+    <button type="button" class="contact-button btn btn-primary btn-sm" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/contacts/new">Add Contact</button>
   </div>
 </div>

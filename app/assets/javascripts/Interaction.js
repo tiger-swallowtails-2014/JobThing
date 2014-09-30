@@ -4,7 +4,9 @@ Interaction = (function() {
       Jobthing.bindNewJobthingButton();
       console.log($('.note-button'))
       Note.bindNewNoteButton();
-      // Contact.bindNewContactButton();
+      Note.bindEditNoteButton();
+      Contact.bindNewContactButton();
+      Contact.bindEditContactButton();
     },
     bindDragEvent: function() {
       var items = $('.item');

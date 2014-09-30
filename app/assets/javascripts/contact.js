@@ -1,60 +1,60 @@
-Note = (function() {
+Contact = (function() {
   return {
-    bindNewNoteButton: function() {
-      $('.note-button').on("click", function(e) {
+    bindNewContactButton: function() {
+      $('.contact-button').on("click", function(e) {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "GET"});
         request.done(function(data) {
           Utility.removeAllForms();
           $('.form_container').append(data);
-          Note.bindNewSubmitButton();
+          Contact.bindNewSubmitButton();
           LightBox.renderForm();
         })
       });
 
     },
-    bindEditNoteButton: function() {
-      $('.note-edit').on("click", function(e) {
+    bindEditContactButton: function() {
+      $('.contact-edit').on("click", function(e) {
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "GET"});
         request.done(function(data) {
           Utility.removeAllForms();
           $('.form_container').append(data);
-          Note.bindEditSubmitButton();
+          Contact.bindEditSubmitButton();
           LightBox.renderForm();
         })
       })
     },
     bindNewSubmitButton: function() {
-      $('.note-form').on("submit", function(e) {
+      $('.new_contact').on("submit", function(e) {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
-          $('.note-box').append(data);
-          Note.bindEditNoteButton();
+          $('.contact-box').append(data);
+          Contact.bindEditContactButton();
           LightBox.closeForm();
+
         })
+
       })
     },
     bindEditSubmitButton: function() {
-      $('.note-form').on("submit", function(e) {
+      $('.contact-form').on("submit", function(e) {
         var element = $(this)
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "PUT", data: $(this).serialize()});
         request.done(function(data) {
           Utility.elementCloner.getOriginal().remove();
-          $('.note-box').append(data);
-          Note.bindEditNoteButton();
+          $('.contact-box').append(data);
+          Contact.bindEditContactButton();
           LightBox.closeForm();
         })
 
       })
     },
     removeForm: function() {
-      $('.note-form').remove();
+      $('.contact-form').remove();
     }
   }
 })();
-
-

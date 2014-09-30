@@ -6,28 +6,31 @@ class ContactsController < ApplicationController
     @contacts = @jobthing.contacts
   end
 
-  def new 
+  def new
     @contact = Contact.new
-     render partial: 'form' 
+     render partial: 'form'
   end
 
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      p "contact created!"
       @jobthing.contacts << @contact
-      redirect_to user_jobthing_contacts_path
+      render 'contact', layout: false
     else
       redirect_to user_jobthing_contacts_path
     end
   end
 
-  def update
-    @contact.update_attributes(contact_params)
-    redirect_to user_jobthing_contacts_path
+  def edit
+    render partial: 'contact'
   end
 
-  def show 
+  def update
+    @contact.update_attributes(contact_params)
+    render 'contact', layout: false
+  end
+
+  def show
   end
 
   def destroy
@@ -41,12 +44,12 @@ class ContactsController < ApplicationController
   end
 
 
-  private 
-  def load_jobthing 
+  private
+  def load_jobthing
     @jobthing = Jobthing.find(params[:jobthing_id])
   end
 
-  def load_user 
+  def load_user
     @user = User.find(params[:user_id])
   end
 
