@@ -1,7 +1,8 @@
 Interaction = (function() {
   return {
     bindFormButton: function() {
-      Jobthing.bindNewJobthingButton();
+      console.log("binding")
+
       Note.bindNewNoteButton();
       Note.bindEditNoteButton();
       Note.bindDeleteButton();

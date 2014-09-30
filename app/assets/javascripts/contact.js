@@ -46,9 +46,7 @@ Contact = (function() {
           Contact.bindEditContactButton();
           Contact.bindDeleteButton();
           LightBox.closeForm();
-
         })
-
       })
     },
     bindEditSubmitButton: function() {
@@ -71,3 +69,5 @@ Contact = (function() {
     }
   }
 })();
+
+

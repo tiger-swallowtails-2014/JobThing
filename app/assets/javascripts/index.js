@@ -109,6 +109,7 @@ $(document).ready(function () {
   Interaction.bindFormButton();
   Interaction.bindDragEvent();
   Interaction.bindDropEvent();
+  Jobthing.bindNewJobthingButton();
   // $('.form-container').hide()
 })
 

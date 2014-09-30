@@ -8,6 +8,7 @@ class JobthingsController < ApplicationController
 
   def new
     @jobthing = Jobthing.new
+    p 'reached here'
     render partial: 'form'
   end
 
