@@ -14,7 +14,6 @@ class NotesController < ApplicationController
   def create
     @note = Note.create(note_params)
     if @note.save
-      # integrate note phase-column feature
       @user.notes << @note
       @jobthing.notes << @note
       render 'note', layout: false

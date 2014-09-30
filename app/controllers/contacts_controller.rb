@@ -35,7 +35,7 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    redirect_to user_jobthing_contacts_path
+    render nothing: true
   end
 
   def edit

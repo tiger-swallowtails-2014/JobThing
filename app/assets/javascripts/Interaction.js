@@ -7,7 +7,7 @@ Interaction = (function() {
       Note.bindDeleteButton();
       Contact.bindNewContactButton();
       Contact.bindEditContactButton();
-      // Contact.bindDeleteButton();
+      Contact.bindDeleteButton();
     },
     bindDragEvent: function() {
       var items = $('.item');

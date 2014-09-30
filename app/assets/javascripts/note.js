@@ -15,7 +15,6 @@ Note = (function() {
     },
     bindEditNoteButton: function() {
       $('.note-edit').on("click", function(e) {
-        console.log("bind edit")
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "GET"});
@@ -28,21 +27,13 @@ Note = (function() {
       })
     },
     bindDeleteButton: function() {
-      console.log("binding")
       $('.note-delete-button').on("click", function(e) {
-        console.log("binding")
-        console.log($('.note-delete-button'))
-
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
-
         var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
-
         request.done(function() {
           console.log("success");
-
           Utility.elementCloner.getOriginal().remove();
-
         })
       })
     },

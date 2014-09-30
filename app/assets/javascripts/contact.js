@@ -26,6 +26,17 @@ Contact = (function() {
         })
       })
     },
+    bindDeleteButton: function() {
+      $('.contact-delete-button').on("click", function(e) {
+        Utility.elementCloner.setClone($(this).parent());
+        e.preventDefault();
+        var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
+        request.done(function() {
+          console.log("success");
+          Utility.elementCloner.getOriginal().remove();
+        })
+      })
+    },
     bindNewSubmitButton: function() {
       $('.contact-form').on("submit", function(e) {
         e.preventDefault();
@@ -33,6 +44,7 @@ Contact = (function() {
         request.done(function(data) {
           $('.contact-box').append(data);
           Contact.bindEditContactButton();
+          Contact.bindDeleteButton();
           LightBox.closeForm();
 
         })
@@ -48,6 +60,7 @@ Contact = (function() {
           Utility.elementCloner.getOriginal().remove();
           $('.contact-box').append(data);
           Contact.bindEditContactButton();
+          Contact.bindDeleteButton();
           LightBox.closeForm();
         })
 
