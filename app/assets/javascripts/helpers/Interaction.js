@@ -3,12 +3,12 @@ Interaction = (function() {
     bindFormButton: function() {
       console.log("binding")
 
-      // Note.bindNewNoteButton();
-      // Note.bindEditNoteButton();
-      // Note.bindDeleteButton();
-      // Contact.bindNewContactButton();
-      // Contact.bindEditContactButton();
-      // Contact.bindDeleteButton();
+      Note.bindNewNoteButton();
+      Note.bindEditNoteButton();
+      Note.bindDeleteButton();
+      Contact.bindNewContactButton();
+      Contact.bindEditContactButton();
+      Contact.bindDeleteButton();
     },
     bindDragEvent: function() {
       var items = $('.item');
