@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
 
   def new 
     @contact = Contact.new
-     render partial: 'form' 
+    render partial: 'form' 
   end
 
   def create

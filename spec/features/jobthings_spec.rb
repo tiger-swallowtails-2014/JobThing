@@ -1,3 +1,4 @@
+#wtf.  not good.  probably not needed for a heavy JS app.
 require 'spec_helper'
 
 describe "Jobthings", :js => true do

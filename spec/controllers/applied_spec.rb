@@ -18,6 +18,8 @@ describe AppliedsController, type: :controller do
       }
     end
 
+
+    # If it doesn't work, don't commit it.
     # it "should increase the number of applied job" do
     #   expect {
     #     post :create

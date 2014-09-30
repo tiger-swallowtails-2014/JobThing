@@ -12,8 +12,10 @@ class InterviewsController < ApplicationController
   end
 
   def create
+    # generally you don't want to commit logging debug data.
     p "reached create route"
     p params
+    # Again, we always redirect here, why @variables?
     @interview = Interview.create(interview_params)
     if @interview.save
       p "saved"

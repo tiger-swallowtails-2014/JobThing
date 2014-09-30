@@ -16,22 +16,22 @@ class UsersController < ApplicationController
   end
 
   def show
-      @user = User.find(params[:id])
-      @jobthings = Jobthing.where(user_id: @user.id)
-      @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = []; @jobs_w_outcome = [];
-      @jobthings.each do |jobthing|
-        if jobthing.has_outcome
-          @jobs_w_outcome << jobthing
-        elsif jobthing.has_misc
-          @jobs_w_misc << jobthing
-        elsif jobthing.has_interview
-          @jobs_w_interview << jobthing
-        elsif jobthing.has_applied
-          @jobs_w_applied << jobthing
-        else
-          @jobs_w_interest << jobthing
-        end
+    @user = User.find(params[:id])
+    @jobthings = @user.jobthings
+    @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = []; @jobs_w_outcome = [];
+    @jobthings.each do |jobthing|
+      if jobthing.has_outcome
+        @jobs_w_outcome << jobthing
+      elsif jobthing.has_misc
+        @jobs_w_misc << jobthing
+      elsif jobthing.has_interview
+        @jobs_w_interview << jobthing
+      elsif jobthing.has_applied
+        @jobs_w_applied << jobthing
+      else
+        @jobs_w_interest << jobthing
       end
+    end
   end
 
   private
