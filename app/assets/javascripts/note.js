@@ -7,25 +7,55 @@ Note = (function() {
         request.done(function(data) {
           Utility.removeAllForms();
           $('.form_container').append(data);
-          Note.bindSubmitButton();
+          Note.bindNewSubmitButton();
           LightBox.renderForm();
         })
       });
 
     },
-    bindSubmitButton: function() {
-      $('.new_note').on("submit", function(e) {
+    bindEditNoteButton: function() {
+      $('.note-edit').on("click", function(e) {
+        Utility.elementCloner.setClone($(this).parent());
+        e.preventDefault();
+        var request = $.ajax({url: $(this).attr('href'), type: "GET"});
+        request.done(function(data) {
+          Utility.removeAllForms();
+          $('.form_container').append(data);
+          Note.bindEditSubmitButton();
+          LightBox.renderForm();
+        })
+      })
+    },
+    bindNewSubmitButton: function() {
+      $('.note-form').on("submit", function(e) {
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
           $('.note-box').append(data);
+          Note.bindEditNoteButton();
+          LightBox.closeForm();
+        })
+
+      })
+    },
+    bindEditSubmitButton: function() {
+      $('.note-form').on("submit", function(e) {
+        var element = $(this)
+        e.preventDefault();
+        var request = $.ajax({url: $(this).attr('action'), type: "PUT", data: $(this).serialize()});
+        request.done(function(data) {
+          Utility.elementCloner.getOriginal().remove();
+          $('.note-box').append(data);
+          Note.bindEditNoteButton();
           LightBox.closeForm();
         })
 
       })
     },
     removeForm: function() {
-      $('.new_note').remove();
+      $('.note-form').remove();
     }
   }
 })();
+
+
