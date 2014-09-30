@@ -29,15 +29,25 @@ tr {
   margin: 0 auto;
 }
 
-.icon {
+.trash-can {
   margin-top: 3%;
   margin-right: 4%;
   float: right;
-  font-size: 60px;
+  font-size: 65px;
 }
 
 .table {
   min-height: 35px;
+}
+
+.table-container1 {
+  overflow: auto;
+  height: 446.5px;
+}
+
+.table-container {
+  overflow: auto;
+  height: 500px;
 }
 
 .job-page-link {
