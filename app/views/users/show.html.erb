@@ -9,11 +9,9 @@
       <div class="table-container1">
         <table class="table interest-table">
           <% @jobs_w_interest.each do |job_w_interest| %>
-          <div class = "table-row">
-            <tr class="item">
-              <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></td>
-            </tr>
-          </div>
+            <div class="item">
+              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></div>
+            </div>
           <% end %>
         </table>
       </div><br>
@@ -26,9 +24,9 @@
       <div class="table-container">
         <table class="table applied-table">
          <% @jobs_w_applied.each do |job_w_applied| %>
-            <tr class="item">
-              <td><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></td>
-            </tr>
+            <div class="item">
+              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></div>
+            </div>
           <% end %>
         </table>
       </div>
@@ -39,9 +37,9 @@
       <div class="table-container">
         <table class="table interview-table">
           <% @jobs_w_interview.each do |job_w_interview| %>
-            <tr class="item">
-              <td><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></td>
-            </tr>
+            <div class="item">
+              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></div>
+            </div>
           <% end %>
         </table>
       </div>
@@ -52,9 +50,9 @@
       <div class="table-container">
         <table class="table misc-table">
           <% @jobs_w_misc.each do |job_w_misc| %>
-            <tr class="item">
-              <td><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></td>
-            </tr>
+            <div class="item">
+              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></div>
+            </div>
           <% end %>
         </table>
       </div>
@@ -65,9 +63,9 @@
       <div class="table-container">
         <table class="table outcome-table">
           <% @jobs_w_outcome.each do |job_w_outcome| %>
-            <tr class="item">
-              <td><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></td>
-            </tr>
+            <div class="item">
+              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></div>
+            </div>
           <% end %>
         </table>
       </div>
