@@ -3,7 +3,6 @@ require 'rails_helper'
 describe AppliedsController, type: :controller do
   let!(:user){create(:user)}
   let!(:job){create(:jobthing)}
-
   describe "POST create" do
     it "should respond successfully " do
       expect {
