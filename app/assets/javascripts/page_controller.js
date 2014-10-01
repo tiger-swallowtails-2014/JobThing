@@ -19,10 +19,10 @@ PageController = (function() {
         //   // assign to outcome table
         // } else if (jobthings[i].has_misc) {
         //   // misc table
-        // } else if (jobthings[i].has_interview) {
-        //   // interview
         // } else
-        if (jobthings[i].has_applied()) {
+        if (jobthings[i].has_interview()) {
+          interview.setJobthing(jobthings[i]);
+        } else if (jobthings[i].has_applied()) {
           applied.setJobthing(jobthings[i]);
         } else {
           interest.setJobthing(jobthings[i]);
@@ -34,6 +34,7 @@ PageController = (function() {
       // call each table model
       applied.renderView();
       interest.renderView();
+      interview.renderView();
       PageController.bindDragEvent();
       PageController.bindDropEvents();
       TableWidget.bindTableActions();

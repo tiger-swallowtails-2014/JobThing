@@ -19,13 +19,25 @@ ColModel.prototype.bindDropEvent = function() {
   var table = this;
   this.table_elem.droppable({
     drop: function() {
-      console.log("dropped " + JOBTHING.company +" on " + table.type);
+      console.log("dropped " + JOBTHING.company + " on " + table.type);
       var element = Utility.elementCloner.getClone();
       $(this).append(element);
-      PageController.bindDragEvent();
       view_removeFromOrigin();
       check_type(table);
+      PageController.bindDragEvent();
     }
+  })
+}
+
+ColModel.prototype.renderForm = function(url) {
+  var request = $.ajax({url: url, type: "GET"});
+  request.done(function(data) {
+    console.log("success");
+    console.log(data);
+    Utility.removeAllForms();
+    $('.form_container').append(data);
+    LightBox.renderForm();
+    PageController.bindDragEvent();
   })
 }
 function view_removeFromOrigin() {
@@ -37,5 +49,11 @@ function check_type(table) {
     table.actions(JOBTHING);
   } else if (table.type === "interest") {
     table.actions(JOBTHING);
+  } else if (table.type === "interview") {
+    table.actions(JOBTHING);
+  } else if (table.type === "misc") {
+
+  } else if (table.type === "outcome") {
+
   }
 }
