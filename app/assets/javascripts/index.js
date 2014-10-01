@@ -47,9 +47,11 @@ Utility = (function() {
 
 JobPage = {
   bindEvents: function () {
-    $('.job-page-link').on("click", this.renderJobPage);
+    console.log($('#job-page-link'))
+    $("#job-page-link").on("click", this.renderJobPage);
   },
   renderJobPage: function(event) {
+    console.log("clicked")
     event.preventDefault();
     $.ajax({
       url: $(this).attr('action'),

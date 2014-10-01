@@ -11,6 +11,8 @@ ColModel.prototype.setJobthing = function(jobthing_obj) {
 
 ColModel.prototype.renderView = function() {
   for (var i = 0; i< this.jobthings.length; i++) {
+    console.log()
+    console.log($.parseHTML(this.jobthings[i]))
     this.table_elem.append(this.jobthings[i].view());
   }
 }
