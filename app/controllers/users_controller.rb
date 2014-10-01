@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @jobs = []
     @jobthing.each  do |job|
       @job = job
-      @applied = [job.applied] || []
+      @applied = job.applied || []
       @interview = job.interviews || []
       @miscjobthing = job.miscjobthings || []
       @outcome = job.outcome || []

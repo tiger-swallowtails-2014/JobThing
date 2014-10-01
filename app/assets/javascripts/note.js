@@ -1,4 +1,4 @@
-zNote = (function() {
+Note = (function() {
   return {
     bindNewNoteButton: function() {
       $('.note-button').on("click", function(e) {

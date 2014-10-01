@@ -60,6 +60,12 @@ Utility = (function() {
         jobthings.push(jobthing);
       };
       return jobthings;
+    },
+    sendRequest: function(url, type, params) {
+      var request = $.ajax({url: url, type: type, data: params});
+      request.done(function() {
+        console.log("success");
+      })
     }
   }
 })();

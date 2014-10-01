@@ -1,33 +1,25 @@
 
-  function ColModel(table_elem) {
-    this.jobthings = []
-    this.table_elem = table_elem
+function ColModel(table_elem, type) {
+  this.jobthings = [];
+  this.table_elem = table_elem;
+  this.type = type
+}
+
+ColModel.prototype.renderView = function() {
+  for (var i = 0; i< this.jobthings.length; i++) {
+    this.table_elem.append(this.jobthings[i].view());
   }
-  ColModel.prototype.bindDropEvent = function(selector, callback){
-    this.selector = selector;
-    $(selector).droppable({
-      drop: function(event, ui) { callback }
-    })
-  }
+}
 
-  ColModel.prototype.renderView = function() {
-    for (var i = 0; i< this.jobthings.length; i++) {
-      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link style='display: none' action='"+this.jobthings[i].url_base()+"'>View</button>"
-      console.log(button)
-      var jobthing_view = "<div class='item'><div>"+this.jobthings[i].company+button+"</div></div>"
-      this.table_elem.append(jobthing_view);
-    }
-  }
+ColModel.prototype.setJobthing = function(jobthing_obj) {
+  this.jobthings.push(jobthing_obj);
+}
 
-  ColModel.prototype.setJobthing = function(jobthing_obj) {
-    console.log(jobthing_obj);
-    console.log(this.jobthings);
-    this.jobthings.push(jobthing_obj);
-  }
+// ColModel.prototype.bindDropEvent
 
-
-
-
+function view_removeFromOrigin() {
+  Utility.elementCloner.getOriginal().remove();
+}
 
 
   // applied.dropJob = function(){
