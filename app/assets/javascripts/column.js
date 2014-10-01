@@ -16,19 +16,26 @@ ColModel.prototype.renderView = function() {
 }
 
 ColModel.prototype.bindDropEvent = function() {
-  console.log(this.table_elem)
+  var table = this;
   this.table_elem.droppable({
     drop: function() {
-      console.log("dropped");
+      console.log("dropped " + JOBTHING.company +" on " + table.type);
       var element = Utility.elementCloner.getClone();
       $(this).append(element);
       PageController.bindDragEvent();
       view_removeFromOrigin();
-
-
+      check_type(table);
     }
   })
 }
 function view_removeFromOrigin() {
   Utility.elementCloner.getOriginal().remove();
+}
+
+function check_type(table) {
+  if (table.type === "applied") {
+    table.actions(JOBTHING);
+  } else if (table.type === "interest") {
+    table.actions(JOBTHING);
+  }
 }

@@ -36,16 +36,9 @@ PageController = (function() {
       interest.renderView();
       PageController.bindDragEvent();
       PageController.bindDropEvents();
+      TableWidget.bindTableActions();
     },
     bindDragEvent: function() {
-      // $('.item').draggable({
-      //   helper: 'clone',
-      //   start: function() {
-      //     console.log("dragging");
-      //     Utility.elementCloner.setClone($(this));
-
-      //   }
-      // })
       for (var i = 0; i < jobthings.length; i++) {
         jobthings[i].bindDragEvent();
       }

@@ -19,10 +19,6 @@ Jobthing.properties = function(job_object) {
     this.has_misc = function() {return job_object.misc.length != 0}
     this.has_outcome = function() {return job_object.outcome.length != 0}
 
-    this.type = function() {
-
-    }
-
     this.url_base = function() {return "/users/" + this.user_id + "/jobthings/" + this.jobthing_id};
     this.url_interview_form = function() {return this.url_base() + "/interviews/new"};
     this.url_misc_form = function() {return this.url_base() + "/miscjobthings/new"};
@@ -32,14 +28,18 @@ Jobthing.properties = function(job_object) {
 
     this.url_applied_delete = function() {
       if (this.has_applied) {
-        return this.url_base() + "/applieds/" + this.applied_id
+        return this.url_base() + "/applieds/" + this.applied.id
       }
     };
     // delete all interviews
     this.url_interview_delete = function() {return this.url_base() + "/destroy_interviews"}
     // delete all miscs
     this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
-    this.url_outcome_delete = function() {return this.url_base() + "/outcomes/" + this.outcome.id}
+    this.url_outcome_delete = function() {
+      if (this.has_outcome) {
+        return this.url_base() + "/outcomes/" + this.outcome.id
+      }
+    };
 
     this.view = function() {
       var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' action='"+this.url_base()+"'>View</button>";
