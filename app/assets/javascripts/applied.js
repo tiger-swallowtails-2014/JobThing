@@ -10,8 +10,8 @@ Applied = (function() {
           // toggle highlight
         },
         drop: function() {
-          console.log("dropped");
           var element = Utility.elementCloner.getClone();
+          console.log(element)
           $('.applied-table tbody').append(element);
           createApplied(element);
           view_removeFromOrigin();

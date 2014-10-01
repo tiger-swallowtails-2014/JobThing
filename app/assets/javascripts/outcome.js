@@ -34,7 +34,7 @@ Outcome = (function() {
       })
     },
     removeForm: function() {
-      $('.new_outcome').remove();
+      $('.big-buttons').remove();
     },
   }
 })();

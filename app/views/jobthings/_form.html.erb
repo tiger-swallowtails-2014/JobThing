@@ -1,7 +1,7 @@
-<%= form_for [@user, @jobthing] do |f| %>
-  <%= f.text_field :job_link, placeholder: "URL here" %></br>
-  <%= f.text_field :company, placeholder: "Company name" %></br>
-  <%= f.text_field :position, placeholder: "Position" %></br>
+<%= bootstrap_form_for [@user, @jobthing] do |f| %>
+  <%= f.text_field :job_link, placeholder: "URL here" %>
+  <%= f.text_field :company, placeholder: "Company name" %>
+  <%= f.text_field :position, placeholder: "Position" %>
   <%= f.submit "Add" %>
 <% end %>
 
