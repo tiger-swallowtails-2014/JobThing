@@ -27,7 +27,7 @@ Jobthing.properties = function(job_object) {
     this.url_applied_create = function() {return this.url_base() + "/applieds"}
 
     this.url_applied_delete = function() {
-      if (this.has_applied) {
+      if (this.has_applied()) {
         return this.url_base() + "/applieds/" + this.applied.id
       }
     };
@@ -36,7 +36,7 @@ Jobthing.properties = function(job_object) {
     // delete all miscs
     this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
     this.url_outcome_delete = function() {
-      if (this.has_outcome) {
+      if (this.has_outcome()) {
         return this.url_base() + "/outcomes/" + this.outcome.id
       }
     };

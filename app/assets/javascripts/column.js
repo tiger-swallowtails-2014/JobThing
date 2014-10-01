@@ -52,8 +52,8 @@ function check_type(table) {
   } else if (table.type === "interview") {
     table.actions(JOBTHING);
   } else if (table.type === "misc") {
-
+    table.actions(JOBTHING);
   } else if (table.type === "outcome") {
-
+    table.actions(JOBTHING);
   }
 }

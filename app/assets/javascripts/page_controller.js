@@ -15,12 +15,11 @@ PageController = (function() {
       TableWidget.create_tables();
       for (var i = 0; i < jobthings.length; i++) {
 
-        // if (jobthings[i].has_outcome()) {
-        //   // assign to outcome table
-        // } else if (jobthings[i].has_misc) {
-        //   // misc table
-        // } else
-        if (jobthings[i].has_interview()) {
+        if (jobthings[i].has_outcome()) {
+          outcome.setJobthing(jobthings[i]);
+        } else if (jobthings[i].has_misc()) {
+          misc.setJobthing(jobthings[i]);
+        } else if (jobthings[i].has_interview()) {
           interview.setJobthing(jobthings[i]);
         } else if (jobthings[i].has_applied()) {
           applied.setJobthing(jobthings[i]);
@@ -35,6 +34,9 @@ PageController = (function() {
       applied.renderView();
       interest.renderView();
       interview.renderView();
+      misc.renderView();
+      outcome.renderView();
+
       PageController.bindDragEvent();
       PageController.bindDropEvents();
       TableWidget.bindTableActions();
