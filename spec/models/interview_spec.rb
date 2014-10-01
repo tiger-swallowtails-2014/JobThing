@@ -8,8 +8,8 @@ describe Interview do
 
   context "associations" do
     it "should belong to its respective job thing" do
-    job = FactoryGirl.build(:jobthing)
-    interview = FactoryGirl.build(:interview)
+    job = build(:jobthing)
+    interview = build(:interview)
     job.interviews << interview
     expect(interview.jobthing).to be job
     end
