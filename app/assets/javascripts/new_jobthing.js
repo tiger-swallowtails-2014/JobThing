@@ -1,5 +1,4 @@
 NewJobthing = {
-
     bindNewJobthingButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
         e.preventDefault();
@@ -9,7 +8,6 @@ NewJobthing = {
           Utility.removeAllForms();
           $('.form_container').append(data);
           LightBox.renderForm();
-          // Interaction.bindDragEvent();
         })
       });
     },

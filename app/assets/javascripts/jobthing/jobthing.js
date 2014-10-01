@@ -42,7 +42,7 @@ Jobthing.properties = function(job_object) {
     };
 
     this.view = function() {
-      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' action='"+this.url_base()+"'>View</button>";
+      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' id='job-page-link' style='display: none' action='"+this.url_base()+"'>View</button>";
       var jobthing_view = "<div class='item' id='"+this.jobthing_id+"''><div>"+this.company+button+"</div></div>";
       return jobthing_view
     }
