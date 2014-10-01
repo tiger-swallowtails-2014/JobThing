@@ -6,7 +6,7 @@ Utility = (function() {
     removeAllForms: function() {
       $('#new_interview').remove();
       $('#new_miscjobthing').remove();
-      $('.button_to').remove();
+      $('#new_outcome').remove();
       $('#new_jobthing').remove();
 
       Note.removeForm();
