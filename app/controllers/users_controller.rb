@@ -6,10 +6,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(person_params)
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+    user = User.create(person_params)
+    if user.save
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
       flash.now[:error] = "Try Again."
       redirect_to root_path
@@ -18,8 +18,8 @@ class UsersController < ApplicationController
 
   def show
     if current_user && page_owner?
-        @user = current_user
-        @jobthings = Jobthing.where(user_id: @user.id)
+      @user = current_user
+      @jobthings = Jobthing.where(user_id: @user.id)
     else
       redirect_to root_path
     end
@@ -27,23 +27,24 @@ class UsersController < ApplicationController
 
   def get_jobthings
     user = User.find(params[:user_id])
-    @jobthing = user.jobthings
-    @jobs = []
-    @jobthing.each  do |job|
-      @job = job
-      @applied = job.applied
-      @interviews = job.interviews
-      @miscjobthings = job.miscjobthings
-      @outcome = job.outcome
+    jobthing = user.jobthings
+    jobs = []
+    jobthing.each  do |job|
+    job = job
+    applied = job.applied
+    interviews = job.interviews
+    miscjobthings = job.miscjobthings
+    outcome = job.outcome
 
-      temp = {jobthing: @job , applied: [@applied], interviews: @interviews, miscjobthings: @miscjobthings, outcome: [@outcome]}
-      @jobs << temp
+    temp = {jobthing: job , applied: [applied], interviews: interviews, miscjobthings: miscjobthings, outcome: [outcome]}
+    jobs << temp
     end
 
-    render json: @jobs
+    render json: jobs
   end
 
   private
+
   def person_params
     params.require(:user).permit(:first_name, :last_name, :username, :email, :password)
   end

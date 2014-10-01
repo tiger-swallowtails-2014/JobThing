@@ -3,7 +3,7 @@ class MiscjobthingsController < ApplicationController
   before_filter :load_jobthing, :load_user
 
   def index
-    @miscjobthing = Miscjobthing.find_by_jobthing_id(@jobthing.id)
+    @miscjobthing = Miscjobthing.find_by_jobthing_id(jobthing.id)
   end
 
   def new
@@ -12,16 +12,13 @@ class MiscjobthingsController < ApplicationController
   end
 
   def create
-    @miscjobthing = Miscjobthing.create(miscjobthing_params)
-    if @miscjobthing.save
-      @jobthing.miscjobthings << @miscjobthing
-      redirect_to user_path(@user)
+    miscjobthing = Miscjobthing.create(miscjobthing_params)
+    if miscjobthing.save
+      jobthing.miscjobthings << miscjobthing
+      redirect_to user_path(user)
     else
-      redirect_to user_path(@user)
+      redirect_to user_path(user)
     end
-  end
-
-  def show
   end
 
   def edit
@@ -29,27 +26,27 @@ class MiscjobthingsController < ApplicationController
   end
 
   def update
-    @miscjobthing.update_attributes(miscjobthing_params)
-    redirect_to user_path(@user)
+    miscjobthing.update_attributes(miscjobthing_params)
+    redirect_to user_path(user)
   end
 
   def destroy
-    @miscjobthing.destroy
-    redirect_to user_path(@user)
+    miscjobthing.destroy
+    redirect_to user_path(user)
   end
 
   private
 
   def load_miscjobthings
-    @miscjobthing = Miscjobthing.find(params[:id])
+    miscjobthing = Miscjobthing.find(params[:id])
   end
 
   def load_jobthing
-    @jobthing = Jobthing.find(params[:jobthing_id])
+    jobthing = Jobthing.find(params[:jobthing_id])
   end
 
   def load_user
-    @user = User.find(params[:user_id])
+    user = User.find(params[:user_id])
   end
 
   def miscjobthing_params

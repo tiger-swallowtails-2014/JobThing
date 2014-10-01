@@ -22,9 +22,6 @@ class NotesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def edit
     render partial: 'form'
   end
