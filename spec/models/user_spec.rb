@@ -9,7 +9,7 @@ describe User do
     it { should_not allow_value("This is not an email").for(:email)}
     it { should allow_value("alisatatarinova@gmail.com").for(:email)}
     it "should create a valid user when all fields are valid" do
-      user = FactoryGirl.build(:user)
+      user = build(:user)
       expect(user).to be_valid
     end
   end
