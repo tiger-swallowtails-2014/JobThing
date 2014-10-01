@@ -1,8 +1,14 @@
 <div class="main-page">
   <div class="main-container">
-    <h1 class="name-title center"><%= @user.username %>'s JobThing </h1>
-    <!-- add user authentication logics here -->
-    <%= button_to "Sign Out", logout_path, :method => :delete %>
+    <section class="color-1">
+      <nav class="inside-navigation">
+        <div class="welcome-header"> Welcome, <%= @user.first_name %>.
+          <div class="sign-out">
+          <%= button_to "Sign Out", logout_path, :method => :delete, :class => 'btn btn-large btn-default' %>
+        </div>
+        </div>
+      </nav>
+    </section>
 
     <div class="table-responsive col-md-2 ">
       <h2>Job Bucket</h2><br>
@@ -75,7 +81,7 @@
   </div>
 
   <div class="form_container">
-    <p class="close-form">Close</p>
+    <p class="close-form"><i class="fa fa-times fa-4x"></i></p>
   </div>
 
 </div>
