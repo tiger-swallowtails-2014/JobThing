@@ -38,14 +38,17 @@ PageController = (function() {
       PageController.bindDropEvents();
     },
     bindDragEvent: function() {
-      $('.item').draggable({
-        helper: 'clone',
-        start: function() {
-          console.log("dragging");
-          Utility.elementCloner.setClone($(this));
+      // $('.item').draggable({
+      //   helper: 'clone',
+      //   start: function() {
+      //     console.log("dragging");
+      //     Utility.elementCloner.setClone($(this));
 
-        }
-      })
+      //   }
+      // })
+      for (var i = 0; i < jobthings.length; i++) {
+        jobthings[i].bindDragEvent();
+      }
     },
     bindDropEvents: function() {
       TableWidget.bindDropEvents();
