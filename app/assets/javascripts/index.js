@@ -7,6 +7,8 @@ Utility = (function() {
       $('#new_interview').remove();
       $('#new_miscjobthing').remove();
       $('#new_outcome').remove();
+      $('#new_jobthing').remove();
+
       Note.removeForm();
       Contact.removeForm();
     },
@@ -98,7 +100,7 @@ $(document).ready(function () {
   // Interaction.bindFormButton();
   // Interaction.bindDragEvent();
   // Interaction.bindDropEvent();
-  // Jobthing.bindNewJobthingButton();
+  NewJobthing.bindNewJobthingButton();
   JobBox.bindEvents();
   // $('.form-container').hide()
 
