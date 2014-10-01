@@ -27,18 +27,14 @@ Jobthing.properties = function(job_object) {
     this.url_applied_create = function() {return this.url_base() + "/applieds"}
 
     this.url_applied_delete = function() {
-      if (this.has_applied()) {
-        return this.url_base() + "/destroy_applied";
-      }
+      return this.url_base() + "/destroy_applied";
     };
     // delete all interviews
     this.url_interview_delete = function() {return this.url_base() + "/destroy_interviews"}
     // delete all miscs
     this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
     this.url_outcome_delete = function() {
-      if (this.has_outcome()) {
-        return this.url_base() + "/destroy_outcome";
-      }
+      return this.url_base() + "/destroy_outcome";
     };
 
     this.view = function() {

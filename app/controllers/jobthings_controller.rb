@@ -40,7 +40,6 @@ class JobthingsController < ApplicationController
   end
 
   def destroy_applied
-    p "reached here"
     @jobthing = Jobthing.find(params[:jobthing_id])
     @jobthing.applied.delete
     render nothing: true
