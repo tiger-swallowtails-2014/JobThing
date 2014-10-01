@@ -1,24 +1,23 @@
 require 'rails_helper'
 
 describe UsersController do
-  let!(:user) {FactoryGirl.create :user}
+  let!(:user) {create :user}
 
   describe "#create" do
     it "should create a new user with successfull response" do
-      post :create, :user => FactoryGirl.attributes_for(:user)
+      post :create, :user => attributes_for(:user)
       expect(response).to have_http_status(302)
     end
-
     it "should redirect to the user's home page" do
       expect {
-        post :create, :user => FactoryGirl.attributes_for(:user)
+        post :create, :user => attributes_for(:user)
         should redirect_to controller: users, action: :show
       }
     end
 
     it "should create a new user with valid params" do
       expect {
-        post :create, :user => FactoryGirl.attributes_for(:user)
+        post :create, :user => attributes_for(:user)
       }.to change{User.count}.by(1)
     end
 
@@ -30,7 +29,7 @@ describe UsersController do
 
     it "should set a session for the user" do
       expect {
-        post :create, :user => FactoryGirl.attributes_for(:user)
+        post :create, :user => attributes_for(:user)
         session[:user_id].to eq(user.id)
       }
     end
@@ -40,7 +39,7 @@ describe UsersController do
   describe "#show" do
     it "should find the correct users with successfull response" do
       get :show, id: user.id
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(302)
     end
   end
 

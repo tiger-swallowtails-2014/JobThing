@@ -10,12 +10,11 @@ class AppliedsController < ApplicationController
       @jobthing.applied = @applied
       redirect_to user_path(@user)
     end
-
   end
 
   def destroy
-    @applied = Applied.find(params[:id])
-    @applied.destroy
+    Applied.find(params[:id]).destroy
+    render nothing: true
   end
 
 end

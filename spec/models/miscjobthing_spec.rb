@@ -5,7 +5,7 @@ describe Miscjobthing do
   end
   context "associations" do
     it "should belong to its respective jobthing" do
-      job = FactoryGirl.build(:jobthing)
+      job = build(:jobthing)
       misc = Miscjobthing.create(name: "Miscellaneous job category, for all the things!")
       job.miscjobthings << misc
       expect(misc.jobthing).to be job
