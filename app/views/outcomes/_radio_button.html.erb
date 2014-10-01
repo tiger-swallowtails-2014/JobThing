@@ -1,4 +1,6 @@
-<div class="big-buttons">
-<%= button_to "Success", user_jobthing_outcomes_path(@user, @jobthing, @outcome, {outcome:{success: "true"}}), method: "create", :class => 'btn btn-large btn-block btn-primary' %><br>
-<%= button_to "Fail", user_jobthing_outcomes_path(@user, @jobthing, @outcome, {outcome:{success: "false"}}), method: "create", :class => 'btn btn-large btn-block btn-danger' %>
-</div
+<div id="new_outcome">
+  <div class="big-buttons">
+  <%= button_to "Success", user_jobthing_outcomes_path(@user, @jobthing, @outcome, {outcome:{success: "true"}}), method: "create", :class => 'btn btn-large btn-block btn-primary' %><br>
+  <%= button_to "Fail", user_jobthing_outcomes_path(@user, @jobthing, @outcome, {outcome:{success: "false"}}), method: "create", :class => 'btn btn-large btn-block btn-danger' %>
+  </div>
+</div>
