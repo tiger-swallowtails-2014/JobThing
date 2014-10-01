@@ -47,22 +47,19 @@ Utility = (function() {
 
 JobPage = {
   bindEvents: function () {
-    console.log($('#job-page-link'))
-    $("#job-page-link").on("click", this.renderJobPage);
+    $("body").on("click", "#job-page-link", this.renderJobPage);
   },
   renderJobPage: function(event) {
-    console.log("clicked")
     event.preventDefault();
-    $.ajax({
-      url: $(this).attr('action'),
-      type: "Get"
-    })
+      $.ajax({
+        url: $(this).attr('action'),
+        type: "Get"
+      })
     .done(function(data){
       $('.main-container').hide(200);
       // remove existing jobpage
       $('.jobpage').remove();
       $('.main-page').append(data);
-      console.log(data);
       Interaction.bindFormButton();
       // bind back button to go to the home page
       $('.back').on("click", function(){
@@ -78,8 +75,8 @@ JobPage = {
 
 var JobBox = {
   bindEvents: function() {
-    $('.item').on("mouseenter", this.showIcons)
-    $('.item').on("mouseleave", this.hideIcons)
+    $('body').on("mouseenter", '.item', this.showIcons)
+    $('body').on("mouseleave", '.item', this.hideIcons)
   },
 
   showIcons: function() {
@@ -92,18 +89,10 @@ var JobBox = {
 }
 
 $(document).ready(function () {
-  // Authentication.bindEvents();
-
   PageController.getJobthingsData();
   Utility.hideAllForms();
   LightBox.bindEvents();
   JobPage.bindEvents();
-
-  // Interaction.bindFormButton();
-  // Interaction.bindDragEvent();
-  // Interaction.bindDropEvent();
   NewJobthing.bindNewJobthingButton();
   JobBox.bindEvents();
-  // $('.form-container').hide()
-
 })

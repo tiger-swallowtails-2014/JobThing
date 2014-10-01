@@ -2,9 +2,10 @@ class ContactsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_contact, :except => [:index, :new, :create]
 
-  # def index
-  #   @contacts = @jobthing.contacts
-  # end
+  def index
+    @contacts = @jobthing.contacts
+    render nothing: true
+  end
 
   def new
     @contact = Contact.new
@@ -29,9 +30,6 @@ class ContactsController < ApplicationController
     @contact.update_attributes(contact_params)
     render 'contact', layout: false
   end
-
-  # def show
-  # end
 
   def destroy
     @contact.destroy
