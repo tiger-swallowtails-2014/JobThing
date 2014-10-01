@@ -2,13 +2,9 @@ class ContactsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_contact, :except => [:index, :new, :create]
 
-  # def index
-  #   @contacts = @jobthing.contacts
-  # end
-
   def new
     @contact = Contact.new
-     render partial: 'form'
+    render partial: 'form'
   end
 
   def create
@@ -29,9 +25,6 @@ class ContactsController < ApplicationController
     @contact.update_attributes(contact_params)
     render 'contact', layout: false
   end
-
-  # def show
-  # end
 
   def destroy
     @contact.destroy
@@ -59,7 +52,5 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:first_name, :last_name, :phone_number, :email)
   end
-
-
 
 end
