@@ -28,7 +28,7 @@ Jobthing.properties = function(job_object) {
 
     this.url_applied_delete = function() {
       if (this.has_applied()) {
-        return this.url_base() + "/applieds/" + this.applied.id;
+        return this.url_base() + "/destroy_applied";
       }
     };
     // delete all interviews
@@ -37,7 +37,7 @@ Jobthing.properties = function(job_object) {
     this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
     this.url_outcome_delete = function() {
       if (this.has_outcome()) {
-        return this.url_base() + "/outcomes/" + this.outcome.id
+        return this.url_base() + "/destroy_outcome";
       }
     };
 
