@@ -1,4 +1,4 @@
-TableWidget = (function () {
+TableController = (function () {
   return {
     create_tables: function() {
       interest = new ColModel($('.interest-table'), 'interest');
@@ -52,7 +52,7 @@ TableWidget = (function () {
             view_removeFromOrigin();
             Utility.sendRequest(jobthing.url_interview_delete(), "GET");
             Utility.sendRequest(jobthing.url_misc_delete(), "GET");
-            Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
+            Utility.sendRequest(jobthing.url_outcome_delete(), "GET");
             Utility.sendRequest(jobthing.url_applied_create(), "POST");
             Utility.sendRequest(jobthing.url_base(), "DELETE");
           }
