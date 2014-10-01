@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926181454) do
+ActiveRecord::Schema.define(version: 20141001184909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20140926181454) do
   end
 
   create_table "contacts", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "first_name",   null: false
+    t.string   "last_name",    null: false
     t.string   "phone_number"
     t.string   "email"
     t.integer  "jobthing_id"
@@ -33,33 +33,33 @@ ActiveRecord::Schema.define(version: 20140926181454) do
   end
 
   create_table "interviews", force: true do |t|
-    t.string   "interview_with"
-    t.datetime "interview_date"
-    t.string   "interview_time"
+    t.string   "interview_with", null: false
+    t.datetime "interview_date", null: false
+    t.string   "interview_time", null: false
     t.integer  "jobthing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "jobthings", force: true do |t|
-    t.string   "job_link"
-    t.string   "company"
-    t.string   "position"
+    t.string   "job_link",   null: false
+    t.string   "company",    null: false
+    t.string   "position",   null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "miscjobthings", force: true do |t|
-    t.string   "name"
-    t.datetime "misc_date"
+    t.string   "name",        null: false
+    t.datetime "misc_date",   null: false
     t.integer  "jobthing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "notes", force: true do |t|
-    t.text     "content"
+    t.text     "content",     null: false
     t.string   "title"
     t.integer  "user_id"
     t.integer  "jobthing_id"
@@ -75,11 +75,11 @@ ActiveRecord::Schema.define(version: 20140926181454) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "username"
-    t.string   "password_digest"
+    t.string   "first_name",      null: false
+    t.string   "last_name",       null: false
+    t.string   "email",           null: false
+    t.string   "username",        null: false
+    t.string   "password_digest", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
