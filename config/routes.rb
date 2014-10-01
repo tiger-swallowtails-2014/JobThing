@@ -29,8 +29,10 @@ Rails.application.routes.draw do
       resources :interviews
       resources :miscjobthings
       resources :outcomes
+      get '/destroy_applied' => 'jobthings#destroy_applied'
       get '/destroy_interviews' => 'jobthings#destroy_interviews'
       get '/destroy_miscs' => 'jobthings#destroy_miscs'
+      get '/destroy_outcome' => 'jobthings#destroy_outcome'
     end
 
   end

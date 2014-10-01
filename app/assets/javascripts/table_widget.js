@@ -20,25 +20,25 @@ TableWidget = (function () {
       applied.actions = function(jobthing) {
         Utility.sendRequest(jobthing.url_interview_delete(), "GET");
         Utility.sendRequest(jobthing.url_misc_delete(), "GET");
-        Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
+        Utility.sendRequest(jobthing.url_outcome_delete(), "GET");
         Utility.sendRequest(jobthing.url_applied_create(), "POST");
       }
 
       interest.actions = function(jobthing) {
         Utility.sendRequest(jobthing.url_interview_delete(), "GET");
         Utility.sendRequest(jobthing.url_misc_delete(), "GET");
-        Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
-        Utility.sendRequest(jobthing.url_applied_delete(), "DELETE");
+        Utility.sendRequest(jobthing.url_outcome_delete(), "GET");
+        Utility.sendRequest(jobthing.url_applied_delete(), "GET");
       }
 
       interview.actions = function(jobthing) {
         Utility.sendRequest(jobthing.url_misc_delete(), "GET");
-        Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
+        Utility.sendRequest(jobthing.url_outcome_delete(), "GET");
         interview.renderForm(jobthing.url_interview_form());
       }
 
       misc.actions = function(jobthing) {
-        Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
+        Utility.sendRequest(jobthing.url_outcome_delete(), "GET");
         misc.renderForm(jobthing.url_misc_form());
       }
 

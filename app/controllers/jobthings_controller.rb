@@ -1,5 +1,5 @@
 class JobthingsController < ApplicationController
-  before_filter :load_jobthing, :except => [:index, :new, :create, :destroy_interviews, :destroy_miscs]
+  before_filter :load_jobthing, :except => [:index, :new, :create, :destroy_interviews, :destroy_miscs, :destroy_applied, :destroy_outcome]
   before_filter :load_user
 
   def index
@@ -8,7 +8,6 @@ class JobthingsController < ApplicationController
 
   def new
     @jobthing = Jobthing.new
-    p 'reached here'
     render partial: 'form'
   end
 
@@ -40,16 +39,29 @@ class JobthingsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy_applied
+    p "reached here"
+    @jobthing = Jobthing.find(params[:jobthing_id])
+    @jobthing.applied.delete
+    render nothing: true
+  end
+
   def destroy_interviews
     @jobthing = Jobthing.find(params[:jobthing_id])
     @jobthing.interviews.delete_all
-    redirect_to user_path(@user)
+    render nothing: true
   end
 
   def destroy_miscs
     @jobthing = Jobthing.find(params[:jobthing_id])
     @jobthing.miscjobthings.delete_all
-    redirect_to user_path(@user)
+    render nothing: true
+  end
+
+  def destroy_outcome
+    @jobthing = Jobthing.find(params[:jobthing_id])
+    @jobthing.outcome.delete
+    render nothing: true
   end
 
   private
