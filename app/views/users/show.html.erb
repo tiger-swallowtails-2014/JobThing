@@ -2,7 +2,7 @@
   <div class="main-container">
     <section class="color-1">
       <nav class="inside-navigation">
-        <div class="welcome-header"> Welcome, <%= @user.first_name %>.
+        <div class="welcome-header name-title" data-id="<%=@user.id%>"> Welcome, <%= @user.first_name %>.
           <div class="sign-out">
           <%= button_to "Sign Out", logout_path, :method => :delete, :class => 'btn btn-large btn-default' %>
         </div>

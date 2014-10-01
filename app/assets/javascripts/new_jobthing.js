@@ -1,5 +1,5 @@
-Jobthing = (function() {
-  return {
+NewJobthing = {
+
     bindNewJobthingButton: function() {
       $("#show_new_jobthing_form").on("click", function(e) {
         e.preventDefault();
@@ -22,7 +22,6 @@ Jobthing = (function() {
       $('.form_container').hide();
     }
 
-  }
-})();
+};
 
 
