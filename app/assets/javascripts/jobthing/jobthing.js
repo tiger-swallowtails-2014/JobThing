@@ -1,4 +1,6 @@
-Jobthing = function(job_object) {
+Jobthing = {};
+
+Jobthing.properties = function(job_object) {
     this.user_id = job_object.jobthing.user_id
     this.job_link = job_object.jobthing.job_link
     this.company = job_object.jobthing.company
@@ -45,17 +47,7 @@ Jobthing = function(job_object) {
       return jobthing_view
     }
 
-    this.bindDragEvent = function() {
-      var items = $('.item');
-      var that = this;
-      items.draggable({
-        helper: 'clone',
-        start: function() {
-          JOBTHING = that;
-          Utility.elementCloner.setClone($(this));
-        }
-      })
-    };
-};
+}
+
 
 

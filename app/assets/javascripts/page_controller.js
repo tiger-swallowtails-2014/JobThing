@@ -12,11 +12,9 @@ PageController = (function() {
     },
     // assign
     assignJobthings: function(jobthings) {
-      console.log("called")
-      // debugger
       TableWidget.create_tables();
       for (var i = 0; i < jobthings.length; i++) {
-        // console.log(jobthings[i].url_base())
+
         // if (jobthings[i].has_outcome()) {
         //   // assign to outcome table
         // } else if (jobthings[i].has_misc) {
@@ -25,40 +23,32 @@ PageController = (function() {
         //   // interview
         // } else
         if (jobthings[i].has_applied()) {
-        //   // applied
           applied.setJobthing(jobthings[i]);
+        } else {
+          interest.setJobthing(jobthings[i]);
         }
-        // else {
-        //   // jobthings
-        // }
       }
       PageController.renderJobthingViews();
     },
     renderJobthingViews: function() {
       // call each table model
       applied.renderView();
+      interest.renderView();
       PageController.bindDragEvent();
       PageController.bindDropEvents();
     },
     bindDragEvent: function() {
-      // bind jobthing drag event
-      // var items = $('.item');
-      // items.draggable({
-      //   helper: 'clone',
-      //   start: function() {
+      $('.item').draggable({
+        helper: 'clone',
+        start: function() {
+          console.log("dragging");
+          Utility.elementCloner.setClone($(this));
 
-      //     Utility.elementCloner.setClone($(this));
-      //   }
-      // })
-      console.log("about to bind")
-      for (var i = 0; i < jobthings.length; i++) {
-        jobthings[i].bindDragEvent();
-      }
+        }
+      })
     },
     bindDropEvents: function() {
-      // bind table drop events
-      TableWidget.forEachTable();
-      applied.bindDropEvent()
+      TableWidget.bindDropEvents();
     }
   }
 })();
