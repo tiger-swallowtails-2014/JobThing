@@ -20,23 +20,27 @@ class UsersController < ApplicationController
     if current_user && page_owner?
         @user = current_user
         @jobthings = Jobthing.where(user_id: @user.id)
-        @jobs_w_interest = []; @jobs_w_applied = []; @jobs_w_interview = []; @jobs_w_misc = [];@jobs_w_outcome = [];
-        @jobthings.each do |jobthing|
-          if jobthing.has_outcome
-            @jobs_w_outcome << jobthing
-          elsif jobthing.has_misc
-            @jobs_w_misc << jobthing
-          elsif jobthing.has_interview
-            @jobs_w_interview << jobthing
-          elsif jobthing.has_applied
-            @jobs_w_applied << jobthing
-          else
-            @jobs_w_interest << jobthing
-          end
-        end
     else
       redirect_to root_path
     end
+  end
+
+  def get_jobthings
+    user = User.find(params[:user_id])
+    @jobthing = user.jobthings
+    @jobs = []
+    @jobthing.each  do |job|
+      @job = job
+      @applied = job.applied
+      @interview = job.interviews || []
+      @miscjobthing = job.miscjobthings || []
+      @outcome = job.outcome
+
+      temp = {jobthing: @job , applied: @applied, interview: @interview, misc: @miscjobthing, outcome: @outcome}
+      @jobs << temp
+    end
+
+    render json: @jobs
   end
 
   private

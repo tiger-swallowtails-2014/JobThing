@@ -9,16 +9,11 @@
         </div>
       </nav>
     </section>
-
     <div class="table-responsive col-md-2 ">
       <h2>Job Bucket</h2><br>
       <div class="table-container1">
         <table class="table interest-table">
-          <% @jobs_w_interest.each do |job_w_interest| %>
-            <div class="item">
-              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_interest} %></div>
-            </div>
-          <% end %>
+
         </table>
       </div><br>
 
@@ -29,11 +24,7 @@
       <h2>Applied To</h2><br>
       <div class="table-container">
         <table class="table applied-table">
-         <% @jobs_w_applied.each do |job_w_applied| %>
-            <div class="item">
-              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_applied} %></div>
-            </div>
-          <% end %>
+
         </table>
       </div>
     </div>
@@ -42,11 +33,7 @@
       <h2>Interview</h2><br>
       <div class="table-container">
         <table class="table interview-table">
-          <% @jobs_w_interview.each do |job_w_interview| %>
-            <div class="item">
-              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_interview} %></div>
-            </div>
-          <% end %>
+
         </table>
       </div>
     </div>
@@ -55,11 +42,7 @@
       <h2>Misc</h2><br>
       <div class="table-container">
         <table class="table misc-table">
-          <% @jobs_w_misc.each do |job_w_misc| %>
-            <div class="item">
-              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_misc} %></div>
-            </div>
-          <% end %>
+
         </table>
       </div>
     </div>
@@ -68,11 +51,7 @@
       <h2>Outcome</h2><br>
       <div class="table-container">
         <table class="table outcome-table">
-          <% @jobs_w_outcome.each do |job_w_outcome| %>
-            <div class="item">
-              <div><%= render partial: 'jobthing', locals: {jobthing: job_w_outcome} %></div>
-            </div>
-          <% end %>
+
         </table>
       </div>
     </div>
