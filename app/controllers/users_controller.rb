@@ -32,11 +32,11 @@ class UsersController < ApplicationController
     @jobthing.each  do |job|
       @job = job
       @applied = job.applied
-      @interviews = job.interviews
-      @miscjobthings = job.miscjobthings
+      @interview = job.interviews || []
+      @miscjobthing = job.miscjobthings || []
       @outcome = job.outcome
 
-      temp = {jobthing: @job , applied: [@applied], interviews: @interviews, miscjobthings: @miscjobthings, outcome: [@outcome]}
+      temp = {jobthing: @job , applied: @applied, interview: @interview, misc: @miscjobthing, outcome: @outcome}
       @jobs << temp
     end
 

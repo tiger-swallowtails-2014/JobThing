@@ -1,39 +1,12 @@
-// Authentication = {
-
-  // bindEvents: function () {
-  //   $('.login-btn').on("click", this.renderSignIn);
-  //   $('.registration-btn').on("click", this.renderSignUp);
-  // },
-
-  // renderSignIn: function() {
-  //   var $template = $('.login_form');
-  //   var loginForm = $template.clone().html().trim();
-  //   $('.sign-in').append(loginForm);
-  //   $('form').hide();
-  //   $('form').slideDown(1000);
-  //   $('.login-btn').hide();
-  // },
-
-  // renderSignUp: function() {
-  //   var $template = $('.registration_form');
-  //   var registrationForm = $template.clone().html().trim();
-  //   $('.sign-up').append(registrationForm);
-  //   $('form').hide();
-  //   $('form').slideDown(1000);
-  //   $('.registration-btn').hide();
-  // }
-// }
-
 Utility = (function() {
   return {
     hideAllForms: function() {
       $('.form_container').hide();
     },
     removeAllForms: function() {
-      // Jobthing.removeForm();
-      // Interview.removeForm();
-      // Misc.removeForm();
-      // Outcome.removeForm();
+      $('#new_interview').remove();
+      $('#new_miscjobthing').remove();
+      $('#new_outcome').remove();
       Note.removeForm();
       Contact.removeForm();
     },
@@ -52,7 +25,21 @@ Utility = (function() {
           return original;
         }
       }
-    })()
+    })(),
+    jsonParser: function(jobthings_data) {
+      var jobthings = [];
+      for (var i = 0; i < jobthings_data.length; i++) {
+        var jobthing = new Jobthing.properties(jobthings_data[i]);
+        jobthings.push(jobthing);
+      };
+      return jobthings;
+    },
+    sendRequest: function(url, type, params) {
+      var request = $.ajax({url: url, type: type, data: params});
+      request.done(function() {
+        console.log("success");
+      })
+    }
   }
 })();
 
@@ -101,14 +88,18 @@ var JobBox = {
 }
 
 $(document).ready(function () {
-  Authentication.bindEvents();
+  // Authentication.bindEvents();
+
+  PageController.getJobthingsData();
   Utility.hideAllForms();
   LightBox.bindEvents();
   JobPage.bindEvents();
+
+  // Interaction.bindFormButton();
+  // Interaction.bindDragEvent();
+  // Interaction.bindDropEvent();
+  // Jobthing.bindNewJobthingButton();
   JobBox.bindEvents();
-  Interaction.bindFormButton();
-  Interaction.bindDragEvent();
-  Interaction.bindDropEvent();
-  Jobthing.bindNewJobthingButton();
   // $('.form-container').hide()
+
 })
