@@ -3,7 +3,11 @@
   <div class="header">
     <h1 class="job-title center"><%= @jobthing.company %></h1>
     <h2 class="position-title center"><%= @jobthing.position %></h2>
-    <h3 class="center"> Apply Button Here </h3>
+    <% if !applied? %>
+    <a href="<%=@jobthing.job_link%>"><button type="button" class="apply-button btn btn-primary btn-sm" action="<%=@jobthing.job_link%>">Apply</button></a>
+    <% else %>
+      <h3 class="center">Applied</h3>
+    <% end %>
   </div>
   <br><br>
 
