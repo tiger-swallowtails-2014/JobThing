@@ -12,7 +12,9 @@
   <br><br>
 
   <div class="job-page-box progress-box">
-    <h1 class="box-title center">Progress</h1>
+    <h1 class="box-title center">Progress
+      <span class="space"><button type="button" class="note-button transparent"><i class="fa fa-plus"></i></button></span>
+    </h1>
     <div class="progress-box">
       <% if applied? %>
           <div class="info container-fluid">
@@ -74,7 +76,9 @@
   </div>
 
   <div class="job-page-box box">
-    <h1 class="box-title center">Notes</h1>
+    <h1 class="box-title center">Notes<span class="space">trs</span>
+      <button type="button" class="note-button transparent" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/notes/new"><i class="fa fa-plus"></i></button>
+    </h1>
       <div class="note-box">
       <% if notes? %>
         <% @jobthing.notes.each do |note| %>
@@ -90,11 +94,12 @@
       <% end %>
     </div>
 
-    <button type="button" class="note-button btn btn-primary btn-sm" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/notes/new">Add Note</button>
   </div>
 
   <div class="job-page-box box">
-    <h1 class="box-title center">Contacts</h1>
+    <h1 class="box-title center">Contacts
+      <button type="button" class="contact-button transparent" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/contacts/new"><i class="fa fa-plus"></i></button>
+    </h1>
       <div class="contact-box">
         <% if contacts? %>
           <% @jobthing.contacts.each do |contact| %>
@@ -108,7 +113,5 @@
           <% end %>
         <% end %>
     </div>
-
-    <button type="button" class="contact-button btn btn-primary btn-sm" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/contacts/new">Add Contact</button>
   </div>
 </div>

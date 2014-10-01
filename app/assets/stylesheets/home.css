@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.job-container {
-  /*border: 2px solid black;*/
-}
-
 .table-responsive {
   border: 2px solid black;
   text-align: center;
@@ -14,7 +10,6 @@
   margin-right: 1.0%;
   padding: 1%;
   border-radius: 10px
-
 }
 
 .item {
@@ -23,6 +18,8 @@
   margin-bottom: 2%;
   min-width: 90%;
   line-height: 36px;
+  height: auto;
+  border-radius: 5px;
 }
 
 .col-centered {
@@ -49,20 +46,17 @@
   overflow: auto;
   height: 321.5px;
   border: 1px solid #F2F2F2;
-
 }
 
 .table-container {
   overflow: auto;
   height: 375px;
   border: 1px solid #F2F2F2;
-
-
 }
 
 .job-page-link {
   float: right;
   margin-right: 2.5%;
-  margin-top: 2.75%;
+  margin-top: 3.5%;
   display: none;
 }
