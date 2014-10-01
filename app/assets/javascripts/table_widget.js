@@ -6,6 +6,7 @@ TableWidget = (function () {
       interview = new ColModel($('.interview-table'), "interview");
       misc = new ColModel($('.misc-table'), "misc");
       outcome = new ColModel($('.outcome-table'), "outcome");
+      trashcan = new ColModel($('.trash-can'), "trashcan");
     },
     bindDropEvents: function() {
       applied.bindDropEvent();
@@ -13,13 +14,13 @@ TableWidget = (function () {
       interview.bindDropEvent();
       misc.bindDropEvent();
       outcome.bindDropEvent();
+      $('.trash-can').droppable({drop: function() {trashcan.actions(JOBTHING)}});
     },
     bindTableActions: function() {
       applied.actions = function(jobthing) {
         Utility.sendRequest(jobthing.url_interview_delete(), "GET");
         Utility.sendRequest(jobthing.url_misc_delete(), "GET");
         Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
-
         Utility.sendRequest(jobthing.url_applied_create(), "POST");
       }
 
@@ -44,6 +45,19 @@ TableWidget = (function () {
       outcome.actions = function(jobthing) {
         outcome.renderForm(jobthing.url_outcome_form());
       }
+
+      trashcan.actions = function(jobthing) {
+        if (confirm("sure?")) {
+            console.log("dropped");
+            view_removeFromOrigin();
+            Utility.sendRequest(jobthing.url_interview_delete(), "GET");
+            Utility.sendRequest(jobthing.url_misc_delete(), "GET");
+            Utility.sendRequest(jobthing.url_outcome_delete(), "DELETE");
+            Utility.sendRequest(jobthing.url_applied_create(), "POST");
+            Utility.sendRequest(jobthing.url_base(), "DELETE");
+          }
+      }
+
     }
   }
 })();

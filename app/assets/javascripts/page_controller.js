@@ -14,7 +14,6 @@ PageController = (function() {
     assignJobthings: function(jobthings) {
       TableWidget.create_tables();
       for (var i = 0; i < jobthings.length; i++) {
-
         if (jobthings[i].has_outcome()) {
           outcome.setJobthing(jobthings[i]);
         } else if (jobthings[i].has_misc()) {
