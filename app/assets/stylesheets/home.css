@@ -13,6 +13,7 @@
   margin-left: 2.1%;
   margin-right: 1.0%;
   padding: 1%;
+  border-radius: 10px
 
 }
 
@@ -48,12 +49,14 @@
   overflow: auto;
   height: 321.5px;
   border: 1px solid #F2F2F2;
+
 }
 
 .table-container {
   overflow: auto;
   height: 375px;
   border: 1px solid #F2F2F2;
+
 
 }
 

@@ -16,7 +16,6 @@ class AppliedsController < ApplicationController
   def destroy
     @applied = Applied.find(params[:id])
     @applied.destroy
-    redirect_to user_path(@user)
   end
 
 end
