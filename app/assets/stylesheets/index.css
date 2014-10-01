@@ -60,9 +60,12 @@ a:hover {
   cursor: pointer;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
-
+.transparent {
+  background: transparent;
+  border: none;
+  outline: none;
 
