@@ -4,10 +4,9 @@ Utility = (function() {
       $('.form_container').hide();
     },
     removeAllForms: function() {
-      // Jobthing.removeForm();
-      // Interview.removeForm();
-      // Misc.removeForm();
-      // Outcome.removeForm();
+      $('#new_interview').remove();
+      $('#new_miscjobthing').remove();
+      $('#new_outcome').remove();
       Note.removeForm();
       Contact.removeForm();
     },

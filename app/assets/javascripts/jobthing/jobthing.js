@@ -14,10 +14,10 @@ Jobthing.properties = function(job_object) {
     this.misc = job_object.misc
     this.outcome = job_object.outcome
 
-    this.has_applied = function() {return job_object.applied.length != 0}
+    this.has_applied = function() {return job_object.applied != null}
     this.has_interview = function() {return job_object.interview.length != 0}
     this.has_misc = function() {return job_object.misc.length != 0}
-    this.has_outcome = function() {return job_object.outcome.length != 0}
+    this.has_outcome = function() {return job_object.outcome != null}
 
     this.url_base = function() {return "/users/" + this.user_id + "/jobthings/" + this.jobthing_id};
     this.url_interview_form = function() {return this.url_base() + "/interviews/new"};
@@ -28,7 +28,7 @@ Jobthing.properties = function(job_object) {
 
     this.url_applied_delete = function() {
       if (this.has_applied()) {
-        return this.url_base() + "/applieds/" + this.applied.id
+        return this.url_base() + "/applieds/" + this.applied.id;
       }
     };
     // delete all interviews
