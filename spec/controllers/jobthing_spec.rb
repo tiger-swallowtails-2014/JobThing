@@ -21,28 +21,19 @@ describe JobthingsController do
     end
   end
 
-  describe "edit" do
-    it "should render the edit partial" do
-      jobthing = create(:jobthing)
-      get :edit, user_id: user.id, jobthing_id: jobthing.id
-      response.should render_template(partial: 'jobthings/_form')
-    end
-  end
-
-  describe "update" do
-    it "should save the updated information for the existing contact" do
-      jobthing = create(:jobthing)
-      put :create, jobthing: attributes_for(:jobthing), user_id: user.id, jobthing_id: jobthing.id
-      jobthing.reload
-
-    end
-  end
-
   describe "destroy" do
-    it "should save the updated information for the existing contact" do
-
+    it "should delete the undesired jobthing" do
+      expect {
+        delete :destroy, user_id: user.id, id: jobthing.id
+      }.to change{Jobthing.count}.by(-1)
     end
   end
+
+  describe "destroy_applied" do
+    it "sh"
+  end
+
+
 
 
 end
