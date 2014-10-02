@@ -57,7 +57,6 @@ Note = (function() {
           $('.note-box').append(data);
           LightBox.closeForm();
         })
-
       })
     },
     removeForm: function() {
