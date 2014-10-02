@@ -1,5 +1,5 @@
 <%= bootstrap_form_for [@user, @jobthing, @miscjobthing] do |f| %>
   <%= f.text_area :name, label: "The miscellaneous category!", placeholder: "Need inspiration? Are you meeting someone for coffee? Networking events? Job functions you want to go to? Keep track of them here!" %>
-  <%= f.datetime_field :misc_date, label: "Date", placeholder: "yyyy-mm-dd" %>
+  <%= f.date_field :misc_date, label: "Date", placeholder: "yyyy-mm-dd" %>
   <%= f.submit "Add" %>
 <% end %>
