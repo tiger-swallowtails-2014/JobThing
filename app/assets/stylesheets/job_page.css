@@ -1,7 +1,5 @@
 .box-title {
   padding-bottom: 5%;
-  /*border-bottom: 2px solid #000000;*/
-  /*border-top: 2px solid #000000;*/
   background-color: #2980B9;
   color: white;
   padding-top: 2%;
@@ -9,8 +7,6 @@
 
 .box-title1 {
   padding-bottom: 5.5%;
-  /*border-bottom: 2px solid #000000;*/
-  /*border-top: 2px solid #000000;*/
   background-color: #2980B9;
   color: white;
   padding-top: 4.5%;
@@ -25,7 +21,6 @@
 
 .job-page-box{
   height: 500px;
-  /*overflow: auto;*/
   border-radius: 5px;
   float: left;
   border: 1.5px solid black;
@@ -52,7 +47,6 @@
 }
 
 .notes {
-  /*border: 1px solid black;*/
   height: 100px;
   border-radius: 3px;
   text-align: center;
@@ -65,8 +59,6 @@
 }
 
 .contacts {
-  /*border: 1px solid black;*/
-  /*height: 100px;*/
   border-radius: 3px;
   text-align: center;
   width: 90%;

@@ -27,7 +27,6 @@ PageController = (function() {
       PageController.renderJobthingViews();
     },
     renderJobthingViews: function() {
-      // call each table model
       applied.renderView();
       interest.renderView();
       interview.renderView();
