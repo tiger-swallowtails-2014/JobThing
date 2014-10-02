@@ -39,8 +39,18 @@ Jobthing.properties = function(job_object) {
   };
 
   this.view = function() {
-    var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' id='job-page-link' style='display: none' action='"+this.url_base()+"'>View</button>";
-    var jobthing_view = "<div class='item' id='"+this.jobthing_id+"''><div>"+this.company+button+"</div></div>";
+    if (this.has_outcome() && this.outcome.success === true) {
+      console.log("success job")
+      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' id='job-page-link' style='display: none' action='"+this.url_base()+"'>View</button>";
+      var jobthing_view = "<div style='background-color:#CBE0FF' class='item' id='"+this.jobthing_id+"''>"+this.company+button+"</div>";
+    } else if (this.has_outcome() && this.outcome.success === false) {
+      console.log("fail job")
+      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' id='job-page-link' style='display: none' action='"+this.url_base()+"'>View</button>";
+      var jobthing_view = "<div style='background-color:#F4D4C9'class='item' id='"+this.jobthing_id+"''><div>"+this.company+button+"</div></div>";
+    } else {
+      var button = "<button type='button' class='btn btn-primary btn-xs job-page-link' id='job-page-link' style='display: none' action='"+this.url_base()+"'>View</button>";
+      var jobthing_view = "<div class='item' id='"+this.jobthing_id+"''><div>"+this.company+button+"</div></div>";
+    }
     return jobthing_view
   }
 
