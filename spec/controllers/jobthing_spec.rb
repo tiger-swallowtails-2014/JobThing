@@ -29,11 +29,4 @@ describe JobthingsController do
     end
   end
 
-  describe "destroy_applied" do
-    it "sh"
-  end
-
-
-
-
 end
