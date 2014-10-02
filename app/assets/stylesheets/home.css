@@ -22,6 +22,10 @@
   border-radius: 5px;
 }
 
+.item:hover {
+  cursor: grab;
+}
+
 .col-centered {
   float: none;
   margin: 0 auto;
@@ -64,6 +68,7 @@
 .ui-draggable-dragging {
   background-color: white;
   z-index: 20;
+  cursor: grabbing;
 }
 
 .highlight {
