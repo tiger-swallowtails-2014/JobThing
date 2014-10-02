@@ -12,7 +12,7 @@ PageController = (function() {
     },
     // assign
     assignJobthings: function(jobthings) {
-      TableController.create_tables();
+      TableModel.create_tables();
       for (var i = 0; i < jobthings.length; i++) {
         if (jobthings[i].has_outcome()) {
           outcome.setJobthing(jobthings[i]);
@@ -38,7 +38,7 @@ PageController = (function() {
 
       PageController.bindDragEvent();
       PageController.bindDropEvents();
-      TableController.bindTableActions();
+      TableModel.bindTableActions();
     },
     bindDragEvent: function() {
       for (var i = 0; i < jobthings.length; i++) {
@@ -46,7 +46,7 @@ PageController = (function() {
       }
     },
     bindDropEvents: function() {
-      TableController.bindDropEvents();
+      TableModel.bindDropEvents();
     }
   }
 })();
