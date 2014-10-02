@@ -1,7 +1,7 @@
-<%= form_for [@user, @jobthing, @contact], :html => {class: "contact-form"} do |f| %>
-First Name: <%= f.text_field :first_name %><br>
-Last Name: <%= f.text_field :last_name %><br>
-Phone Number: <%= f.text_field :phone_number, placeholder: "xxx-xxx-xxxx" %><br>
-Email: <%= f.text_field :email %><br>
-<%= f.submit "Submit", class: "contact-submit" %>
+<%= bootstrap_form_for [@user, @jobthing, @contact], :html => {class: "contact-form"} do |f| %>
+<%= f.text_field :first_name, label: "First Name:", inline: true %><br>
+<%= f.text_field :last_name, label: "Last Name:", inline: true %><br>
+<%= f.text_field :phone_number, placeholder: "xxx-xxx-xxxx", label: "Phone Number:" %><br>
+<%= f.text_field :email, label: "E-mail:" %><br>
+<%= f.submit "Submit", class: "contact-submit btn btn-large btn-primary" %>
 <% end %>

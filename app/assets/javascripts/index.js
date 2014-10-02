@@ -8,6 +8,7 @@ Utility = (function() {
       $('#new_miscjobthing').remove();
       $('#new_outcome').remove();
       $('#new_jobthing').remove();
+      $('.applied-form').remove();
 
       Note.removeForm();
       Contact.removeForm();

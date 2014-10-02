@@ -7,6 +7,7 @@ Contact = (function() {
         request.done(function(data) {
           Utility.removeAllForms();
           $('.form_container').append(data);
+          contactFormValidations();
           Contact.bindNewSubmitButton();
           LightBox.renderForm();
         })

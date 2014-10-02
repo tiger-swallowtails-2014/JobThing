@@ -105,6 +105,11 @@
   color: transparent;
 }
 
+
+#note_content {
+  height: 7em;
+}
+
 .scrollable {
   overflow: auto;
   height: 350px;
@@ -113,6 +118,5 @@
 .interact:hover {
   text-decoration: none;
 }
-
 
 
