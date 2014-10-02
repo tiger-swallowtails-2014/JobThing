@@ -30,9 +30,6 @@ class ContactsController < ApplicationController
     render 'contact', layout: false
   end
 
-  # def show
-  # end
-
   def destroy
     @contact.destroy
     render nothing: true
