@@ -60,3 +60,8 @@
   margin-top: 3.5%;
   display: none;
 }
+
+.ui-draggable-dragging {
+  background-color: white;
+  z-index: 20;
+}
