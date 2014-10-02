@@ -51,10 +51,10 @@ Jobthing.properties = function(job_object) {
       start: function() {
         JOBTHING = that;
         Utility.elementCloner.setClone($(this));
-        Utility.elementCloner.getOriginal().toggle();
+        Utility.elementCloner.getOriginal().hide();
       },
       stop: function() {
-        Utility.elementCloner.getOriginal().toggle();
+        Utility.elementCloner.getOriginal().show();
       }
     })
   }
