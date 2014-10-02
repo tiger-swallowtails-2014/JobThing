@@ -8,7 +8,6 @@ Jobthing.properties = function(job_object) {
 
   this.jobthing_id = job_object.jobthing.id
 
-  // array of objects
   this.applied = job_object.applied
   this.interview = job_object.interview
   this.misc = job_object.misc
@@ -26,13 +25,11 @@ Jobthing.properties = function(job_object) {
   this.url_outcome_form = function() {return this.url_base() + "/outcomes/new"};
 
   this.url_applied_create = function() {return this.url_base() + "/applieds"}
-
   this.url_applied_delete = function() {
     return this.url_base() + "/destroy_applied";
   };
-  // delete all interviews
+
   this.url_interview_delete = function() {return this.url_base() + "/destroy_interviews"}
-  // delete all miscs
   this.url_misc_delete = function() {return this.url_base() + "/destroy_miscs"}
   this.url_outcome_delete = function() {
     return this.url_base() + "/destroy_outcome";
@@ -56,7 +53,6 @@ Jobthing.properties = function(job_object) {
 
   this.bindDragEvent = function() {
     var that = this;
-
     $('#'+this.jobthing_id).draggable({
       helper: 'clone',
       start: function() {

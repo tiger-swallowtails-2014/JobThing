@@ -58,11 +58,9 @@ JobPage = {
       })
     .done(function(data){
       $('.main-container').hide(200);
-      // remove existing jobpage
       $('.jobpage').remove();
       $('.main-page').append(data);
       Interaction.bindFormButton();
-      // bind back button to go to the home page
       $('.back').on("click", function(){
         $('.jobpage').remove();
         $('.main-container').show(300);

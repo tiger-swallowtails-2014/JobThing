@@ -1,7 +1,7 @@
 function ColModel(table_elem, type) {
   this.jobthings = [];
   this.table_elem = table_elem;
-  this.type = type
+  this.type = type;
 }
 
 ColModel.prototype.setJobthing = function(jobthing_obj) {
