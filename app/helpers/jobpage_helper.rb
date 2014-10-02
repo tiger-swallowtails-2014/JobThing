@@ -36,6 +36,10 @@ module JobpageHelper
     Date.parse(date.to_date.to_s).strftime("%y")
   end
 
+  def day_diff(date1, date2)
+    date1 - date2
+  end
+
   def past?(date)
     date < ::Date.current
   end
