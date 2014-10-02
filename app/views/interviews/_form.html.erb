@@ -1,5 +1,5 @@
 <%= bootstrap_form_for [@user, @jobthing, @interview] do |f| %>
-<%= f.date_field :interview_with, label: "Who are you interviewing with?" %><br>
+<%= f.text_field :interview_with, label: "Who are you interviewing with?" %><br>
 Interview Date: <%= f.date_field :interview_date, label: "Interview Date", hide_label: :true, placeholder: "yyyy-mm-dd" %><br>
 Interview Time: <%= f.time_field :interview_time, placeholder: "hh:mm", label: "Interview Time", hide_label: :true %><br>
 <%= f.submit "Submit" %>
