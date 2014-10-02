@@ -6,7 +6,7 @@
     <% if !applied? %>
     <a href="<%=@jobthing.job_link%>"><button type="button" class="apply-button btn btn-primary btn-sm" action="<%=@jobthing.job_link%>">Apply</button></a>
     <% else %>
-      <h3 class="center">Applied</h3>
+      <h3 class="center">Its been <%=@jobthing.applied.created_at%> since you applied<days since you applied</h3>
     <% end %>
   </div>
   <br><br>
