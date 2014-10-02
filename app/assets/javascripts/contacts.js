@@ -8,7 +8,6 @@ Contact = (function() {
           Utility.removeAllForms();
           $('.form_container').append(data);
           contactFormValidations();
-          Contact.bindNewSubmitButton();
           LightBox.renderForm();
         })
       });
