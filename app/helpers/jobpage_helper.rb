@@ -37,7 +37,7 @@ module JobpageHelper
   end
 
   def past?(date)
-    date < ::DateTime.current
+    date < ::Date.current
   end
 
   def success?(bool)
