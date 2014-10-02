@@ -1,7 +1,7 @@
 .box-title {
   padding-bottom: 5%;
-  border-bottom: 2px solid #000000;
-  border-top: 2px solid #000000;
+  /*border-bottom: 2px solid #000000;*/
+  /*border-top: 2px solid #000000;*/
   background-color: #2980B9;
   color: white;
   padding-top: 2%;
@@ -9,8 +9,8 @@
 
 .box-title1 {
   padding-bottom: 5.5%;
-  border-bottom: 2px solid #000000;
-  border-top: 2px solid #000000;
+  /*border-bottom: 2px solid #000000;*/
+  /*border-top: 2px solid #000000;*/
   background-color: #2980B9;
   color: white;
   padding-top: 4.5%;
@@ -28,7 +28,7 @@
   /*overflow: auto;*/
   border-radius: 5px;
   float: left;
-  border: 2px solid black;
+  border: 1.5px solid black;
   width: 30%;
   margin-left: 2%;
   margin-right: 1%;
