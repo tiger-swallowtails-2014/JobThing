@@ -2,6 +2,11 @@ class UsersController < ApplicationController
   protect_from_forgery
 
   def index
+    if current_user
+      @user = current_user
+      @jobthings = Jobthing.where(user_id: @user.id)
+      redirect_to user_path(@user)
+    end
     @user = User.new
   end
 
