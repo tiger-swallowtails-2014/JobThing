@@ -7,10 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
-    else
-      flash[:alert] = "Invalid email or password"
-      render "new"
+      render json: @user
     end
   end
 
