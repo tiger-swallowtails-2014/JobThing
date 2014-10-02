@@ -1,6 +1,19 @@
 .box-title {
   padding-bottom: 5%;
-  border-bottom: 2px solid #d8d8d8;
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+  background-color: #2980B9;
+  color: white;
+  padding-top: 2%;
+}
+
+.box-title1 {
+  padding-bottom: 5.5%;
+  border-bottom: 2px solid #000000;
+  border-top: 2px solid #000000;
+  background-color: #2980B9;
+  color: white;
+  padding-top: 4.5%;
 }
 
 .back {
@@ -12,7 +25,7 @@
 
 .job-page-box{
   height: 500px;
-  overflow: auto;
+  /*overflow: auto;*/
   border-radius: 5px;
   float: left;
   border: 2px solid black;
@@ -39,12 +52,29 @@
 }
 
 .notes {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  height: 100px;
   border-radius: 3px;
   text-align: center;
   width: 90%;
   margin-top: 3%;
-  padding-top: 2%;
+  padding-top: 0.5%;
+  overflow: auto;
+  background-color: #EEEEEE;
+  padding-bottom: 0.5%;
+}
+
+.contacts {
+  /*border: 1px solid black;*/
+  /*height: 100px;*/
+  border-radius: 3px;
+  text-align: center;
+  width: 90%;
+  margin-top: 3%;
+  padding-top: 0.5%;
+  overflow: auto;
+  background-color: #EEEEEE;
+  padding-bottom: 0.5%;
 }
 
 .note-button {
@@ -74,4 +104,14 @@
 .space {
   color: transparent;
 }
+
+.scrollable {
+  overflow: auto;
+  height: 350px;
+}
+
+.interact:hover {
+  text-decoration: none;
+}
+
 
