@@ -1,5 +1,5 @@
-<%= form_for [@user, @jobthing, @note], :html => {class: "note-form"} do |f| %>
+<%= bootstrap_form_for [@user, @jobthing, @note], :html => {class: "note-form"} do |f| %>
   <%= f.text_field :title, placeholder: "title" %>
-  <%= f.text_field :content, placeholder: "note content here" %>
-  <%= f.submit "Add Note", class: "note-submit" %>
+  <%= f.text_area :content, placeholder: "note content here" %>
+  <%= f.submit "Add Note", class: "note-submit btn btn-large btn-primary" %>
 <% end %>

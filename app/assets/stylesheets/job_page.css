@@ -75,3 +75,7 @@
   color: transparent;
 }
 
+#note_content {
+  height: 7em;
+}
+

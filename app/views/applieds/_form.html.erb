@@ -1,0 +1,4 @@
+<%= bootstrap_form_for [@user, @jobthing, @applied], :html => {class: "applied-form"} do |f| %>
+<%= f.date_field :applied_date, label: "What date did you apply on?"%>
+<%= f.submit "Submit", class: "contact-submit btn btn-large btn-primary" %>
+<% end %>

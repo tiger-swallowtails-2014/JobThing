@@ -1,5 +1,10 @@
 class AppliedsController < ApplicationController
 
+  def new 
+    @applied = Applied.new
+    render partial: 'form'
+  end
+
   def create
     @user = User.find(params[:user_id])
     @jobthing = Jobthing.find(params[:jobthing_id])
