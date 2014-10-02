@@ -2,10 +2,6 @@ class InterviewsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_interview, except: [:index, :new, :create]
 
-  # def index
-  #   @interviews = @jobthing.interviews
-  # end
-
   def new
     @interview = Interview.new
     render partial: 'form'
@@ -20,9 +16,6 @@ class InterviewsController < ApplicationController
       redirect_to user_path(@user)
     end
   end
-
-  # def show
-  # end
 
   def edit
     render partial: 'form'
