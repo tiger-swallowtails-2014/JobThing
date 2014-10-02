@@ -6,7 +6,7 @@
     <% if !applied? %>
     <a href="<%=@jobthing.job_link%>"><button type="button" class="apply-button btn btn-primary btn-sm" action="<%=@jobthing.job_link%>">Apply</button></a>
     <% else %>
-      <h3 class="center">Its been <%=@jobthing.applied.created_at%> since you applied<days since you applied</h3>
+      <h3 class="center">Its been <%=(DateTime.now.to_date - @jobthing.applied.applied_date).to_i%> day(s) since you applied</h3>
     <% end %>
   </div>
   <br><br>
@@ -19,9 +19,9 @@
       <% if applied? %>
           <div class="info container-fluid">
             <div class="calendar">
-              <div class="month"><%= month(@jobthing.applied.created_at) %></div>
-              <div class="date"><%= day(@jobthing.applied.created_at) %></div>
-              <div class="year">20<%= year(@jobthing.applied.created_at) %></div>
+              <div class="month"><%= month(@jobthing.applied.applied_date) %></div>
+              <div class="date"><%= day(@jobthing.applied.applied_date) %></div>
+              <div class="year">20<%= year(@jobthing.applied.applied_date) %></div>
             </div>
             <p class="date-info">Date Applied</p>
           </div>
