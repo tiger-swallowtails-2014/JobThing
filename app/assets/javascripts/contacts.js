@@ -14,7 +14,7 @@ Contact = (function() {
 
     },
     bindEditContactButton: function() {
-      $('.contact-edit').on("click", function(e) {
+      $('.contact-box').on("click", '.contact-edit', function(e) {
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "GET"});
@@ -27,7 +27,7 @@ Contact = (function() {
       })
     },
     bindDeleteButton: function() {
-      $('.contact-delete-button').on("click", function(e) {
+      $('.contact-box').on("click", '.contact-delete-button', function(e) {
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
@@ -43,8 +43,6 @@ Contact = (function() {
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
           $('.contact-box').append(data);
-          Contact.bindEditContactButton();
-          Contact.bindDeleteButton();
           LightBox.closeForm();
         })
       })
@@ -57,8 +55,6 @@ Contact = (function() {
         request.done(function(data) {
           Utility.elementCloner.getOriginal().remove();
           $('.contact-box').append(data);
-          Contact.bindEditContactButton();
-          Contact.bindDeleteButton();
           LightBox.closeForm();
         })
 

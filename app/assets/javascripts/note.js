@@ -14,7 +14,7 @@ Note = (function() {
 
     },
     bindEditNoteButton: function() {
-      $('.note-edit').on("click", function(e) {
+      $('.note-box').on("click", '.note-edit', function(e) {
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "GET"});
@@ -27,7 +27,7 @@ Note = (function() {
       })
     },
     bindDeleteButton: function() {
-      $('.note-delete-button').on("click", function(e) {
+      $('.note-box').on("click", '.note-delete-button', function(e) {
         Utility.elementCloner.setClone($(this).parent());
         e.preventDefault();
         var request = $.ajax({url: $(this).attr('href'), type: "DELETE"});
@@ -43,8 +43,6 @@ Note = (function() {
         var request = $.ajax({url: $(this).attr('action'), type: "POST", data: $(this).serialize()});
         request.done(function(data) {
           $('.note-box').append(data);
-          Note.bindEditNoteButton();
-          Note.bindDeleteButton();
           LightBox.closeForm();
         })
       })
@@ -57,8 +55,6 @@ Note = (function() {
         request.done(function(data) {
           Utility.elementCloner.getOriginal().remove();
           $('.note-box').append(data);
-          Note.bindEditNoteButton();
-          Note.bindDeleteButton();
           LightBox.closeForm();
         })
 
@@ -69,5 +65,3 @@ Note = (function() {
     }
   }
 })();
-
-
