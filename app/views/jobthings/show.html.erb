@@ -79,8 +79,7 @@
     <h1 class="box-title center">Notes<span class="space">trs</span>
       <button type="button" class="note-button transparent" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/notes/new"><i class="fa fa-plus"></i></button>
     </h1>
-    <div class="something">
-      <div class="note-box">
+      <div class="note-box scrollable">
       <% if notes? %>
         <% @jobthing.notes.each do |note| %>
           <div class="notes container-fluid">
@@ -93,7 +92,6 @@
         <% end %>
 
       <% end %>
-  </div>
     </div>
 
   </div>
@@ -102,10 +100,10 @@
     <h1 class="box-title center">Contacts
       <button type="button" class="contact-button transparent" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/contacts/new"><i class="fa fa-plus"></i></button>
     </h1>
-      <div class="contact-box">
+      <div class="contact-box scrollable">
         <% if contacts? %>
           <% @jobthing.contacts.each do |contact| %>
-            <div class="notes container-fluid">
+            <div class="contacts container-fluid">
               <p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p>
               <p class="contact-info">Email : <%= contact.email %></p>
               <p class="contact-info">Phone Number: <%= contact.phone_number %></p>

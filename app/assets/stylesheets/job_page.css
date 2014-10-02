@@ -53,13 +53,28 @@
 
 .notes {
   /*border: 1px solid black;*/
+  height: 100px;
   border-radius: 3px;
   text-align: center;
   width: 90%;
   margin-top: 3%;
-  padding-top: 2%;
+  padding-top: 0.5%;
   overflow: auto;
   background-color: #EEEEEE;
+  padding-bottom: 0.5%;
+}
+
+.contacts {
+  /*border: 1px solid black;*/
+  /*height: 100px;*/
+  border-radius: 3px;
+  text-align: center;
+  width: 90%;
+  margin-top: 3%;
+  padding-top: 0.5%;
+  overflow: auto;
+  background-color: #EEEEEE;
+  padding-bottom: 0.5%;
 }
 
 .note-button {
@@ -90,7 +105,7 @@
   color: transparent;
 }
 
-.something {
+.scrollable {
   overflow: auto;
   height: 350px;
 }
