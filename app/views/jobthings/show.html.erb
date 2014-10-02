@@ -79,19 +79,21 @@
     <h1 class="box-title center">Notes<span class="space">trs</span>
       <button type="button" class="note-button transparent" action="/users/<%=@user.id%>/jobthings/<%=@jobthing.id%>/notes/new"><i class="fa fa-plus"></i></button>
     </h1>
+    <div class="something">
       <div class="note-box">
       <% if notes? %>
         <% @jobthing.notes.each do |note| %>
           <div class="notes container-fluid">
             <p class="note-title"><%= note.title %></p>
             <p class="note-content"><%= note.content %></p>
-            <%= link_to "Edit", edit_user_jobthing_note_path(@user, @jobthing, note), class: "note-edit" %>
-            <%= link_to "Delete", user_jobthing_note_path(@user, @jobthing, note), remote: true, class: "note-delete-button" %>
+            <%= link_to "Edit", edit_user_jobthing_note_path(@user, @jobthing, note), class: "note-edit interact" %>
+            <%= link_to "Delete", user_jobthing_note_path(@user, @jobthing, note), remote: true, class: "note-delete-button interact" %>
           </div>
 
         <% end %>
 
       <% end %>
+  </div>
     </div>
 
   </div>
@@ -107,8 +109,8 @@
               <p class="contact-name"><%= contact.first_name %> <%= contact.last_name %></p>
               <p class="contact-info">Email : <%= contact.email %></p>
               <p class="contact-info">Phone Number: <%= contact.phone_number %></p>
-              <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, contact), class: "contact-edit" %>
-              <%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, contact), remote: true, class: "contact-delete-button" %>
+              <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, contact), class: "contact-edit interact" %>
+              <%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, contact), remote: true, class: "contact-delete-button interact" %>
             </div>
           <% end %>
         <% end %>

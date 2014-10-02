@@ -25,7 +25,7 @@
 
 .job-page-box{
   height: 500px;
-  overflow: auto;
+  /*overflow: auto;*/
   border-radius: 5px;
   float: left;
   border: 2px solid black;
@@ -52,12 +52,14 @@
 }
 
 .notes {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   border-radius: 3px;
   text-align: center;
   width: 90%;
   margin-top: 3%;
   padding-top: 2%;
+  overflow: auto;
+  background-color: #EEEEEE;
 }
 
 .note-button {
@@ -87,4 +89,14 @@
 .space {
   color: transparent;
 }
+
+.something {
+  overflow: auto;
+  height: 350px;
+}
+
+.interact:hover {
+  text-decoration: none;
+}
+
 
