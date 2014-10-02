@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
       @jobthing.contacts << @contact
       render 'contact', layout: false
     else
-      redirect_to user_jobthing_contacts_path
+      render nothing: true
     end
   end
 
