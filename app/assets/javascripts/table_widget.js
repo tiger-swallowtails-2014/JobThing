@@ -47,8 +47,7 @@ TableController = (function () {
       }
 
       trashcan.actions = function(jobthing) {
-        if (confirm("sure?")) {
-            console.log("dropped");
+        if (confirm("Are you sure you want to delete this jobthing?")) {
             view_removeFromOrigin();
             Utility.sendRequest(jobthing.url_interview_delete(), "GET");
             Utility.sendRequest(jobthing.url_misc_delete(), "GET");
