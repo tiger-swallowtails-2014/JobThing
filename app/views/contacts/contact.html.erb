@@ -1,7 +1,7 @@
-<div class="notes container-fluid">
+<div class="contacts container-fluid">
   <p class="contact-name"><%= @contact.first_name %> <%= @contact.last_name %></p>
   <p class="contact-info">Email : <%= @contact.email %></p>
   <p class="contact-info">Phone Number: <%= @contact.phone_number %></p>
-  <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, @contact), class: "contact-edit" %>
-  <%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, @contact), remote: true, class: "contact-delete-button" %>
+  <%= link_to "Edit", edit_user_jobthing_contact_path(@user, @jobthing, @contact), class: "contact-edit interact" %>
+  <%= link_to "Delete", user_jobthing_contact_path(@user, @jobthing, @contact), remote: true, class: "contact-delete-button interact" %>
 </div>

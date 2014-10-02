@@ -18,7 +18,7 @@ class NotesController < ApplicationController
       @jobthing.notes << @note
       render 'note', layout: false
     else
-      redirect_to user_path(@user)
+      render nothing: true
     end
   end
 

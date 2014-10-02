@@ -20,6 +20,7 @@ Jobthing.properties = function(job_object) {
   this.has_outcome = function() {return job_object.outcome != null}
 
   this.url_base = function() {return "/users/" + this.user_id + "/jobthings/" + this.jobthing_id};
+  this.url_applied_form = function() {return this.url_base() + "/applieds/new"};
   this.url_interview_form = function() {return this.url_base() + "/interviews/new"};
   this.url_misc_form = function() {return this.url_base() + "/miscjobthings/new"};
   this.url_outcome_form = function() {return this.url_base() + "/outcomes/new"};
