@@ -17,6 +17,12 @@ ColModel.prototype.renderView = function() {
 ColModel.prototype.bindDropEvent = function() {
   var table = this;
   $(this.table_elem).droppable({
+    activate: function() {
+      $('.table').toggleClass("highlight");
+    },
+    deactivate: function() {
+      $('.table').toggleClass("highlight");
+    },
     drop: function() {
       var element = Utility.elementCloner.getClone();
       $(this).append(element);
