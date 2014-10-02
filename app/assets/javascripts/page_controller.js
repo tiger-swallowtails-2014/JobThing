@@ -5,12 +5,10 @@ PageController = (function() {
       var user_id = $('.name-title').attr('data-id');
       var request = $.ajax({url: "/users/"+user_id+"/get_jobthings", type: "GET"});
       request.done(function(data) {
-        // construct objects
         jobthings = Utility.jsonParser(data);
         PageController.assignJobthings(jobthings);
       })
     },
-    // assign
     assignJobthings: function(jobthings) {
       TableModel.create_tables();
       for (var i = 0; i < jobthings.length; i++) {
@@ -29,7 +27,6 @@ PageController = (function() {
       PageController.renderJobthingViews();
     },
     renderJobthingViews: function() {
-      // call each table model
       applied.renderView();
       interest.renderView();
       interview.renderView();
