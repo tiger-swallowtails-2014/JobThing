@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_contact, :except => [:index, :new, :create]
+  before_filter :permissions
 
   def index
     @contacts = @jobthing.contacts

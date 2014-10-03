@@ -1,6 +1,7 @@
 class InterviewsController < ApplicationController
   before_filter :load_jobthing, :load_user
   before_filter :load_interview, except: [:index, :new, :create]
+  before_filter :permissions
 
   def new
     @interview = Interview.new

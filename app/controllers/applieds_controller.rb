@@ -1,5 +1,6 @@
 class AppliedsController < ApplicationController
   before_filter :load_jobthing, :load_user
+  before_filter :permissions
 
   def new 
     @applied = Applied.new

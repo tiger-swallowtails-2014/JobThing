@@ -11,5 +11,11 @@ class ApplicationController < ActionController::Base
     @current_user.id == params[:id].to_i
   end
 
+  def permissions 
+    if !(current_user && (@current_user.id == params[:user_id].to_i))
+      redirect_to root_path
+    end
+  end
+
   helper_method :current_user
 end
