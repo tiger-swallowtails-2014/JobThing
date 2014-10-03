@@ -1,6 +1,7 @@
 class MiscjobthingsController < ApplicationController
   before_filter :load_miscjobthings, :except => [:index, :new, :create]
   before_filter :load_jobthing, :load_user
+  before_filter :permissions
 
   def index
     @miscjobthing = Miscjobthing.find_by_jobthing_id(@jobthing.id)

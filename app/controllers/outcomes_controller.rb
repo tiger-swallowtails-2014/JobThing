@@ -1,20 +1,18 @@
 class OutcomesController < ApplicationController
   before_filter :load_outcome, :except => [:index, :new, :create]
   before_filter :load_jobthing, :load_user
+  before_filter :permissions
 
   def index
     @outcome = Outcome.find_by_jobthing_id(@jobthing.id)
   end
 
   def new
-    p "helllooooo"
-    p params 
     @outcome = Outcome.new
     render partial: 'radio_button'
   end
 
   def create
-    p "post"
     @outcome = Outcome.create(outcome_params)
     if @outcome.save
       @jobthing.outcome = @outcome

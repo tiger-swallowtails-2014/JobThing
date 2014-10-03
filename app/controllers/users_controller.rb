@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   protect_from_forgery
-
+  before_filter :permissions, :except => [:index, :new, :create, :show]
   def index
     if current_user
       @user = current_user

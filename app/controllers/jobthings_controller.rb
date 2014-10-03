@@ -1,6 +1,7 @@
 class JobthingsController < ApplicationController
   before_filter :load_jobthing, :except => [:index, :new, :create, :destroy_interviews, :destroy_miscs, :destroy_applied, :destroy_outcome]
   before_filter :load_user
+  before_filter :permissions
 
   def index
     @jobthings = Jobthing.where(user_id: @user.id)

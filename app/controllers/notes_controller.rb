@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_filter :load_note, :except => [:index, :new, :create, :destroy]
   before_filter :load_jobthing, :load_user
+  before_filter :permissions
 
   def index
     @notes = Note.where(jobthing_id: @jobthing.id)
